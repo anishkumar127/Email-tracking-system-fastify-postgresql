@@ -1,12 +1,20 @@
 import Fastify from 'fastify';
-import emailTrackingRoutes from './routes/emailTracking';
+import emailTrackingRoutes from './routes/track.routes';
 import health from './routes/healthCheck';
 import loggerPlugin from './plugins/logger';
 import errorHandler from './plugins/errorHandler';
+import cors from '@fastify/cors';
 const fastify = Fastify({ logger: true });
 
 const start = async () => {
     try {
+        // Register the CORS plugin
+        fastify.register(cors, {
+            origin: '*', 
+            methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+            allowedHeaders: ['Content-Type', 'Authorization'], 
+            credentials: true, 
+        });
         // Register plugins
         await fastify.register(loggerPlugin);
         await fastify.register(errorHandler);

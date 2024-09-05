@@ -14,18 +14,19 @@ datasource db {
 }
 
 model User {
-  id         Int      @id @default(autoincrement())
-  emailId    String   @unique
-  userId     String   @unique
-  readAt     DateTime?
-  lastPingAt DateTime?
-  duration   Int      @default(0) // Duration in seconds
-  ipAddress  String? // IP Address of the user
-  location   String? // Geographical location (e.g., "City, Country")
-  browser    String? // Browser information (e.g., "Chrome, Firefox")
-  system     String? // Operating system (e.g., "Windows, macOS")
-  deviceInfo String? // Device information (e.g., "Desktop, Mobile")
-  isRead     Boolean  @default(false) // Read status of the email
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  id          Int       @id @default(autoincrement())
+  emailId     String    @unique
+  userId      String    @unique
+  readAt      DateTime?
+  lastPingAt  DateTime?
+  readCounts Int       @default(0)
+  duration    Int       @default(0) // Duration in seconds
+  ipAddress   String? // IP Address of the user
+  location    String? // Geographical location (e.g., "City, Country")
+  browser     String? // Browser information (e.g., "Chrome, Firefox")
+  system      String? // Operating system (e.g., "Windows, macOS")
+  deviceInfo  String? // Device information (e.g., "Desktop, Mobile")
+  isRead      Boolean   @default(false) // Read status of the email
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 }
