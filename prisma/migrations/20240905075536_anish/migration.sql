@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "User" ALTER COLUMN "readAt" DROP NOT NULL,
+ALTER COLUMN "lastPingAt" DROP NOT NULL;

@@ -13,12 +13,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-model EmailTracking {
-  id          Int      @id @default(autoincrement())
-  emailId     String
-  userId      String
-  readAt      DateTime
-  lastPingAt  DateTime
-  duration    Int      @default(0) // Duration in seconds
+model User {
+  id         Int      @id @default(autoincrement())
+  emailId    String   @unique
+  userId     String   @unique
+  readAt     DateTime?
+  lastPingAt DateTime?
+  duration   Int      @default(0) // Duration in seconds
+  ipAddress  String? // IP Address of the user
+  location   String? // Geographical location (e.g., "City, Country")
+  browser    String? // Browser information (e.g., "Chrome, Firefox")
+  system     String? // Operating system (e.g., "Windows, macOS")
+  deviceInfo String? // Device information (e.g., "Desktop, Mobile")
+  isRead     Boolean  @default(false) // Read status of the email
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }
