@@ -1,18 +1,21 @@
 import { FastifyInstance } from 'fastify';
-import { createUser, isEmailRead, pingEmail } from '../handlers/track.handlers';
-import { trackEmailSchema, pingSchema } from '../schemas/emailTracking';
+import { createUser, getUser, isEmailRead, pingEmail } from '../handlers/track.handlers';
+import { readEmailSchema, pingSchema } from '../schemas/emailTracking';
 
 export default async function emailTrackingRoutes(fastify: FastifyInstance) {
-    fastify.get('/track', {
+    fastify.put('/read', {
         handler: isEmailRead,
-        schema: trackEmailSchema,
+        schema: readEmailSchema,
     });
 
-    fastify.post('/ping', {
+    fastify.put('/ping', {
         handler: pingEmail,
         schema: pingSchema,
     });
     fastify.post('/create', {
         handler: createUser,
+    });
+    fastify.get('/user', {
+        handler: getUser,
     });
 }

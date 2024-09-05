@@ -4,8 +4,8 @@ import UAParser from 'ua-parser-js';
 import axios from 'axios'
 export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        const { emailId, userId } = request.query as { emailId: string; userId: string };
-
+        const { emailId, userId } = request.body as { emailId: string; userId: string };
+        console.log("level 1")
         if (!emailId || !userId) {
             reply.status(400).send({ error: 'Missing emailId or userId' });
             return;
@@ -151,3 +151,24 @@ export const createUser = async (request: FastifyRequest, reply: FastifyReply) =
         reply.code(500).send({ error: 'Internal Server Error' });
     }
 };
+
+
+export const getUser = async (request: FastifyRequest, reply: FastifyReply) => {
+    try {
+        const { emailId, userId } = request.query as { emailId: string; userId: string };
+        console.log("comes")
+        const user = await prisma.user.findFirst({
+            where: {
+                emailId,
+                userId,
+            },
+        });
+        reply.code(200).send({
+            user: user,
+            message: 'User fetched successfully',
+        });
+        return;
+    } catch (error) {
+        reply.code(500).send({ error: 'Internal Server Error' });
+    }
+}

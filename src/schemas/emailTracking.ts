@@ -1,5 +1,13 @@
-export const trackEmailSchema = {
-    querystring: {
+export const readEmailSchema = {
+    // querystring: {
+    //     type: 'object',
+    //     properties: {
+    //         emailId: { type: 'string' },
+    //         userId: { type: 'string' },
+    //     },
+    //     required: ['emailId', 'userId'],
+    // },
+    body: {
         type: 'object',
         properties: {
             emailId: { type: 'string' },
