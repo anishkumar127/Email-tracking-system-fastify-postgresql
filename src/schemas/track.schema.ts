@@ -1,4 +1,5 @@
 export const readEmailSchema = {
+    // $id: 'readEmailSchema',
     // querystring: {
     //     type: 'object',
     //     properties: {
@@ -38,6 +39,7 @@ export const readEmailSchema = {
 };
 
 export const pingSchema = {
+    // $id: 'pingSchema',
     body: {
         type: 'object',
         properties: {

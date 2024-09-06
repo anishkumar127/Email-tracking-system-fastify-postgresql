@@ -6,12 +6,12 @@
         "lib": ["ESNext"],
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "baseUrl": ".",
+        // "baseUrl": ".",
         // "rootDir": ".",
         "outDir": "./dist",
-        "paths": {
-            "~/*": ["src/*"]
-        },
+        // "paths": {
+        //     "~/*": ["src/*"]
+        // },
         "strictBindCallApply": false,
         "strictNullChecks": false,
         "noFallthroughCasesInSwitch": false,

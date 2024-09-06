@@ -4,24 +4,36 @@ import health from './routes/healthCheck';
 import loggerPlugin from './plugins/logger';
 import errorHandler from './plugins/errorHandler';
 import cors from '@fastify/cors';
-const fastify = Fastify({ logger: true });
+import pino from 'pino';
+import { loggerOptions } from './utils/Loggers';
+const fastify = Fastify({
+    logger: pino(loggerOptions),
+});
 
-const start = async () => {
+const main = async () => {
     try {
-        // Register the CORS plugin
+        /* -------------------------------------------------------------------------- */
+        /*                          Register the CORS plugin                          */
+        /* -------------------------------------------------------------------------- */
         fastify.register(cors, {
-            origin: '*', 
-            methods: ['GET', 'POST', 'PUT', 'DELETE'], 
-            allowedHeaders: ['Content-Type', 'Authorization'], 
-            credentials: true, 
+            origin: '*',
+            methods: ['GET', 'POST', 'PUT', 'DELETE'],
+            allowedHeaders: ['Content-Type', 'Authorization'],
+            credentials: true,
         });
-        // Register plugins
+        /* -------------------------------------------------------------------------- */
+        /*                              PLUGINS                                       */
+        /* -------------------------------------------------------------------------- */
         await fastify.register(loggerPlugin);
         await fastify.register(errorHandler);
-        // Register routes
+        /* -------------------------------------------------------------------------- */
+        /*                               ROUTES                                       */
+        /* -------------------------------------------------------------------------- */
         await fastify.register(emailTrackingRoutes, { prefix: '/api/v1' });
         await fastify.register(health, { prefix: '/api/v1' });
-        // start server
+        /* -------------------------------------------------------------------------- */
+        /*                              SERVER                                        */
+        /* -------------------------------------------------------------------------- */
         const port = Number(process.env.PORT) || 3000;
         console.log({ port });
 
@@ -32,4 +44,4 @@ const start = async () => {
         process.exit(1);
     }
 };
-start();
+main();

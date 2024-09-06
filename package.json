@@ -25,6 +25,8 @@
         "axios": "^1.7.7",
         "fastify": "^4.28.1",
         "fastify-plugin": "^4.5.1",
+        "pino": "^9.4.0",
+        "pino-pretty": "^11.2.2",
         "ua-parser-js": "^1.0.38"
     },
     "devDependencies": {

@@ -1,11 +1,11 @@
-import { FastifyRequest, FastifyReply } from 'fastify';
+import fastify, { FastifyRequest, FastifyReply } from 'fastify';
 import prisma from '../prismaClient';
 import UAParser from 'ua-parser-js';
-import axios from 'axios'
+import axios from 'axios';
 export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         const { emailId, userId } = request.body as { emailId: string; userId: string };
-        console.log("level 1")
+        console.log('level 1');
         if (!emailId || !userId) {
             reply.status(400).send({ error: 'Missing emailId or userId' });
             return;
@@ -16,11 +16,11 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             const userAgent = request.headers['user-agent'];
             const parser = new UAParser(userAgent);
             const result = parser.getResult();
-            const os = result?.os?.name; // OS name (e.g., Windows, macOS, Android)
-            const browser = result?.browser?.name; // Browser name (e.g., Chrome, Firefox)
+            const os = result?.os?.name;
+            const browser = result?.browser?.name;
 
             // Retrieve the geolocation information
-            const geoResponse = await axios.get(`https://ipinfo.io/${ip}/geo?token=d8688e45222550`);
+            const geoResponse = await axios.get(`https://ipinfo.io/${ip}/geo?token=843b85132fe7ea`);
             const { city, region, country } = geoResponse.data;
 
             // Populate the context object
@@ -47,12 +47,11 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
                 readCounts: {
                     increment: 1,
                 },
-                ipAddress:context?.ip ?? null,
+                ipAddress: context?.ip ?? null,
                 location: context?.location ?? null,
                 browser: context?.browser ?? null,
                 system: context?.os ?? null,
                 deviceInfo: context?.userAgent ?? null,
-
             };
             if (!tracking.readAt) {
                 payload['readAt'] = currentDate;
@@ -152,11 +151,10 @@ export const createUser = async (request: FastifyRequest, reply: FastifyReply) =
     }
 };
 
-
 export const getUser = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         const { emailId, userId } = request.query as { emailId: string; userId: string };
-        console.log("comes")
+        console.log('comes');
         const user = await prisma.user.findFirst({
             where: {
                 emailId,
@@ -167,8 +165,7 @@ export const getUser = async (request: FastifyRequest, reply: FastifyReply) => {
             user: user,
             message: 'User fetched successfully',
         });
-        return;
     } catch (error) {
         reply.code(500).send({ error: 'Internal Server Error' });
     }
-}
+};
