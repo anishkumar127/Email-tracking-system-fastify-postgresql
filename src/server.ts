@@ -6,12 +6,21 @@ import errorHandler from './plugins/errorHandler';
 import cors from '@fastify/cors';
 import pino from 'pino';
 import { loggerOptions } from './utils/Loggers';
+import prisma from './prismaClient';
 const app = Fastify({
     logger: pino(loggerOptions),
 });
-
+async function checkDatabaseConnection(fastify, options) {
+    try {
+        await prisma.$connect();
+        fastify.log.info('Database connection successful');
+    } catch (error) {
+        fastify.log.error(`Database connection failed:${error}`);
+    }
+}
 const main = async () => {
     try {
+        app.register(checkDatabaseConnection);
         /* -------------------------------------------------------------------------- */
         /*                          Register the CORS plugin                          */
         /* -------------------------------------------------------------------------- */

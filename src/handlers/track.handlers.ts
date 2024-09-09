@@ -7,8 +7,7 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
         const { emailId, userId } = request.body as { emailId: string; userId: string };
         console.log('level 1');
         if (!emailId || !userId) {
-            reply.status(400).send({ error: 'Missing emailId or userId' });
-            return;
+            return reply.status(400).send({ error: 'Missing emailId or userId' });
         }
         let context;
         try {
@@ -64,11 +63,10 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             reply.code(404).send({ error: 'Tracking record not found' });
         }
 
-        reply.send({
+        return reply.send({
             message: 'Email read successfully',
             success: true,
         });
-        return;
     } catch (error) {
         console.error('Error tracking email:', error);
         reply.code(500).send({ error: 'Internal Server Error' });
@@ -78,7 +76,7 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
 export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         const { emailId, userId } = request.body as { emailId: string; userId: string };
-console.log("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
+        console.log('hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
         if (!emailId || !userId) {
             reply.status(400).send({ error: 'Missing emailId or userId' });
             return;
@@ -147,6 +145,9 @@ export const createTickets = async (request: FastifyRequest, reply: FastifyReply
 export const getTickets = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         const { emailId } = request.query as { emailId: string; userId: string };
+        if (!emailId) {
+            reply.code(401).send({ error: 'Missing emailId' });
+        }
         const user = await prisma.tickets.findMany({
             where: {
                 emailId,
