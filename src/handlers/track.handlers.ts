@@ -144,13 +144,14 @@ export const createTickets = async (request: FastifyRequest, reply: FastifyReply
 /* -------------------------------------------------------------------------- */
 export const getTickets = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        const { emailId } = request.query as { emailId: string; userId: string };
+        const { emailId ,userId} = request.query as { emailId: string; userId: string };
         if (!emailId) {
             reply.code(401).send({ error: 'Missing emailId' });
         }
         const user = await prisma.tickets.findMany({
             where: {
                 emailId,
+                userId
             },
         });
         reply.code(200).send({

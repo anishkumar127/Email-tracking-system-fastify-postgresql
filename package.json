@@ -28,11 +28,13 @@
         "fastify-plugin": "^4.5.1",
         "pino": "^9.4.0",
         "pino-pretty": "^11.2.2",
+        "postgres": "^3.4.4",
         "ua-parser-js": "^1.0.38"
     },
     "devDependencies": {
         "@types/node": "^22.5.3",
         "c8": "^10.1.2",
+        "drizzle-kit": "^0.24.2",
         "nodemon": "^3.1.4",
         "prettier": "^3.3.3",
         "prisma": "^5.19.1",
