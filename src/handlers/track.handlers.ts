@@ -33,7 +33,7 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             };
         } catch {}
         const currentDate = new Date();
-        const tracking = await prisma.user.findFirst({
+        const tracking = await prisma.tickets.findFirst({
             where: {
                 emailId,
                 userId,
@@ -56,7 +56,7 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             if (!tracking.readAt) {
                 payload['readAt'] = currentDate;
             }
-            await prisma.user.update({
+            await prisma.tickets.update({
                 where: { id: tracking.id },
                 data: payload,
             });
@@ -86,7 +86,7 @@ export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) =>
 
         const pingAt = new Date();
 
-        const tracking = await prisma.user.findFirst({
+        const tracking = await prisma.tickets.findFirst({
             where: {
                 emailId,
                 userId,
@@ -99,7 +99,7 @@ export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) =>
 
             // const durationIncrement = Math.floor((pingAt.getTime() - tracking.lastPingAt.getTime()) / 1000);
 
-            await prisma.user.update({
+            await prisma.tickets.update({
                 where: { id: tracking.id },
                 data: {
                     lastPingAt: pingAt,
@@ -120,50 +120,41 @@ export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) =>
     }
 };
 
-export const createUser = async (request: FastifyRequest, reply: FastifyReply) => {
+/* -------------------------------------------------------------------------- */
+/*                               CREATE TICKETS                               */
+/* -------------------------------------------------------------------------- */
+export const createTickets = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         const { emailId, userId } = request.body as { emailId: string; userId: string };
-        const isUserExists = await prisma.user.findFirst({
-            where: {
-                emailId,
-                userId,
-            },
-        });
-
-        if (isUserExists) {
-            reply.code(409).send({ error: 'User already exists' });
-            return;
-        }
-
-        const user = await prisma.user.create({
+        console.log({emailId,userId})
+         await prisma.tickets.create({
             data: {
                 emailId,
                 userId,
             },
         });
-        console.log({ user });
-        reply.code(201).send({
-            message: 'User created successfully',
+        return reply.code(201).send({
+            message: 'ticket send successfully',
         });
-        return;
     } catch (error) {
         reply.code(500).send({ error: 'Internal Server Error' });
     }
 };
 
-export const getUser = async (request: FastifyRequest, reply: FastifyReply) => {
+/* -------------------------------------------------------------------------- */
+/*                            FETCH ALL THE TICKETS                           */
+/* -------------------------------------------------------------------------- */
+export const getTickets = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        const { emailId, userId } = request.query as { emailId: string; userId: string };
-        console.log('comes');
-        const user = await prisma.user.findFirst({
+        const { emailId } = request.query as { emailId: string; userId: string };
+        const user = await prisma.tickets.findMany({
             where: {
                 emailId,
-                userId,
             },
         });
         reply.code(200).send({
             user: user,
-            message: 'User fetched successfully',
+            message: 'Tickets fetched successfully',
         });
     } catch (error) {
         reply.code(500).send({ error: 'Internal Server Error' });
