@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "types": ["vitest/globals"],
         "module": "commonjs",
         "incremental": true,
         "target": "ES2022",
@@ -24,6 +25,6 @@
         "forceConsistentCasingInFileNames": false,
         "skipLibCheck": true
     },
-    "include": ["src/**/*"],
+    "include": ["src/**/*","tests", "tests"],
     "exclude": ["node_modules", "scripts", "dist"]
 }

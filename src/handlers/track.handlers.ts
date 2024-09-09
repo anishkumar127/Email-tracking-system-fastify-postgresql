@@ -1,7 +1,7 @@
-import fastify, { FastifyRequest, FastifyReply } from 'fastify';
-import prisma from '../prismaClient';
-import UAParser from 'ua-parser-js';
 import axios from 'axios';
+import { FastifyReply, FastifyRequest } from 'fastify';
+import UAParser from 'ua-parser-js';
+import prisma from '../prismaClient';
 export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         const { emailId, userId } = request.body as { emailId: string; userId: string };
@@ -78,7 +78,7 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
 export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         const { emailId, userId } = request.body as { emailId: string; userId: string };
-
+console.log("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
         if (!emailId || !userId) {
             reply.status(400).send({ error: 'Missing emailId or userId' });
             return;
@@ -126,8 +126,8 @@ export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) =>
 export const createTickets = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         const { emailId, userId } = request.body as { emailId: string; userId: string };
-        console.log({emailId,userId})
-         await prisma.tickets.create({
+        console.log({ emailId, userId });
+        await prisma.tickets.create({
             data: {
                 emailId,
                 userId,
