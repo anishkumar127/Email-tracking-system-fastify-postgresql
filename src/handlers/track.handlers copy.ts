@@ -1,10 +1,9 @@
 import axios from 'axios';
+import { and, desc, eq } from 'drizzle-orm';
 import { FastifyReply, FastifyRequest } from 'fastify';
 import UAParser from 'ua-parser-js';
-import prisma from '../prismaClient';
 import { db } from '../db/db';
 import { tickets } from '../db/schema';
-import { and, desc, eq } from 'drizzle-orm';
 export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         const { emailId, userId } = request.body as { emailId: string; userId: string };
