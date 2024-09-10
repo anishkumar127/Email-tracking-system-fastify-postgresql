@@ -1,143 +1,117 @@
 {
-	"info": {
-		"_postman_id": "31fc0963-bb68-48e9-9a8f-8aa2bcbbcaa6",
-		"name": "Email Tracking",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "26162396"
-	},
-	"item": [
-		{
-		"name": "READ EMAIL",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"emailId\": \"anishbishnoi127@gmail.com\",\r\n  \"userId\": \"123\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/v1/read",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"read"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PING EVERY SECONDS TRACK SEEN DURATION",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"emailId\": \"anishbishnoi127@gmail.com\",\r\n  \"userId\": \"123\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/v1/ping",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"ping"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "CREATE TICKETS",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							"pm.environment.set(\"currentTimestamp\", Date.now());"
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"emailId\":\"anishbishnoi127@gmail.com\",\r\n  \"userId\":\"123\",\r\n  \"sendDate\": {{currentTimestamp}}\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/v1/create",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"create"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET TICKETS",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/v1/user?emailId=anishbishnoi127@gmail.com&userId=123",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"user"
-					],
-					"query": [
-						{
-							"key": "emailId",
-							"value": "anishbishnoi127@gmail.com"
-						},
-						{
-							"key": "userId",
-							"value": "123"
-						}
-					]
-				}
-			},
-			"response": []
-		}
-	]
+    "info": {
+        "_postman_id": "31fc0963-bb68-48e9-9a8f-8aa2bcbbcaa6",
+        "name": "Email Tracking",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "26162396"
+    },
+    "item": [
+        {
+            "name": "READ EMAIL",
+            "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n  \"emailId\": \"anishbishnoi127@gmail.com\",\r\n  \"userId\": \"123\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:3000/api/v1/read",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["api", "v1", "read"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "PING EVERY SECONDS TRACK SEEN DURATION",
+            "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n  \"emailId\": \"anishbishnoi127@gmail.com\",\r\n  \"userId\": \"123\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:3000/api/v1/ping",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["api", "v1", "ping"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "CREATE TICKETS",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": ["pm.environment.set(\"currentTimestamp\", Date.now());"],
+                        "type": "text/javascript",
+                        "packages": {}
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n  \"emailId\":\"anishbishnoi127@gmail.com\",\r\n  \"userId\":\"123\",\r\n  \"sendDate\": {{currentTimestamp}}\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:3000/api/v1/create",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["api", "v1", "create"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "GET TICKETS",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/api/v1/user?emailId=anishbishnoi127@gmail.com&userId=123",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["api", "v1", "user"],
+                    "query": [
+                        {
+                            "key": "emailId",
+                            "value": "anishbishnoi127@gmail.com"
+                        },
+                        {
+                            "key": "userId",
+                            "value": "123"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
 }

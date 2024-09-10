@@ -7,6 +7,8 @@ import cors from '@fastify/cors';
 import pino from 'pino';
 import { loggerOptions } from './utils/Loggers';
 import prisma from './prismaClient';
+import dotenv from 'dotenv'
+dotenv.config()
 const app = Fastify({
     logger: pino(loggerOptions),
 });

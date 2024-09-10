@@ -2,10 +2,12 @@ import axios from 'axios';
 import { FastifyReply, FastifyRequest } from 'fastify';
 import UAParser from 'ua-parser-js';
 import prisma from '../prismaClient';
+import { db } from '../db/db';
+import { tickets } from '../db/schema';
+import { and, eq } from 'drizzle-orm';
 export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         const { emailId, userId } = request.body as { emailId: string; userId: string };
-        console.log('level 1');
         if (!emailId || !userId) {
             return reply.status(400).send({ error: 'Missing emailId or userId' });
         }
@@ -32,16 +34,26 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             };
         } catch {}
         const currentDate = new Date();
+
         const tracking = await prisma.tickets.findFirst({
             where: {
                 emailId,
                 userId,
             },
             orderBy: {
-                createdAt : 'desc',
+                readAt: 'desc',
             },
         });
 
+        // const tracking = await db.query.tickets.findFirst({
+        //     where: (tickets, { eq, and }) => and(
+        //       eq(tickets.emailId, emailId),
+        //       eq(tickets.userId, userId)
+        //     ),
+        //     orderBy: (tickets, { desc }) => [desc(tickets.readAt)]
+        // });
+        
+        
         if (tracking) {
             const payload = {
                 isRead: true,
@@ -58,12 +70,10 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             if (!tracking.readAt) {
                 payload['readAt'] = currentDate;
             }
-            console.log("readAt",tracking.readAt)
             const now = new Date();
             const isGT30m = tracking.readAt
-                ? now.getTime() - new Date(tracking.readAt).getTime() > (30 * 60 * 1000)
+                ? now.getTime() - new Date(tracking.readAt).getTime() > 30 * 60 * 1000
                 : true;
-            console.log({isGT30m})
             if (isGT30m) {
                 await prisma.tickets.create({
                     data: {
@@ -118,7 +128,7 @@ export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) =>
                 userId,
             },
             orderBy: {
-                createdAt: 'desc',
+                readAt: 'desc',
             },
         });
 
@@ -159,6 +169,7 @@ export const createTickets = async (request: FastifyRequest, reply: FastifyReply
                 userId,
             },
         });
+        await db.insert(tickets).values({ emailId, userId });
         return reply.code(201).send({
             message: 'ticket send successfully',
         });
@@ -173,15 +184,11 @@ export const createTickets = async (request: FastifyRequest, reply: FastifyReply
 export const getTickets = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         const { emailId, userId } = request.query as { emailId: string; userId: string };
-        if (!emailId) {
+        if (!emailId || !userId) {
             reply.code(401).send({ error: 'Missing emailId' });
         }
-        const user = await prisma.tickets.findMany({
-            where: {
-                emailId,
-                userId,
-            },
-        });
+        const user = await db.select().from(tickets).where(and(eq(tickets.emailId, emailId), eq(tickets.userId, userId)));
+       
         reply.code(200).send({
             user: user,
             message: 'Tickets fetched successfully',

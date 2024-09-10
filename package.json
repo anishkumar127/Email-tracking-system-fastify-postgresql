@@ -14,7 +14,10 @@
         "dev": "nodemon src/server.ts",
         "build": "tsc",
         "start": "node dist/server.js",
-        "format": "prettier --write ."
+        "format": "prettier --write .",
+        "drizzle:generate": "drizzle-kit generate --config=drizzle.config.ts",
+        "drizzle:run": "node -r esbuild-register ./migrate.ts",
+        "drizzle:migrate": "ts-node ./migrate.ts"
     },
     "keywords": [],
     "author": "anishbishnoi127@gmail.com",
@@ -23,6 +26,7 @@
         "@fastify/cors": "^9.0.1",
         "@prisma/client": "^5.19.1",
         "axios": "^1.7.7",
+        "dotenv": "^16.4.5",
         "drizzle-orm": "^0.33.0",
         "fastify": "^4.28.1",
         "fastify-plugin": "^4.5.1",

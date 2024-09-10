@@ -1,4 +1,3 @@
-
 # Email Tracking API Documentation
 
 ## Overview
@@ -11,21 +10,21 @@ The Email Tracking API allows users to manage and track the status of emails in 
 
 **Description:** Marks an email as read for a specific user.
 
-- **Method:** `PUT`
-- **URL:** `http://localhost:3000/api/v1/read`
+-   **Method:** `PUT`
+-   **URL:** `http://localhost:3000/api/v1/read`
 
 **Request Body:**
 
 ```json
 {
-  "emailId": "anishbishnoi127@gmail.com",
-  "userId": "123"
+    "emailId": "anishbishnoi127@gmail.com",
+    "userId": "123"
 }
 ```
 
 **Response:**
 
-- No response body specified.
+-   No response body specified.
 
 ---
 
@@ -33,21 +32,21 @@ The Email Tracking API allows users to manage and track the status of emails in 
 
 **Description:** Tracks the duration an email is being viewed by pinging the server periodically.
 
-- **Method:** `PUT`
-- **URL:** `http://localhost:3000/api/v1/ping`
+-   **Method:** `PUT`
+-   **URL:** `http://localhost:3000/api/v1/ping`
 
 **Request Body:**
 
 ```json
 {
-  "emailId": "anishbishnoi127@gmail.com",
-  "userId": "123"
+    "emailId": "anishbishnoi127@gmail.com",
+    "userId": "123"
 }
 ```
 
 **Response:**
 
-- No response body specified.
+-   No response body specified.
 
 ---
 
@@ -55,15 +54,15 @@ The Email Tracking API allows users to manage and track the status of emails in 
 
 **Description:** Creates a new ticket for an email event, such as sending or reading.
 
-- **Method:** `POST`
-- **URL:** `http://localhost:3000/api/v1/create`
+-   **Method:** `POST`
+-   **URL:** `http://localhost:3000/api/v1/create`
 
 **Prerequest Script:**
 
 This script sets the current timestamp in the environment variable `currentTimestamp` before the request is sent.
 
 ```javascript
-pm.environment.set("currentTimestamp", Date.now());
+pm.environment.set('currentTimestamp', Date.now());
 ```
 
 **Request Body:**
@@ -78,7 +77,7 @@ pm.environment.set("currentTimestamp", Date.now());
 
 **Response:**
 
-- No response body specified.
+-   No response body specified.
 
 ---
 
@@ -86,17 +85,14 @@ pm.environment.set("currentTimestamp", Date.now());
 
 **Description:** Retrieves tickets for a specific user based on the email ID and user ID.
 
-- **Method:** `GET`
-- **URL:** `http://localhost:3000/api/v1/user?emailId=anishbishnoi127@gmail.com&userId=123`
+-   **Method:** `GET`
+-   **URL:** `http://localhost:3000/api/v1/user?emailId=anishbishnoi127@gmail.com&userId=123`
 
 **Query Parameters:**
 
-- `emailId`: `anishbishnoi127@gmail.com`
-- `userId`: `123`
+-   `emailId`: `anishbishnoi127@gmail.com`
+-   `userId`: `123`
 
 **Response:**
 
-- No response body specified.
-
-
-
+-   No response body specified.
