@@ -4,7 +4,7 @@ import UAParser from 'ua-parser-js';
 import prisma from '../prismaClient';
 import { db } from '../db/db';
 import { tickets } from '../db/schema';
-import { and, eq } from 'drizzle-orm';
+import { and, desc, eq } from 'drizzle-orm';
 export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         const { emailId, userId } = request.body as { emailId: string; userId: string };
@@ -34,17 +34,7 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             };
         } catch {}
         const currentDate = new Date();
-
-        const tracking = await prisma.tickets.findFirst({
-            where: {
-                emailId,
-                userId,
-            },
-            orderBy: {
-                readAt: 'desc',
-            },
-        });
-
+        /* ------------------------------- NOT WORKING ------------------------------ */
         // const tracking = await db.query.tickets.findFirst({
         //     where: (tickets, { eq, and }) => and(
         //       eq(tickets.emailId, emailId),
@@ -52,10 +42,17 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
         //     ),
         //     orderBy: (tickets, { desc }) => [desc(tickets.readAt)]
         // });
-        
-        
-        if (tracking) {
+        const tracking = await db
+            .select()
+            .from(tickets)
+            .where(and(eq(tickets.emailId, emailId), eq(tickets.userId, userId)))
+            .orderBy(desc(tickets.createdAt))
+            .limit(1);
+
+        if (tracking && tracking?.length > 0) {
             const payload = {
+                emailId: emailId,
+                userId: userId,
                 isRead: true,
                 lastPingAt: currentDate,
                 readCounts: {
@@ -67,38 +64,34 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
                 system: context?.os ?? null,
                 deviceInfo: context?.userAgent ?? null,
             };
-            if (!tracking.readAt) {
+            if (!tracking[0].readAt) {
                 payload['readAt'] = currentDate;
             }
             const now = new Date();
-            const isGT30m = tracking.readAt
-                ? now.getTime() - new Date(tracking.readAt).getTime() > 30 * 60 * 1000
+            const isGT30m = tracking[0].readAt
+                ? now.getTime() - new Date(tracking[0].readAt).getTime() > 30 * 60 * 1000
                 : true;
             if (isGT30m) {
-                await prisma.tickets.create({
-                    data: {
-                        emailId,
-                        userId,
-                        lastPingAt: now,
-                        duration: 0,
-                        readCounts: 1,
-                        readAt: now,
-                        isRead: true,
-                        ipAddress: context?.ip ?? null,
-                        location: context?.location ?? null,
-                        browser: context?.browser ?? null,
-                        system: context?.os ?? null,
-                        deviceInfo: context?.userAgent ?? null,
-                    },
-                });
+                const schema = {
+                    emailId: emailId,
+                    userId: userId,
+                    isRead: true,
+                    readAt: now,
+                    lastPingAt: now,
+                    duration: 0,
+                    readCounts: 1,
+                    ipAddress: context?.ip ?? null,
+                    location: context?.location ?? null,
+                    browser: context?.browser ?? null,
+                    deviceInfo: context?.userAgent ?? null,
+                    system: context?.os ?? null,
+                };
+                await db.insert(tickets).values(schema);
             } else {
-                await prisma.tickets.update({
-                    where: { id: tracking.id },
-                    data: payload,
-                });
+                await db.update(tickets).set(payload).where(eq(tickets.id, tracking[0].id));
             }
         } else {
-            reply.code(404).send({ error: 'Tracking record not found' });
+            return reply.code(404).send({ error: 'Tracking record not found' });
         }
 
         return reply.send({
@@ -107,7 +100,7 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
         });
     } catch (error) {
         console.error('Error tracking email:', error);
-        reply.code(500).send({ error: 'Internal Server Error' });
+        return reply.code(500).send({ error: 'Internal Server Error' });
     }
 };
 
@@ -116,43 +109,37 @@ export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) =>
         const { emailId, userId } = request.body as { emailId: string; userId: string };
         console.log('hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
         if (!emailId || !userId) {
-            reply.status(400).send({ error: 'Missing emailId or userId' });
-            return;
+            return reply.status(400).send({ error: 'Missing emailId or userId' });
         }
 
         const pingAt = new Date();
+        const tracking = await db
+            .select()
+            .from(tickets)
+            .where(and(eq(tickets.emailId, emailId), eq(tickets.userId, userId)))
+            .orderBy(desc(tickets.createdAt))
+            .limit(1);
 
-        const tracking = await prisma.tickets.findFirst({
-            where: {
-                emailId,
-                userId,
-            },
-            orderBy: {
-                readAt: 'desc',
-            },
-        });
-
-        if (tracking) {
-            const lastPingAt = tracking.lastPingAt ? new Date(tracking.lastPingAt) : pingAt;
+        if (tracking && tracking?.length > 0) {
+            const lastPingAt = tracking[0].lastPingAt ? new Date(tracking[0].lastPingAt) : pingAt;
             const durationIncrement = Math.floor((pingAt.getTime() - lastPingAt.getTime()) / 1000); // Calculate duration increment
 
             // const durationIncrement = Math.floor((pingAt.getTime() - tracking.lastPingAt.getTime()) / 1000);
 
-            await prisma.tickets.update({
-                where: { id: tracking.id },
-                data: {
-                    lastPingAt: pingAt,
-                    duration: tracking.duration + durationIncrement,
-                },
-            });
+            const schema = {
+                emailId,
+                userId,
+                lastPingAt: pingAt,
+                duration: tracking[0].duration + durationIncrement,
+            };
+            await db.update(tickets).set(schema).where(eq(tickets.id, tracking[0].id));
         } else {
-            reply.status(404).send({ error: 'Tracking record not found' });
-            return;
+            return reply.status(404).send({ error: 'Tracking record not found' });
         }
 
-        reply.code(201).send({ status: 'ok', message: 'ping success' });
+        return reply.code(201).send({ status: 'ok', message: 'ping success' });
     } catch (error) {
-        reply.code(500).send({ error: 'Internal Server Error' });
+        return reply.code(500).send({ error: 'Internal Server Error' });
     }
 };
 
@@ -162,19 +149,12 @@ export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) =>
 export const createTickets = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         const { emailId, userId } = request.body as { emailId: string; userId: string };
-        console.log({ emailId, userId });
-        await prisma.tickets.create({
-            data: {
-                emailId,
-                userId,
-            },
-        });
         await db.insert(tickets).values({ emailId, userId });
         return reply.code(201).send({
             message: 'ticket send successfully',
         });
     } catch (error) {
-        reply.code(500).send({ error: 'Internal Server Error' });
+        return reply.code(500).send({ error: 'Internal Server Error' });
     }
 };
 
@@ -185,15 +165,18 @@ export const getTickets = async (request: FastifyRequest, reply: FastifyReply) =
     try {
         const { emailId, userId } = request.query as { emailId: string; userId: string };
         if (!emailId || !userId) {
-            reply.code(401).send({ error: 'Missing emailId' });
+            return reply.code(401).send({ error: 'Missing emailId' });
         }
-        const user = await db.select().from(tickets).where(and(eq(tickets.emailId, emailId), eq(tickets.userId, userId)));
-       
-        reply.code(200).send({
+        const user = await db
+            .select()
+            .from(tickets)
+            .where(and(eq(tickets.emailId, emailId), eq(tickets.userId, userId)));
+
+        return reply.code(200).send({
             user: user,
             message: 'Tickets fetched successfully',
         });
     } catch (error) {
-        reply.code(500).send({ error: 'Internal Server Error' });
+        return reply.code(500).send({ error: 'Internal Server Error' });
     }
 };

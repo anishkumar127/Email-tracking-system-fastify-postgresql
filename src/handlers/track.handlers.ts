@@ -38,7 +38,7 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
                 userId,
             },
             orderBy: {
-                createdAt : 'desc',
+                createdAt: 'desc',
             },
         });
 
@@ -58,12 +58,12 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             if (!tracking.readAt) {
                 payload['readAt'] = currentDate;
             }
-            console.log("readAt",tracking.readAt)
+            console.log('readAt', tracking.readAt);
             const now = new Date();
             const isGT30m = tracking.readAt
-                ? now.getTime() - new Date(tracking.readAt).getTime() > (30 * 60 * 1000)
+                ? now.getTime() - new Date(tracking.readAt).getTime() > 30 * 60 * 1000
                 : true;
-            console.log({isGT30m})
+            console.log({ isGT30m });
             if (isGT30m) {
                 await prisma.tickets.create({
                     data: {

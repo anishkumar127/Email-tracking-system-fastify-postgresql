@@ -4,6 +4,8 @@
         "module": "commonjs",
         "incremental": true,
         "target": "ES2022",
+        // "strict": true,
+        // "explainFiles": true,
         "lib": ["ESNext"],
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,

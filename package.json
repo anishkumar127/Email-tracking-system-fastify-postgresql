@@ -11,7 +11,7 @@
     "scripts": {
         "prisma:generate": "prisma generate",
         "prisma:migrate": "prisma migrate dev --name anish",
-        "dev": "nodemon src/server.ts",
+        "dev": "nodemon src/server.ts --traceResolution",
         "build": "tsc",
         "start": "node dist/server.js",
         "format": "prettier --write .",

@@ -1,5 +1,5 @@
 import { FastifyInstance } from 'fastify';
-import {   createTickets, getTickets, isEmailRead, pingEmail } from '../handlers/track.handlers';
+import { createTickets, getTickets, isEmailRead, pingEmail } from '../handlers/track.handlers';
 // import { createTickets ,getTickets} from '../handlers/track.handlers copy';
 import { readEmailSchema, pingSchema } from '../schemas/track.schema';
 
