@@ -1,14 +1,6 @@
 export const readEmailSchema = {
     // $id: 'readEmailSchema',
-    // querystring: {
-    //     type: 'object',
-    //     properties: {
-    //         emailId: { type: 'string' },
-    //         userId: { type: 'string' },
-    //     },
-    //     required: ['emailId', 'userId'],
-    // },
-    body: {
+    querystring: {
         type: 'object',
         properties: {
             emailId: { type: 'string' },
@@ -16,6 +8,14 @@ export const readEmailSchema = {
         },
         required: ['emailId', 'userId'],
     },
+    // body: {
+    //     type: 'object',
+    //     properties: {
+    //         emailId: { type: 'string' },
+    //         userId: { type: 'string' },
+    //     },
+    //     required: ['emailId', 'userId'],
+    // },
     response: {
         200: {
             type: 'string',

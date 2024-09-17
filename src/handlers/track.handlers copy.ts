@@ -6,7 +6,7 @@ import { db } from '../db/db';
 import { tickets } from '../db/schema';
 export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        const { emailId, userId } = request.body as { emailId: string; userId: string };
+        const { emailId, userId } = request.query as { emailId: string; userId: string };
         if (!emailId || !userId) {
             return reply.status(400).send({ error: 'Missing emailId or userId' });
         }
@@ -54,9 +54,9 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
                 userId: userId,
                 isRead: true,
                 lastPingAt: currentDate,
-                readCounts: {
-                    increment: 1,
-                },
+                // readCounts: {
+                //     increment: 1,
+                // },
                 ipAddress: context?.ip ?? null,
                 location: context?.location ?? null,
                 browser: context?.browser ?? null,
@@ -87,16 +87,26 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
                 };
                 await db.insert(tickets).values(schema);
             } else {
+                console.log("updating ",payload);
                 await db.update(tickets).set(payload).where(eq(tickets.id, tracking[0].id));
             }
         } else {
             return reply.code(404).send({ error: 'Tracking record not found' });
         }
 
-        return reply.send({
-            message: 'Email read successfully',
-            success: true,
-        });
+        // return reply.send({
+        //     message: 'Email read successfully',
+        //     success: true,
+        // });
+        const transparentPixel = Buffer.from(
+            'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/ohNYAAAAABJRU5ErkJggg==',
+            'base64'
+        );
+        reply
+        .header('Content-Type', 'image/png')
+        .header('Content-Length', transparentPixel.length)
+        .send(transparentPixel);
+    
     } catch (error) {
         console.error('Error tracking email:', error);
         return reply.code(500).send({ error: 'Internal Server Error' });

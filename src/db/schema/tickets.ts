@@ -1,5 +1,5 @@
 import { sql } from 'drizzle-orm';
-import { boolean, integer, pgTable, serial, timestamp, varchar } from 'drizzle-orm/pg-core';
+import { boolean, index, integer, pgTable, serial, timestamp, varchar } from 'drizzle-orm/pg-core';
 
 const tickets = pgTable('tickets', {
     id: serial('id').primaryKey(),
@@ -18,5 +18,10 @@ const tickets = pgTable('tickets', {
     sendDate: timestamp('send_date').default(sql`CURRENT_TIMESTAMP`),
     createdAt: timestamp('created_at').default(sql`CURRENT_TIMESTAMP`),
     updatedAt: timestamp('updated_at', { mode: 'string' }).defaultNow(),
+},
+    (table) => {
+        return {
+        emailIdIdx : index('email_id_idx').on(table.emailId)
+    }
 });
 export default tickets;
