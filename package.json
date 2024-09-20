@@ -14,7 +14,7 @@
         "prisma:migrate": "prisma migrate dev --name anish",
         "dev": "nodemon src/server.ts --traceResolution",
         "build": "tsc",
-        "start": "node dist/src/server.js",
+        "start": "node dist/server.js",
         "format": "prettier --write .",
         "drizzle:generate": "drizzle-kit generate --config=drizzle.config.ts",
         "drizzle:run": "node -r esbuild-register ./migrate.ts",
