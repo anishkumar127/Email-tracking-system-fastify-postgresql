@@ -52,10 +52,10 @@ const main = async () => {
         /* -------------------------------------------------------------------------- */
         /*                              SERVER                                        */
         /* -------------------------------------------------------------------------- */
-        const port = Number(process.env.PORT) || 3000;
+        const port = Number(process.env.PORT) || 8080;
         console.log({ port });
 
-        const address = await app.listen({ port: port });
+        const address = await app.listen({ port: port ,host:'0.0.0.0'});
         app.log.info(`Server listening at ${address}`);
     } catch (err) {
         app.log.error(err);

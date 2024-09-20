@@ -14,7 +14,7 @@
         "prisma:migrate": "prisma migrate dev --name anish",
         "dev": "nodemon src/server.ts --traceResolution",
         "build": "tsc",
-        "start": "node dist/server.js",
+        "start": "node dist/src/server.js",
         "format": "prettier --write .",
         "drizzle:generate": "drizzle-kit generate --config=drizzle.config.ts",
         "drizzle:run": "node -r esbuild-register ./migrate.ts",
@@ -26,30 +26,24 @@
     "license": "ISC",
     "dependencies": {
         "@fastify/cors": "^9.0.1",
-        "@fastify/static": "^7.0.4",
-        "@prisma/client": "^5.19.1",
-        "@types/fastify-static": "^2.2.1",
         "axios": "^1.7.7",
         "dotenv": "^16.4.5",
         "drizzle-orm": "^0.33.0",
         "fastify": "^4.28.1",
         "fastify-plugin": "^4.5.1",
-        "fastify-static": "^4.7.0",
         "pino": "^9.4.0",
         "pino-pretty": "^11.2.2",
         "postgres": "^3.4.4",
-        "ua-parser-js": "^1.0.38"
+        "ua-parser-js": "^1.0.39"
     },
     "devDependencies": {
-        "@types/node": "^22.5.3",
-        "c8": "^10.1.2",
+        "@types/node": "^22.5.5",
         "drizzle-kit": "^0.24.2",
-        "nodemon": "^3.1.4",
+        "nodemon": "^3.1.6",
         "prettier": "^3.3.3",
-        "prisma": "^5.19.1",
         "supertest": "^7.0.0",
         "ts-node": "^10.9.2",
-        "typescript": "^5.5.4",
-        "vitest": "^2.0.5"
+        "typescript": "^5.6.2",
+        "vitest": "^2.1.1"
     }
 }
