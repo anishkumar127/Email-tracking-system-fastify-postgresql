@@ -1,6 +1,5 @@
 {
-    "appService.zipIgnorePattern": [
-        "node_modules{,/**}",
-        ".vscode{,/**}"
-    ]
+    "appService.zipIgnorePattern": ["node_modules{,/**}", ".vscode{,/**}"],
+    "appService.defaultWebAppToDeploy": "/subscriptions/2b95ca10-4458-42c3-8ab6-8316cc98c999/resourceGroups/email-tracking_group/providers/Microsoft.Web/sites/email-tracking",
+    "appService.deploySubpath": "."
 }

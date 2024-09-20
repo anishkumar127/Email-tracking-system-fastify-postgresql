@@ -2,28 +2,31 @@ import Fastify from 'fastify';
 import supertest from 'supertest';
 import { beforeAll, afterAll, beforeEach, describe, it, expect } from 'vitest';
 import * as handlers from '../src/handlers/track.handlers'; // Adjust the import path based on your project structure
-import prisma from '../src/prismaClient';
+import { db } from '../src/db/db';
+import { tickets } from '../src/db/schema';
+import { eq } from 'drizzle-orm';
+// import prisma from '../src/prismaClient';
 
 const app = Fastify();
 
-app.post('/read', handlers.isEmailRead);
+app.get('/read', handlers.isEmailRead);
 app.post('/ping', handlers.pingEmail);
 app.post('/create', handlers.createTickets);
 app.get('/tickets', handlers.getTickets);
 
 beforeAll(async () => {
-    await prisma.$connect(); // Connect to the database
+    // await prisma.$connect(); // Connect to the database
     await app.ready();
 });
 
 afterAll(async () => {
-    await prisma.$disconnect(); // Disconnect from the database
+    // await prisma.$disconnect(); // Disconnect from the database
     await app.close();
 });
 
 beforeEach(async () => {
     // Clean up the database before each test
-    await prisma.tickets.deleteMany(); // This removes all ticket records to start fresh
+    await db.delete(tickets); // This removes all ticket records to start fresh
 });
 
 describe('Ticket Handlers Integration Tests', () => {
@@ -37,7 +40,7 @@ describe('Ticket Handlers Integration Tests', () => {
             expect(response.body).toEqual({ message: 'ticket send successfully' });
 
             // Optional: Verify the entry in the database
-            const tickets = await prisma.tickets.findMany();
+            const tickets = await db.query.tickets.findMany();
             expect(tickets.length).toBe(1);
             expect(tickets[0]).toMatchObject({ emailId: 'test@example.com', userId: '123' });
         });
@@ -57,13 +60,11 @@ describe('Ticket Handlers Integration Tests', () => {
     describe('GET /tickets', () => {
         it('should fetch tickets successfully', async () => {
             // Create a ticket directly in the database for the test
-            await prisma.tickets.create({
-                data: { emailId: 'test@example.com', userId: '123' },
-            });
+            await db.insert(tickets).values({ emailId: 'test@example.com', userId: '123' });
 
             const response = await supertest(app.server)
                 .get('/tickets')
-                .query({ emailId: 'test@example.com' });
+                .query({ emailId: 'test@example.com', userId: '123' });
 
             expect(response.status).toBe(200);
             //   expect(response.body).toEqual({
@@ -86,30 +87,30 @@ describe('Ticket Handlers Integration Tests', () => {
         });
     });
 
-    describe('POST /read', () => {
+    describe('GET /read', () => {
         it('should update email as read', async () => {
             // First, create the ticket to update
-            const ticket = await prisma.tickets.create({
-                data: { emailId: 'test@example.com', userId: '123', readAt: null },
-            });
-
+            // * giving array as a result using [] desturcting. and only getting the object.
+            const [ticket] = await db
+                .insert(tickets)
+                .values({ emailId: 'test@example.com', userId: '123' })
+                .returning();
             const response = await supertest(app.server)
-                .post('/read')
-                .send({ emailId: 'test@example.com', userId: '123' });
-
+                .get('/read')
+                .query({ emailId: 'test@example.com', userId: '123' });
             expect(response.status).toBe(200);
-            expect(response.body).toEqual({ message: 'Email read successfully', success: true });
+            // giving buffer response.
+            // expect(response.body).toEqual({ message: 'Email read successfully', success: true });
 
             // Verify the update in the database
-            const updatedTicket = await prisma.tickets.findUnique({ where: { id: ticket.id } });
+            const [updatedTicket] = await db.select().from(tickets).where(eq(tickets.id, ticket.id)).limit(1);
             expect(updatedTicket.readAt).not.toBeNull();
         });
 
         it('should return 404 if the tracking record is not found', async () => {
             const response = await supertest(app.server)
-                .post('/read')
-                .send({ emailId: 'notfound@example.com', userId: '123' });
-
+                .get('/read')
+                .query({ emailId: 'notfound@example.com', userId: '123' });
             expect(response.status).toBe(404);
             expect(response.body).toEqual({ error: 'Tracking record not found' });
         });
@@ -118,10 +119,13 @@ describe('Ticket Handlers Integration Tests', () => {
     describe('POST /ping', () => {
         it('should update ping data successfully', async () => {
             // First, create the ticket to update
-            const ticket = await prisma.tickets.create({
-                data: { emailId: 'test@example.com', userId: '123', lastPingAt: new Date(), duration: 100 },
-            });
-
+            const schema = {
+                emailId: 'test@example.com',
+                userId: '123',
+                lastPingAt: new Date(),
+                duration: 100,
+            };
+            const [ticket] = await db.insert(tickets).values(schema).returning();
             const response = await supertest(app.server)
                 .post('/ping')
                 .send({ emailId: 'test@example.com', userId: '123' });
@@ -130,7 +134,7 @@ describe('Ticket Handlers Integration Tests', () => {
             expect(response.body).toEqual({ status: 'ok', message: 'ping success' });
 
             // Verify the update in the database
-            const updatedTicket = await prisma.tickets.findUnique({ where: { id: ticket.id } });
+            const [updatedTicket] = await db.select().from(tickets).where(eq(tickets.id, ticket.id)).limit(1);
             expect(updatedTicket.lastPingAt).not.toEqual(ticket.lastPingAt);
         });
 

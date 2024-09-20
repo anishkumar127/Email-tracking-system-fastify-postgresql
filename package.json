@@ -9,6 +9,7 @@
         "pnpm": ">=8"
     },
     "scripts": {
+        "test": "vitest",
         "prisma:generate": "prisma generate",
         "prisma:migrate": "prisma migrate dev --name anish",
         "dev": "nodemon src/server.ts --traceResolution",
@@ -17,7 +18,8 @@
         "format": "prettier --write .",
         "drizzle:generate": "drizzle-kit generate --config=drizzle.config.ts",
         "drizzle:run": "node -r esbuild-register ./migrate.ts",
-        "drizzle:migrate": "ts-node ./migrate.ts"
+        "drizzle:migrate": "ts-node ./migrate.ts",
+        "drizzle:studio": "drizzle-kit studio"
     },
     "keywords": [],
     "author": "anishbishnoi127@gmail.com",

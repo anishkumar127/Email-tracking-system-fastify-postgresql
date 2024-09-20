@@ -19,11 +19,8 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             const os = result?.os?.name;
             const browser = result?.browser?.name;
 
-            // Retrieve the geolocation information
             const geoResponse = await axios.get(`https://ipinfo.io/${ip}/geo?token=843b85132fe7ea`);
             const { city, region, country } = geoResponse.data;
-
-            // Populate the context object
             context = {
                 ip,
                 userAgent,
@@ -33,21 +30,13 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             };
         } catch {}
         const currentDate = new Date();
-        /* ------------------------------- NOT WORKING ------------------------------ */
-        // const tracking = await db.query.tickets.findFirst({
-        //     where: (tickets, { eq, and }) => and(
-        //       eq(tickets.emailId, emailId),
-        //       eq(tickets.userId, userId)
-        //     ),
-        //     orderBy: (tickets, { desc }) => [desc(tickets.readAt)]
-        // });
         const tracking = await db
             .select()
             .from(tickets)
             .where(and(eq(tickets.emailId, emailId), eq(tickets.userId, userId)))
             .orderBy(desc(tickets.createdAt))
             .limit(1);
-
+        console.log('tracking', tracking);
         if (tracking && tracking?.length > 0) {
             const payload = {
                 emailId: emailId,
@@ -57,6 +46,7 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
                 // readCounts: {
                 //     increment: 1,
                 // },
+                readCounts: tracking[0]?.readCounts + 1 || 0,
                 ipAddress: context?.ip ?? null,
                 location: context?.location ?? null,
                 browser: context?.browser ?? null,
@@ -69,7 +59,7 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             const now = new Date();
             const isGT30m = tracking[0].readAt
                 ? now.getTime() - new Date(tracking[0].readAt).getTime() > 30 * 60 * 1000
-                : true;
+                : false;
             if (isGT30m) {
                 const schema = {
                     emailId: emailId,
@@ -87,7 +77,7 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
                 };
                 await db.insert(tickets).values(schema);
             } else {
-                console.log("updating ",payload);
+                console.log('updating ', payload);
                 await db.update(tickets).set(payload).where(eq(tickets.id, tracking[0].id));
             }
         } else {
@@ -102,11 +92,10 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/ohNYAAAAABJRU5ErkJggg==',
             'base64'
         );
-        reply
-        .header('Content-Type', 'image/png')
-        .header('Content-Length', transparentPixel.length)
-        .send(transparentPixel);
-    
+        return reply
+            .header('Content-Type', 'image/png')
+            .header('Content-Length', transparentPixel.length)
+            .send(transparentPixel);
     } catch (error) {
         console.error('Error tracking email:', error);
         return reply.code(500).send({ error: 'Internal Server Error' });
@@ -116,7 +105,6 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
 export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         const { emailId, userId } = request.body as { emailId: string; userId: string };
-        console.log('hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
         if (!emailId || !userId) {
             return reply.status(400).send({ error: 'Missing emailId or userId' });
         }

@@ -4,5 +4,5 @@ import dotenv from 'dotenv';
 dotenv.config();
 const queryString = process.env.DATABASE_URL as string;
 export const connection = postgres(queryString);
-
-export const db = drizzle(connection);
+import * as schema from './schema/index'; // for type checking
+export const db = drizzle(connection, { schema });
