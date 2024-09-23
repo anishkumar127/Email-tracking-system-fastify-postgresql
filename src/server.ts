@@ -12,6 +12,7 @@ import { sql } from 'drizzle-orm';
 dotenv.config();
 const app = Fastify({
     logger: pino(loggerOptions),
+    
 });
 async function checkDatabaseConnection(fastify, options) {
     try {
@@ -23,17 +24,18 @@ async function checkDatabaseConnection(fastify, options) {
         const timeTakenMs = endTime[0] * 1e3 + endTime[1] * 1e-6;
 
         fastify.log.info(`Database connection successful in ${timeTakenMs.toFixed(3) + ' ms'}`);
+        
     } catch (error) {
         fastify.log.error(`Database connection failed:${error}`);
     }
 }
 const main = async () => {
     try {
-        app.register(checkDatabaseConnection);
+       await  app.register(checkDatabaseConnection);
         /* -------------------------------------------------------------------------- */
         /*                          Register the CORS plugin                          */
         /* -------------------------------------------------------------------------- */
-        app.register(cors, {
+     await   app.register(cors, {
             origin: '*',
             methods: ['GET', 'POST', 'PUT', 'DELETE'],
             allowedHeaders: ['Content-Type', 'Authorization'],

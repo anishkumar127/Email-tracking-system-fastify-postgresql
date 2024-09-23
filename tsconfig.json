@@ -16,7 +16,7 @@
         //     "~/*": ["src/*"]
         // },
         "strictBindCallApply": false,
-        "strictNullChecks": false,
+        "strictNullChecks": true, // TODO: previously was false.
         "noFallthroughCasesInSwitch": false,
         "noImplicitAny": false,
         "declaration": true,
