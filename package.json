@@ -1,6 +1,6 @@
 {
     "name": "email-tracking",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "private": true,
     "description": "",
     "main": "dist/server.js",
@@ -17,7 +17,9 @@
         "drizzle:generate": "drizzle-kit generate --config=drizzle.config.ts",
         "drizzle:run": "node -r esbuild-register ./migrate.ts",
         "drizzle:migrate": "ts-node ./migrate.ts",
-        "drizzle:studio": "drizzle-kit studio"
+        "drizzle:studio": "drizzle-kit studio",
+        "release": "standard-version",
+        "release:push": "standard-version && git push --follow-tags origin main"
     },
     "keywords": [],
     "author": "anishbishnoi127@gmail.com",
@@ -39,6 +41,7 @@
         "drizzle-kit": "^0.24.2",
         "nodemon": "^3.1.6",
         "prettier": "^3.3.3",
+        "standard-version": "^9.5.0",
         "supertest": "^7.0.0",
         "ts-node": "^10.9.2",
         "typescript": "^5.6.2",
