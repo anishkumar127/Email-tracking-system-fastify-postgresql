@@ -6,11 +6,9 @@
         "target": "ES2022",
         // "strict": true,
         // "explainFiles": true,
-        "lib": ["ESNext"],
+        "lib": ["ESNext","DOM"],
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        // "baseUrl": ".",
-        // "rootDir": ".",
         "outDir": "./dist",
         // "paths": {
         //     "~/*": ["src/*"]
@@ -25,8 +23,9 @@
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": false,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "types": ["node"] 
     },
-    "include": ["src/**/*", "tests", "tests"],
+    "include": ["src/**/*", "tests", "tests", "tests/**/*"],
     "exclude": ["node_modules", "scripts", "dist", "test","**/*spec.ts"]
 }
