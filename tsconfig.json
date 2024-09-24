@@ -10,9 +10,6 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "outDir": "./dist",
-        // "paths": {
-        //     "~/*": ["src/*"]
-        // },
         "strictBindCallApply": false,
         "strictNullChecks": true, // TODO: previously was false.
         "noFallthroughCasesInSwitch": false,
@@ -24,7 +21,6 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": false,
         "skipLibCheck": true,
-        "types": ["node"] 
     },
     "include": ["src/**/*", "tests", "tests", "tests/**/*"],
     "exclude": ["node_modules", "scripts", "dist", "test","**/*spec.ts"]
