@@ -33,10 +33,10 @@
         "pino": "^9.4.0",
         "pino-pretty": "^11.2.2",
         "postgres": "^3.4.4",
-        "ua-parser-js": "^1.0.39",
-        "@types/node": "^22.5.5"
+        "ua-parser-js": "^1.0.39"
     },
     "devDependencies": {
+        "@types/node": "^22.5.5",
         "@types/supertest": "^6.0.2",
         "drizzle-kit": "^0.24.2",
         "nodemon": "^3.1.7",
