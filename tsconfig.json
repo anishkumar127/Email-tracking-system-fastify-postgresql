@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "types": ["node"],
         // "types": ["vitest/globals"],
         "module": "commonjs",
         "incremental": true,
