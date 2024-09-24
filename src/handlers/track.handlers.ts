@@ -29,38 +29,14 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
                 location: `${city}, ${region}, ${country}`,
             };
         } catch {}
-        const currentDate = new Date();
         const tracking = await db
             .select()
             .from(tickets)
             .where(and(eq(tickets.emailId, emailId), eq(tickets.userId, userId)))
-            .orderBy(desc(tickets.createdAt))
             .limit(1);
-        console.log('tracking', tracking);
         if (tracking && tracking?.length > 0) {
-            const payload = {
-                emailId: emailId,
-                userId: userId,
-                isRead: true,
-                lastPingAt: currentDate,
-                // readCounts: {
-                //     increment: 1,
-                // },
-                readCounts: tracking[0]?.readCounts + 1 || 0,
-                ipAddress: context?.ip ?? null,
-                location: context?.location ?? null,
-                browser: context?.browser ?? null,
-                system: context?.os ?? null,
-                deviceInfo: context?.userAgent ?? null,
-            };
-            if (!tracking[0].readAt) {
-                payload['readAt'] = currentDate;
-            }
-            const now = new Date();
-            const isGT30m = tracking[0].readAt
-                ? now.getTime() - new Date(tracking[0].readAt).getTime() > 30 * 60 * 1000
-                : false;
-            if (isGT30m) {
+                const now = new Date();
+                console.log('location', context?.location);
                 const schema = {
                     emailId: emailId,
                     userId: userId,
@@ -76,18 +52,10 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
                     system: context?.os ?? null,
                 };
                 await db.insert(tickets).values(schema);
-            } else {
-                console.log('updating ', payload);
-                await db.update(tickets).set(payload).where(eq(tickets.id, tracking[0].id));
-            }
         } else {
             return reply.code(404).send({ error: 'Tracking record not found' });
         }
 
-        // return reply.send({
-        //     message: 'Email read successfully',
-        //     success: true,
-        // });
         const transparentPixel = Buffer.from(
             'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/ohNYAAAAABJRU5ErkJggg==',
             'base64'
