@@ -1,48 +1,28 @@
-// {
-//     "compilerOptions": {
-//         "types": ["node"],
-//         // "types": ["vitest/globals"],
-//         "module": "commonjs",
-//         "incremental": true,
-//         "target": "ES2022",
-//         // "strict": true,
-//         // "explainFiles": true,
-//         "lib": ["ES2022"],
-//         "emitDecoratorMetadata": true,
-//         "experimentalDecorators": true,
-//         "outDir": "./dist",
-//         "strictBindCallApply": false,
-//         "strictNullChecks": true, // TODO: previously was false.
-//         "noFallthroughCasesInSwitch": false,
-//         "noImplicitAny": false,
-//         "declaration": true,
-//         "removeComments": true,
-//         "sourceMap": true,
-//         "allowSyntheticDefaultImports": true,
-//         "esModuleInterop": true,
-//         "forceConsistentCasingInFileNames": false,
-//         "skipLibCheck": true,
-//     },
-//     "include": ["src/**/*"],
-//     "exclude": ["node_modules", "scripts", "dist", "test","**/*spec.ts"]
-// }
 {
     "compilerOptions": {
-      "target": "ES2020",                        // Set the target ECMAScript version
-      "module": "CommonJS",                      // Specify module code generation
-      "lib": ["ES2020"],                         // Include the ES2020 library
-      "esModuleInterop": true,                   // Enables interop between CommonJS and ES modules
-      "skipLibCheck": true,                      // Skip type checking of all declaration files
-      "strict": true,                            // Enable all strict type checking options
-      "forceConsistentCasingInFileNames": true,  // Disallow inconsistently-cased references to the same file
-      "moduleResolution": "node",                // Use Node.js-style module resolution
-      "resolveJsonModule": true,                 // Allow importing .json files
-      "isolatedModules": true,                   // Ensure each file can be safely transpiled without relying on other files
-      "outDir": "./dist",                        // Redirect output structure to the dist directory
-      "noImplicitAny": false,                    // Allow expressions to implicitly have 'any' type
-      "types": ["node", "fastify"]               // Include the Node.js and Fastify types
+        "types": ["node"],
+        // "types": ["vitest/globals"],
+        "module": "commonjs",
+        "incremental": true,
+        "target": "ES2022",
+        // "strict": true,
+        // "explainFiles": true,
+        "lib": ["ES2022"],
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "outDir": "./dist",
+        "strictBindCallApply": false,
+        "strictNullChecks": true, // TODO: previously was false.
+        "noFallthroughCasesInSwitch": false,
+        "noImplicitAny": false,
+        "declaration": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": false,
+        "skipLibCheck": true,
     },
-    "include": ["src/**/*.ts"],                  // Specify the files to include in the project
-    "exclude": ["node_modules", "dist"]          // Exclude node_modules and dist directories
-  }
-  
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "scripts", "dist", "test","**/*spec.ts"]
+}
