@@ -36,7 +36,8 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             .limit(1);
         if (tracking && tracking?.length > 0) {
                 const now = new Date();
-                console.log('location', context?.location);
+            console.log('location', context?.location);
+            if (tracking[0].isRead) {
                 const schema = {
                     emailId: emailId,
                     userId: userId,
@@ -52,6 +53,23 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
                     system: context?.os ?? null,
                 };
                 await db.insert(tickets).values(schema);
+            } else {
+                const payload = {
+                    emailId: emailId,
+                    userId: userId,
+                    isRead: true,
+                    readAt: new Date(),
+                    lastPingAt: new Date(),
+                    duration: 0,
+                    readCounts: 1,
+                    ipAddress: context?.ip ?? null,
+                    location: context?.location ?? null,
+                    browser: context?.browser ?? null,
+                    system: context?.os ?? null,
+                    deviceInfo: context?.userAgent ?? null,
+                };
+                await db.update(tickets).set(payload).where(eq(tickets.id, tracking[0].id));
+            }
         } else {
             return reply.code(404).send({ error: 'Tracking record not found' });
         }

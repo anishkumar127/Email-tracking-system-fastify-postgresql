@@ -4,7 +4,7 @@ import { beforeAll, afterAll, beforeEach, describe, it, expect } from 'vitest';
 import * as handlers from '../src/handlers/track.handlers'; // Adjust the import path based on your project structure
 import { db } from '../src/db/db';
 import { tickets } from '../src/db/schema';
-import { eq } from 'drizzle-orm';
+import { desc, eq } from 'drizzle-orm';
 // import prisma from '../src/prismaClient';
 
 const app = Fastify();
@@ -103,7 +103,10 @@ describe('Ticket Handlers Integration Tests', () => {
             // expect(response.body).toEqual({ message: 'Email read successfully', success: true });
 
             // Verify the update in the database
-            const [updatedTicket] = await db.select().from(tickets).where(eq(tickets.id, ticket.id)).limit(1);
+            const [updatedTicket] = await db.select().from(tickets).where(eq(tickets.id, ticket.id))
+            // .orderBy(desc(tickets.createdAt))
+                .limit(1);
+            console.log({updatedTicket})
             expect(updatedTicket.readAt).not.toBeNull();
         });
 
