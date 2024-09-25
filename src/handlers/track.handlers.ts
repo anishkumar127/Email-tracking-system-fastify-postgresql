@@ -171,7 +171,7 @@ export const summaryOfMail = async (request: FastifyRequest, reply: FastifyReply
     try {
         const { emailId, userId } = request.query as { emailId: string; userId: string };
         if (!emailId || !userId) {
-            return reply.code(401).send({ error: 'Missing emailId' });
+            return reply.code(401).send({ error: 'Missing emailId or userId' });
         }
         const summary = await db
             .select({
