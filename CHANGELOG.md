@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/anishkumar127/email-tracking/compare/v1.1.2...v1.3.0) (2024-09-25)
+
+
+### Features
+
+* Created how much mail read api ([fe9ed94](https://github.com/anishkumar127/email-tracking/commit/fe9ed944df3138ec66e7bc5c20866f596500b5a9))
+* Now every read create the new entries ([86f8ef0](https://github.com/anishkumar127/email-tracking/commit/86f8ef0584294ae33ac10cc4f1e46771dab68a2a))
+
+
+### Bug Fixes
+
+* Env to edge run ([33bc581](https://github.com/anishkumar127/email-tracking/commit/33bc581f4ee8a985cb73a8a58a7a3bed4e206a9d))
+* Exclude the test on production ([28b6be5](https://github.com/anishkumar127/email-tracking/commit/28b6be5d1fe6f628a161f641e2fcc588d6f44e03))
+* Exclude the test on production ([78d793e](https://github.com/anishkumar127/email-tracking/commit/78d793e4c653dbd25ef535e89925d0b672152e7b))
+* Exclude the test on production ([111186a](https://github.com/anishkumar127/email-tracking/commit/111186afeb855673b4bc6ec497e00bffa90dc487))
+* Exclude the test on production ([520cfc4](https://github.com/anishkumar127/email-tracking/commit/520cfc47eae8a2e9d735e02b0338210017ec7693))
+* Exclude the test on production ([7c62536](https://github.com/anishkumar127/email-tracking/commit/7c625362593bcbe806aba8575251bdc9ae6938d2))
+* First time readAt was empty so update that ([eba411d](https://github.com/anishkumar127/email-tracking/commit/eba411d46b1f8efdc5500a0e90476e629a55f36d))
+* Test removed form the includes ts ([c68520f](https://github.com/anishkumar127/email-tracking/commit/c68520ffe99a0f66d9c2e72a20cea161565166fa))
+* Test removed form the includes ts ([7f88dc3](https://github.com/anishkumar127/email-tracking/commit/7f88dc377f134f2b234459a01ef42cb41fbab933))
+* Test removed form the includes ts ([2b58880](https://github.com/anishkumar127/email-tracking/commit/2b58880c076639f165b8916a25f846d93eca5f24))
+* Test removed form the includes ts ([f5c8f5c](https://github.com/anishkumar127/email-tracking/commit/f5c8f5cb0faf440a37de76e38de794e374c415ed))
+* Test removed form the includes ts ([391858e](https://github.com/anishkumar127/email-tracking/commit/391858e7ed10b8539c4a6a98f878aaa58c6779cc))
+
 ## [1.2.0](https://github.com/anishkumar127/email-tracking/compare/v1.1.2...v1.2.0) (2024-09-24)
 
 
