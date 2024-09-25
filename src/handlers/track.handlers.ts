@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { and, desc, eq } from 'drizzle-orm';
+import { and, count, desc, eq, sql } from 'drizzle-orm';
 import { FastifyReply, FastifyRequest } from 'fastify';
 import UAParser from 'ua-parser-js';
 import { db } from '../db/db';
@@ -163,3 +163,30 @@ export const getTickets = async (request: FastifyRequest, reply: FastifyReply) =
         return reply.code(500).send({ error: 'Internal Server Error' });
     }
 };
+
+/* -------------------------------------------------------------------------- */
+/*              TOTAL TIMES OF READ PARTICULAR EMAIL AND USER ID              */
+/* -------------------------------------------------------------------------- */
+export const summaryOfMail = async (request: FastifyRequest, reply: FastifyReply) => {
+    try {
+        const { emailId, userId } = request.query as { emailId: string; userId: string };
+        if (!emailId || !userId) {
+            return reply.code(401).send({ error: 'Missing emailId' });
+        }
+        const summary = await db
+            .select({
+                read: count(),
+                ip: tickets.ipAddress
+             })
+            .from(tickets)
+            .where(and(eq(tickets.emailId, emailId), eq(tickets.userId, userId), eq(tickets.isRead, true)))
+            .groupBy(tickets.ipAddress);
+
+        return reply.code(200).send({   
+            summary: summary,
+            message: 'Summary fetched successfully',
+        });
+    } catch (error) {
+        return reply.code(500).send({ error: 'Internal Server Error' });
+    }
+}
