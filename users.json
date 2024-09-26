@@ -1,0 +1,4944 @@
+[{
+  "_id": {
+    "$oid": "656df7e49796fe793e738807"
+  },
+  "username": "master",
+  "email": "master@gmail.com",
+  "password": "master",
+  "role": "MASTER",
+  "Location": "",
+  "OTP": "",
+  "adminId": null,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "fullName": "",
+  "isActive": true,
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "userLimit": 0,
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "660acda32a23b231a78d62f0"
+  },
+  "username": "umeshadmin",
+  "email": "umeshadmin@gmail.com",
+  "fullName": "umeshadmin",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$Q13el18MkI42vQVLMVdvVuXjuQ8Ckx01ONTGX2KKhc3sY1dQEaDzO",
+  "userLimit": 4,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-04-01T15:07:15.411Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-13T17:00:48.747Z"
+  },
+  "__v": 0,
+  "OTP": "646710",
+  "otpExpireTime": {
+    "$date": "2024-06-13T17:20:48.663Z"
+  },
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "660b89112a23b231a78d6d36"
+  },
+  "username": "anishadmin",
+  "email": "anishadmin@gmail.com",
+  "fullName": "anishadmin",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$D2q0maeWusk71YX0pVRwXeY8FSAyroMBYuZoycPR/5a.DoCNQpKl6",
+  "userLimit": 9,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-04-02T04:26:57.688Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-20T13:06:00.290Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "660bcdcb71db8df6f98b6a3d"
+  },
+  "username": "amitgarg",
+  "email": "amitgarg@gmail.com",
+  "fullName": "Amitgarg",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$nW9oQjc7xfSOcyqgxVTc.eIkLh/MeDHMKl.Odkl6pMPfAA2TrE12y",
+  "userLimit": 2,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-04-02T09:20:11.314Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-12T05:48:57.362Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "660bcf62a33d7bd6850ef025"
+  },
+  "username": "saurabhgarg",
+  "email": "saurabhgarg@gmail.com",
+  "fullName": "saurabhgarg",
+  "adminId": {
+    "$oid": "660bcdcb71db8df6f98b6a3d"
+  },
+  "role": "USER",
+  "password": "$2b$10$sFLtBRIjp1NvoQXuUodkMOnEjYLZHBVblBIlRNcyH5B6wkd1Tt9Ra",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Delhi",
+  "createdAt": {
+    "$date": "2024-04-02T09:26:58.836Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-12T05:52:13.919Z"
+  },
+  "__v": 0,
+  "OTP": "523186",
+  "otpExpireTime": {
+    "$date": "2024-07-12T06:12:13.916Z"
+  },
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "660c395771db8df6f98b6b50"
+  },
+  "username": "umeshuser",
+  "email": "umeshuser@gmail.com",
+  "fullName": "umeshuser",
+  "adminId": {
+    "$oid": "660acda32a23b231a78d62f0"
+  },
+  "role": "USER",
+  "password": "$2b$10$Ar059g.4qE2itCtSZsfKN.F7UoZt2VjTk2TZXNjv5xwYwXGDbELdS",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Delhi",
+  "createdAt": {
+    "$date": "2024-04-02T16:59:03.262Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-03T19:49:58.028Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "660d7d9a8faa0947daee3432"
+  },
+  "username": "amitgargca",
+  "email": "amit.garg@rnbp.in",
+  "fullName": "ParkHotelLimited",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$nRML6JiJl0o4cJRfOStmBukPe7CrHAWwZRPEng8zfZj12.xtRjhu2",
+  "userLimit": 5,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-04-03T16:02:34.225Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-01T04:39:52.619Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "660d913b8faa0947daee3d87"
+  },
+  "username": "delhi",
+  "email": "delhi@park.com",
+  "fullName": "DelhiUnit",
+  "adminId": {
+    "$oid": "660d7d9a8faa0947daee3432"
+  },
+  "role": "USER",
+  "password": "$2b$10$zmcjLUZ.k4NQSNPI6VtLVO1Bf5Ba6Mxd.5KzezX2jKs1liutErgc6",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Delhi",
+  "createdAt": {
+    "$date": "2024-04-03T17:26:19.661Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-20T20:00:22.152Z"
+  },
+  "__v": 0,
+  "OTP": "849242",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-19T20:39:26.641Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "660d916b8faa0947daee3d90"
+  },
+  "username": "bangalore",
+  "email": "bang@park.com",
+  "fullName": "BangaloreUnit",
+  "adminId": {
+    "$oid": "660d7d9a8faa0947daee3432"
+  },
+  "role": "USER",
+  "password": "$2b$10$8RAKJO16ZaHddCwemkLn2OLimrrVX/mC/Cfjn0.cJLIAl4QkkogN2",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Bang",
+  "createdAt": {
+    "$date": "2024-04-03T17:27:07.486Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-08T11:51:15.497Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "660d91cd8faa0947daee3d9b"
+  },
+  "username": "chennai",
+  "email": "chen@park.com",
+  "fullName": "ChennaiUnit",
+  "adminId": {
+    "$oid": "660d7d9a8faa0947daee3432"
+  },
+  "role": "USER",
+  "password": "$2b$10$kyp2cq19dPX621mmcZy9ROt3dM96NfsQkT.vMWLBQY.9d7DZ7UIL2",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Chen",
+  "createdAt": {
+    "$date": "2024-04-03T17:28:45.945Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-03T17:28:45.945Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "660e4505d9d91780e95dbe05"
+  },
+  "username": "flurys",
+  "email": "flurys@park.com",
+  "fullName": "Flurys",
+  "adminId": {
+    "$oid": "660d7d9a8faa0947daee3432"
+  },
+  "role": "USER",
+  "password": "$2b$10$Wqhwfwx97Ba0xxqrshCzt.8Rwo9S36aEGEvsz2fS.9npVFKKTmrVC",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Flurys",
+  "createdAt": {
+    "$date": "2024-04-04T06:13:25.518Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-08T11:04:28.974Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "660ed17bd9d91780e95dcd2d"
+  },
+  "username": "hyderabad",
+  "email": "hyd@park.com",
+  "fullName": "Hyderabad",
+  "adminId": {
+    "$oid": "660d7d9a8faa0947daee3432"
+  },
+  "role": "USER",
+  "password": "$2b$10$kappQdd5SCnjq7LlTPC3ue8AslelQCPcgsOzcjDfW2bmCVrc65fZy",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Hyd",
+  "createdAt": {
+    "$date": "2024-04-04T16:12:43.125Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-04T16:12:43.125Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "660eec14d9d91780e95dce21"
+  },
+  "username": "aklsdfkl",
+  "email": "asdf@gmail.com",
+  "fullName": "asdf",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$LTBj/sJbKrhEzMnVi0y/QeFarZco5Z3LJXkr.FH9Zd09V86mriscS",
+  "userLimit": 4,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-04-04T18:06:12.261Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-04T18:06:12.261Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "660eef7b2c85d611c7d475c9"
+  },
+  "username": "newuser333333",
+  "email": "adfasdf@gmail.com",
+  "fullName": "nesdf",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$0hJHh/gRz4ejsydGo6ssxuzofT1Rqka0tEq/vGpjtObJEm2AInDmK",
+  "userLimit": 21,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-04-04T18:20:43.860Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-04T18:20:43.860Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "660eefa72c85d611c7d475cd"
+  },
+  "username": "newuser333333f",
+  "email": "adfasffdf@gmail.com",
+  "fullName": "nesdffff",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$bBWEAETPyy2LJdXY7UpbpO365iAwqMQkqhiE.T34Sb/Dhb.FT/DCa",
+  "userLimit": 3,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-04-04T18:21:27.084Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-09T19:43:54.575Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "66110e73cc2c9adff8825719"
+  },
+  "username": "radhakrishna10",
+  "email": "testadmin1@gmail.com",
+  "fullName": "TestAdmin1",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$Zlir1RdsqQtbvxRyt026m.y0CTPUwI88KZksH7IPUB3U0CZhLTCD.",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-04-06T08:57:23.315Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-09T17:37:00.934Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6611137296124e376a79785e"
+  },
+  "username": "newadmin3",
+  "email": "newadmin3@gmail.com",
+  "fullName": "newadmin3",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$jJ6F6aL6Ni.lmqAekUoPluZkOPR8UeyX0MSrcyf5TKlUXcZA.AUxa",
+  "userLimit": 4,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-04-06T09:18:42.827Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-06T09:18:42.827Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6611152096124e376a7978ad"
+  },
+  "username": "newadmin4",
+  "email": "newadmin4@gmail.com",
+  "fullName": "newadmin4",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$1HKx/.bEw4PskAX97iYWh.B8i5tGBMA0aSJfBzm.ZkHvDGkG6Y7/2",
+  "userLimit": 2,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-04-06T09:25:52.392Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-06T09:25:52.392Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6613cf7142a4355eb8355a8c"
+  },
+  "username": "kolkata",
+  "email": "kol@park.com",
+  "fullName": "Kolkata",
+  "adminId": {
+    "$oid": "660d7d9a8faa0947daee3432"
+  },
+  "role": "USER",
+  "password": "$2b$10$Wdv16UFHhkBJLf.rHEQPIONLcF0l4bEoW3HuwPQklmGMbv//1fWjy",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "TPCL",
+  "createdAt": {
+    "$date": "2024-04-08T11:05:21.705Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-08T11:05:21.705Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6613cfa742a4355eb8355a99"
+  },
+  "username": "navimumabi",
+  "email": "mum@park.com",
+  "fullName": "NaviMumbai",
+  "adminId": {
+    "$oid": "660d7d9a8faa0947daee3432"
+  },
+  "role": "USER",
+  "password": "$2b$10$KmaVfgv3HpVnPsXH4Ip9u.h15kDM1pLy0sjCGzlEYbKu1/AykJr.a",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "TPNM",
+  "createdAt": {
+    "$date": "2024-04-08T11:06:15.663Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-08T11:06:15.663Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6613cfc742a4355eb8355aa0"
+  },
+  "username": "saket",
+  "email": "saket@park.com",
+  "fullName": "Saket",
+  "adminId": {
+    "$oid": "660d7d9a8faa0947daee3432"
+  },
+  "role": "USER",
+  "password": "$2b$10$367otE56FEVG1DLLIII6oOsDCBPnwC9/MF3aHTIhsDjjBOhkEVOTO",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Zone Saket",
+  "createdAt": {
+    "$date": "2024-04-08T11:06:47.551Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-08T11:06:47.551Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6613cff242a4355eb8355aa7"
+  },
+  "username": "spemumbai",
+  "email": "spe@park.com",
+  "fullName": "SPEMumbai",
+  "adminId": {
+    "$oid": "660d7d9a8faa0947daee3432"
+  },
+  "role": "USER",
+  "password": "$2b$10$FVDVBYSDszlOZV5hgyZWWOLozPe9H1wMDGMTGcTpghfYLIfdzJj8y",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "SPE",
+  "createdAt": {
+    "$date": "2024-04-08T11:07:30.630Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-08T11:07:30.630Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6613d02442a4355eb8355aae"
+  },
+  "username": "vizag",
+  "email": "viz@park.com",
+  "fullName": "Vizag",
+  "adminId": {
+    "$oid": "660d7d9a8faa0947daee3432"
+  },
+  "role": "USER",
+  "password": "$2b$10$pvfNGXQ/3WhtoqrBW09ZAOcpRMDYRZw3cCeLyXZ3m2TxQTRVuOc4m",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "TBVZ",
+  "createdAt": {
+    "$date": "2024-04-08T11:08:20.842Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-08T11:08:20.842Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6613df92529cb686b55552ba"
+  },
+  "username": "parkhotelslimited",
+  "email": "park@gmail.com",
+  "fullName": "Apeejay Surrendra Park Hotels Limited",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$y/RVroztCgk8URPjNlfCLO7oyhTj2mALvTKLJ.Eopygje3P5eLzIS",
+  "userLimit": 7,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-04-08T12:14:10.064Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-08T13:06:03.902Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6613e18242a4355eb83560d4"
+  },
+  "username": "delhi_tnnd",
+  "email": "delhi@asphl.com",
+  "fullName": "Delhi",
+  "adminId": {
+    "$oid": "6613df92529cb686b55552ba"
+  },
+  "role": "USER",
+  "password": "$2b$10$zY2z4.34ISnJkGYMHgxkyePbTrgIyqIu1BSm8nHhcchJzUlgdwp3a",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "TPND",
+  "createdAt": {
+    "$date": "2024-04-08T12:22:26.684Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-08T12:22:26.684Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6613e21742a4355eb835631c"
+  },
+  "username": "bangalore_tpbl",
+  "email": "bangalore@asphl.com",
+  "fullName": "Bangalore",
+  "adminId": {
+    "$oid": "6613df92529cb686b55552ba"
+  },
+  "role": "USER",
+  "password": "$2b$10$g6a53ufkmzFB1/sE9lc/HujMlqfDw10VYQJBvcdCplOSFs1uIvSmK",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "TPBL",
+  "createdAt": {
+    "$date": "2024-04-08T12:24:55.422Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-08T12:24:55.422Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6613e36342a4355eb835634e"
+  },
+  "username": "chennai_tpch",
+  "email": "chennai@asphl.com",
+  "fullName": "Cheenai",
+  "adminId": {
+    "$oid": "6613df92529cb686b55552ba"
+  },
+  "role": "USER",
+  "password": "$2b$10$jmBzh2B7jEgS.h6nSVxzeuktdUIIRJg0JdmTbvtZnZ4S2PHUmNxIO",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "TPCH",
+  "createdAt": {
+    "$date": "2024-04-08T12:30:27.471Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-08T12:30:27.471Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6613e3a542a4355eb8356355"
+  },
+  "username": "hyderabad_tphyd",
+  "email": "hyderabad@asphl.com",
+  "fullName": "Hyderabad",
+  "adminId": {
+    "$oid": "6613df92529cb686b55552ba"
+  },
+  "role": "USER",
+  "password": "$2b$10$DzQnW9Si6Y9GUOnjwKOm.OssNwiH.6Onc0CMU2hXzMH7kCccK7EdS",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "TPHYD",
+  "createdAt": {
+    "$date": "2024-04-08T12:31:33.891Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-08T12:31:33.891Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6613e4f1529cb686b5555596"
+  },
+  "username": "kolkata_tpcl",
+  "email": "kolkata@asphl.com",
+  "fullName": "Kolkata",
+  "adminId": {
+    "$oid": "6613df92529cb686b55552ba"
+  },
+  "role": "USER",
+  "password": "$2b$10$/o2wYlIbKuPbMo2zjm.IAuKoyB5Pp1CzQQOM7LAbl7QeGL8iXU3Uy",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "TPCL",
+  "createdAt": {
+    "$date": "2024-04-08T12:37:05.905Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-08T12:37:05.905Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6613e606529cb686b55555d3"
+  },
+  "username": "vizag_tpvz",
+  "email": "vizag@asphl.com",
+  "fullName": "Vizag",
+  "adminId": {
+    "$oid": "6613df92529cb686b55552ba"
+  },
+  "role": "USER",
+  "password": "$2b$10$hyzHLJ00Chc0GC82OSauOONh4tklfYeq.tFvvm3G8U0Wmt/yia42u",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "TPVZ",
+  "createdAt": {
+    "$date": "2024-04-08T12:41:42.173Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-08T12:41:42.173Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6613eaf7529cb686b55559f9"
+  },
+  "username": "spe_mumbai",
+  "email": "spemumbai@park.com",
+  "fullName": "SPEMumbai",
+  "adminId": {
+    "$oid": "6613df92529cb686b55552ba"
+  },
+  "role": "USER",
+  "password": "$2b$10$h0DFcLny5XCr2RtvnVjGL.SYDS7tZOb20n1YJuO1vYp8Ij9ez/.uK",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "SPE",
+  "createdAt": {
+    "$date": "2024-04-08T13:02:47.936Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-08T13:02:47.936Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6613eb3e529cb686b5555a00"
+  },
+  "username": "navi_mumbai",
+  "email": "navimumbai@park.com",
+  "fullName": "NaviMumbai",
+  "adminId": {
+    "$oid": "6613df92529cb686b55552ba"
+  },
+  "role": "USER",
+  "password": "$2b$10$6JW..Jx10RJAsbR1yHmTVeu9ZMFYDchbe7dYC/mcYj4jjBcrpcRO.",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "TPNM",
+  "createdAt": {
+    "$date": "2024-04-08T13:03:58.230Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-08T13:03:58.230Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6613ebbb529cb686b5555a16"
+  },
+  "username": "flurys_park",
+  "email": "flurys@ashpl.com",
+  "fullName": "Flurys",
+  "adminId": {
+    "$oid": "6613df92529cb686b55552ba"
+  },
+  "role": "USER",
+  "password": "$2b$10$huLL4ZJfOWG26Es7vXtM2.eKt8nO5nwTXCPKylAacUfjFKcYYMPnS",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Flurys",
+  "createdAt": {
+    "$date": "2024-04-08T13:06:03.909Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-08T13:06:03.909Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6615513bc74c72605713d42e"
+  },
+  "username": "temp1",
+  "email": "temp1@gmail.com",
+  "fullName": "temp1",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$k20tioleTe67uA9h0mbJaeRmzAq8WrNUZ2veRVkC6MpyR7oIVYtRq",
+  "userLimit": 21,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-04-09T14:31:23.049Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-09T14:46:50.227Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "661562c124fa62bffa7a7000"
+  },
+  "username": "sdfsdf",
+  "email": "sdfsdf@gmail.com",
+  "fullName": "sdfsdf",
+  "adminId": {
+    "$oid": "660acda32a23b231a78d62f0"
+  },
+  "role": "USER",
+  "password": "$2b$10$Le.xpl7YpMq9ARNyREAQiOGMZNRMXtHaL/fRixoHaGu/jYDZolB2q",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "fake",
+  "createdAt": {
+    "$date": "2024-04-09T15:46:09.465Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-09T17:06:16.850Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "66157cbc8d3e6854bc41c9c3"
+  },
+  "username": "testadmin1user1",
+  "email": "testadmin1user1@gmail.com",
+  "fullName": "vipinUser",
+  "adminId": {
+    "$oid": "66110e73cc2c9adff8825719"
+  },
+  "role": "USER",
+  "password": "$2b$10$PEKUYLnLyKDyxIYzIA/zRuT9aH7Z62T3vCkJT2sEqd.rRIucR1RVG",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Delhi",
+  "createdAt": {
+    "$date": "2024-04-09T17:37:00.957Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-09T17:37:00.957Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6623bdb87bd7d59b57c35955"
+  },
+  "username": "anishuser",
+  "email": "anishuser@gmail.com",
+  "fullName": "anishuser",
+  "adminId": {
+    "$oid": "660b89112a23b231a78d6d36"
+  },
+  "role": "USER",
+  "password": "$2b$10$VYyIzennNJow.2k7nz5RyOfWy6WfKc2mFC303pF2dNNOq9mSE..Wy",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Delhi",
+  "createdAt": {
+    "$date": "2024-04-20T13:06:00.598Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-20T13:06:00.598Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "66654637e11c58927cdacd5d"
+  },
+  "username": "anishone1",
+  "email": "anishone1@gmail.com",
+  "fullName": "anish",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$kdrPQDELUDF5nW8vceDTL.g2yRoHmzePCanWKvb8qd7Ybywndo.T6",
+  "userLimit": 2,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-06-09T06:05:43.170Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-09T06:05:43.170Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6665528dcecad19403443f13"
+  },
+  "username": "anish",
+  "email": "anishbishnoi127@gmail.com",
+  "fullName": "anish",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$qxp8jnoD6gjFaIhYEMh97O7OHhwHtpqBdlZWHeSUA2Q6GnFWNqsJa",
+  "userLimit": 3,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-06-09T06:58:21.343Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-24T17:08:05.189Z"
+  },
+  "__v": 0,
+  "OTP": "818202",
+  "otpExpireTime": {
+    "$date": "2024-06-15T07:28:46.721Z"
+  },
+  "isVerified": true,
+  "verifiedDate": {
+    "$date": "2024-06-15T07:09:17.882Z"
+  },
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6665920fa183f201d76464c1"
+  },
+  "username": "temp2",
+  "email": "temp2@gmail.com",
+  "fullName": "temp2",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$dufnfZAxhcBA4IPjr4ZEn.dOJ3WzlE23r/JKKUxq.9Pg3ArGcmezC",
+  "userLimit": 2,
+  "isActive": true,
+  "Location": "",
+  "isVerified": false,
+  "OTP": "658248",
+  "verifiedDate": {
+    "$date": "2024-06-09T11:29:19.609Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-06-09T11:49:19.609Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-09T11:29:19.621Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-09T11:29:19.621Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6669e3607dde9bcf210c4fec"
+  },
+  "username": "umeshjyani",
+  "email": "umeshjyani00@gmail.com",
+  "fullName": "umeshjyani",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$GAjVRyFuhMDKOq1KzQ5PAeVH.94kCIYbKbeMkRZmsBitQ./ql5Y8y",
+  "userLimit": 1,
+  "isActive": true,
+  "Location": "",
+  "isVerified": false,
+  "OTP": "589604",
+  "verifiedDate": {
+    "$date": "2024-06-12T18:05:20.948Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-06-12T18:25:20.948Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-12T18:05:20.956Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-12T18:05:20.956Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6669eb177dde9bcf210c4ff7"
+  },
+  "username": "umeshjyanijjj767676",
+  "email": "umeshjyanii00@gmail.com",
+  "fullName": "umeshjyani",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$tpLZoiipomnAp7lpTpj55uCzT8QHnKzFh2DrjudSJwXx1XfPdVp.S",
+  "userLimit": 1,
+  "isActive": true,
+  "Location": "",
+  "isVerified": false,
+  "OTP": "397292",
+  "verifiedDate": {
+    "$date": "2024-06-12T18:38:15.810Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-06-12T18:58:15.810Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-12T18:38:15.812Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-12T18:38:15.812Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "666aa8477dde9bcf210c4ffd"
+  },
+  "username": "bifijo9463",
+  "email": "bifijo9463@morxin.com",
+  "fullName": "bifijo9463@morxin.com",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$mpxOb3KVBjghqoa9bIRJEOy9ePQW2hjxdQCsskiqsKZREvQJs01iq",
+  "userLimit": 1,
+  "isActive": true,
+  "Location": "",
+  "isVerified": false,
+  "OTP": "547433",
+  "verifiedDate": {
+    "$date": "2024-06-13T08:05:27.819Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-06-13T08:25:27.819Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-13T08:05:27.824Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-13T08:05:27.824Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "666b32e82dfb0dc5bd8ba95d"
+  },
+  "username": "yacaxew605",
+  "email": "yacaxew605@kernuo.com",
+  "fullName": "yacaxew605@kernuo.com",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$L4fD26XpyhkNeyR3KVf93e9ockdGOy4ox0l5Nvg.LqkXEWJEJQECW",
+  "userLimit": 1,
+  "isActive": true,
+  "Location": "",
+  "isVerified": true,
+  "OTP": "263504",
+  "verifiedDate": {
+    "$date": "2024-06-13T18:04:12.118Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-06-13T18:22:31.165Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-13T17:56:56.141Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-13T18:04:12.118Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "666b36c8a7c37f29d06bff92"
+  },
+  "username": "mavixey956",
+  "email": "mavixey956@morxin.com",
+  "fullName": "mavixey956@morxin.com",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$vhev66B8qmibZ70UZg90wOHixxswcUdvP.hXWDa50KIJj277cLVBq",
+  "userLimit": 5,
+  "isActive": true,
+  "Location": "",
+  "isVerified": true,
+  "OTP": "425467",
+  "verifiedDate": {
+    "$date": "2024-06-13T18:13:50.602Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-06-13T18:33:28.320Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-13T18:13:28.327Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-02T11:43:59.473Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "666b37bba7c37f29d06bff99"
+  },
+  "username": "lifoni7321",
+  "email": "lifoni7321@morxin.com",
+  "fullName": "lifoni7321@morxin.com",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$4/9xfBZNgzCsaZbfkf00dOIxWvIzqb7JjP0daxvSnVF55zvVMHZeO",
+  "userLimit": 10,
+  "isActive": true,
+  "Location": "",
+  "isVerified": true,
+  "OTP": "769908",
+  "verifiedDate": {
+    "$date": "2024-06-13T18:37:28.979Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-06-13T18:56:58.652Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-13T18:17:31.752Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-23T14:09:54.003Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "666c0853a7c37f29d06c0005"
+  },
+  "username": "yesid55746",
+  "email": "yesid55746@kernuo.com",
+  "fullName": "yesid55746@kernuo.com",
+  "adminId": {
+    "$oid": "666b37bba7c37f29d06bff99"
+  },
+  "role": "USER",
+  "password": "$2b$10$yB8PiTHVJUOUkoW0oENxD.epJ9XoNzloXvFmTtCz7kTA/URrON7gy",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "asd",
+  "isVerified": true,
+  "OTP": "976626",
+  "verifiedDate": {
+    "$date": "2024-06-14T09:08:07.890Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-06-14T09:27:31.594Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-14T09:07:31.596Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-23T14:25:48.607Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "666c0911b187f69259a7f15e"
+  },
+  "username": "jepipos734",
+  "email": "jepipos734@kernuo.com",
+  "fullName": "jepipos734@kernuo.com",
+  "adminId": {
+    "$oid": "666b37bba7c37f29d06bff99"
+  },
+  "role": "USER",
+  "password": "$2b$10$V.AshZkmToQn9oCCYfPx1O6yB.jroZci8UfEcmNgd7U6u3P5IKC5i",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "df",
+  "isVerified": true,
+  "OTP": "940146",
+  "verifiedDate": {
+    "$date": "2024-06-14T09:11:14.937Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-06-14T09:30:50.311Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-14T09:10:41.050Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-19T15:38:07.939Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "667030426f4b08ae6d8bf033"
+  },
+  "username": "subsidiary",
+  "email": "tepiho2332@dovinou.com",
+  "fullName": "SUBSIDIARY",
+  "adminId": {
+    "$oid": "6665528dcecad19403443f13"
+  },
+  "role": "USER",
+  "subRole": "SUBSIDIARY",
+  "password": "$2b$10$qLayNkzdzNLlm6BXsaq7fOAROVMmL0S86EkTXaw.0nBw9Neab3eV2",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Delhi",
+  "isVerified": true,
+  "OTP": "479434",
+  "verifiedDate": {
+    "$date": "2024-06-17T12:46:58.072Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-06-17T13:06:58.071Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-17T12:46:58.088Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-17T12:46:58.088Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6679b5bb9b20db5ba107aa49"
+  },
+  "username": "subsidiary_units",
+  "email": "pofibix762@egela.com",
+  "fullName": "SUBSIDIARY_UNITS",
+  "adminId": {
+    "$oid": "667030426f4b08ae6d8bf033"
+  },
+  "role": "USER",
+  "subRole": "SUBSIDIARY_UNITS",
+  "password": "$2b$10$uBAOj2VTYI6xrcBk88/eM.cPf4g4F8lGu.2bhsYn.5l8xopfxpW5m",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "",
+  "isVerified": false,
+  "OTP": "443553",
+  "verifiedDate": {
+    "$date": "2024-06-24T18:06:51.754Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-06-24T18:26:51.754Z"
+  },
+  "createdAt": {
+    "$date": "2024-06-24T18:06:51.782Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-24T18:06:51.782Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6683c6fc8d9f3db58be0ee54"
+  },
+  "username": "jijehi8217",
+  "email": "jijehi8217@dcbin.com",
+  "fullName": "jijehi8217",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "password": "$2b$10$ByCRFGRqQCXKse92h6GCUOfYzdSW5bQs0qGH87aJxNxg7lxsZdx9m",
+  "userLimit": 1,
+  "isActive": true,
+  "Location": "",
+  "isVerified": false,
+  "OTP": "378256",
+  "verifiedDate": {
+    "$date": "2024-07-02T09:23:08.436Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-07-02T09:43:08.436Z"
+  },
+  "createdAt": {
+    "$date": "2024-07-02T09:23:08.459Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-02T09:23:08.459Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6683cfeabc5eab3612168fce"
+  },
+  "username": "mewesaj555",
+  "email": "mewesaj555@dcbin.com",
+  "fullName": "mewesaj555",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "password": "$2b$10$orpRM6sAm93Pbo90uj/pV.oZ5MPb7lf6CPbIKU6rMUIR1tTAGsgai",
+  "userLimit": 1,
+  "isActive": true,
+  "Location": "",
+  "isVerified": true,
+  "OTP": "952550",
+  "verifiedDate": {
+    "$date": "2024-07-02T10:01:42.893Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-07-02T10:21:14.180Z"
+  },
+  "createdAt": {
+    "$date": "2024-07-02T10:01:14.191Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-02T10:01:42.893Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6617db1342aed8f61bad8c01"
+  },
+  "username": "zoneconnect",
+  "email": "saket@asphl.com",
+  "fullName": "Saket",
+  "adminId": {
+    "$oid": "6613df92529cb686b55552ba"
+  },
+  "role": "USER",
+  "password": "$2b$10$lerS1N3BLY4I39ezOrjLJeSOym4src1Zr4MwsGlCw2jyo67oEXjpG",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Saket",
+  "createdAt": {
+    "$date": "2024-04-11T12:44:03.788Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-13T06:30:30.457Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6626952fd5e0238a7706ad5a"
+  },
+  "username": "charter",
+  "email": "charter@asphl.com",
+  "fullName": "Apeejay Charter Private Limited",
+  "adminId": {
+    "$oid": "6613df92529cb686b55552ba"
+  },
+  "role": "USER",
+  "password": "$2b$10$MSN4mH4.zRQRtHJC7ax3cuLE0VZnHfA0z5vGrPL4Y2.RlipUxjxqu",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Charter",
+  "createdAt": {
+    "$date": "2024-04-22T16:49:51.716Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-22T16:49:51.716Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "66181d8742aed8f61bad8dc0"
+  },
+  "username": "northwesthotel",
+  "email": "northwest@park.com",
+  "fullName": "North West",
+  "adminId": {
+    "$oid": "660d7d9a8faa0947daee3432"
+  },
+  "role": "USER",
+  "password": "$2b$10$DIWsjvWLmD7g4R7PjtUx6OdlBhJ3ZJhiIFlCQ3v0wC97VEJy.jswu",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "North West",
+  "createdAt": {
+    "$date": "2024-04-11T17:27:35.508Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-11T17:27:35.508Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "662694f7302116e69d1c75ec"
+  },
+  "username": "northwest",
+  "email": "northwest@asphl.com",
+  "fullName": "Apeejay North-West Hotels Private Limited",
+  "adminId": {
+    "$oid": "6613df92529cb686b55552ba"
+  },
+  "role": "USER",
+  "password": "$2b$10$Dl/cV92i.bqT2JV1DFzGuulx9yus8JpuzlIt3bmitYrXg.FrpA3CW",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "North-West",
+  "createdAt": {
+    "$date": "2024-04-22T16:48:55.505Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-22T16:48:55.505Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6633993b6519aa6a300cdccb"
+  },
+  "username": "hydrabadfinsensor",
+  "email": "hydrabad@finsensor.ai",
+  "fullName": "Hydrabad",
+  "adminId": {
+    "$oid": "6633354402c9e9ee7c142fcc"
+  },
+  "role": "USER",
+  "password": "$2b$10$JXXjEyH80UIfnBevTQg9M.4NFHBsB2Obh154WnlfHJfgM06cQgxQm",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Hyderabad",
+  "createdAt": {
+    "$date": "2024-05-02T13:46:35.644Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-02T13:46:35.644Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "66326f2002c9e9ee7c142dcc"
+  },
+  "username": "corporate",
+  "email": "corporate@asphl.com",
+  "fullName": "Corporate",
+  "adminId": {
+    "$oid": "6613df92529cb686b55552ba"
+  },
+  "role": "USER",
+  "password": "$2b$10$CIt2W2f9/6T.HGWzKtL8iupGHADIJ756Uq0kMqDghvlPqy//JhJ02",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Corporate",
+  "createdAt": {
+    "$date": "2024-05-01T16:34:40.540Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-01T16:34:40.540Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6633354402c9e9ee7c142fcc"
+  },
+  "username": "finsensor",
+  "email": "finsensor@finsensor.ai",
+  "fullName": "FinSensor AI Private Limited",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$dMX5G7QRZ7LBQcj8.R4XGu0H2gWlcEjkXXO2WXuR2iKGibD1jT7cK",
+  "userLimit": 16,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-05-02T06:40:04.019Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-04T07:26:52.153Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6630ddbb3c4e96a501840358"
+  },
+  "username": "digha",
+  "email": "digha@asphl.com",
+  "fullName": "Digha",
+  "adminId": {
+    "$oid": "6613df92529cb686b55552ba"
+  },
+  "role": "USER",
+  "password": "$2b$10$Rw7U77l8XeTXskKUntb/2epuEy2XFcZn8duCF2CsGvoaYJOkRrLFa",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Digha",
+  "createdAt": {
+    "$date": "2024-04-30T12:02:03.431Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-30T12:02:03.431Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6635db0f02c9e9ee7c146e1f"
+  },
+  "username": "delhifinsensor",
+  "email": "delhi@finsensor.ai",
+  "fullName": "Delhi",
+  "adminId": {
+    "$oid": "6633354402c9e9ee7c142fcc"
+  },
+  "role": "USER",
+  "password": "$2b$10$7eIv1OJsewrsRiP25I45suF2KD/twAxRIRghWGgQ0QpFHulX18QE2",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Delhi",
+  "createdAt": {
+    "$date": "2024-05-04T06:51:59.885Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-04T06:51:59.885Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6635db566519aa6a300d01fa"
+  },
+  "username": "bangalorefinsensor",
+  "email": "bangalore@finsensor.ai",
+  "fullName": "Bangalore",
+  "adminId": {
+    "$oid": "6633354402c9e9ee7c142fcc"
+  },
+  "role": "USER",
+  "password": "$2b$10$Nm8ANIoUg6LWkZpddeITwOvnP.W5NiRnNj2Cj1LhGWgbz7gKe6wke",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Bangalore",
+  "createdAt": {
+    "$date": "2024-05-04T06:53:10.871Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-04T06:53:10.871Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6633580c6519aa6a300cd853"
+  },
+  "username": "corporatefinsensor",
+  "email": "corporate@finsensor.ai",
+  "fullName": "Corporate",
+  "adminId": {
+    "$oid": "6633354402c9e9ee7c142fcc"
+  },
+  "role": "USER",
+  "password": "$2b$10$1buMnHRmpQxfepDXz2I6Bu0CiCSQNOsSFMAiOrYo4/RpyqMXMLqIW",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Corporate",
+  "createdAt": {
+    "$date": "2024-05-02T09:08:28.056Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-02T09:08:28.056Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6626957ed5e0238a7706ad61"
+  },
+  "username": "hotelrestaurants",
+  "email": "hnr@asphl.com",
+  "fullName": "Apeejay Hotels & Restaurants Private Limited",
+  "adminId": {
+    "$oid": "6613df92529cb686b55552ba"
+  },
+  "role": "USER",
+  "password": "$2b$10$Lu8mDG/YIlaqBr/1kzXm1eKqV2m6x6zUj9y7iv5BKlv616N5XcGLO",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Hotel & Restaurants",
+  "createdAt": {
+    "$date": "2024-04-22T16:51:10.039Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-22T16:51:10.039Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "66320f8f6519aa6a300c3487"
+  },
+  "username": "mitaindiaprivatelimited",
+  "email": "mitaindia@mita.com",
+  "fullName": "Mita India Private Limited",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$aenmg45DFZGi01t49uGx6uYmVMt2shW9sfWXLQDBTULfoxNR6tySi",
+  "userLimit": 3,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-05-01T09:46:55.847Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-01T09:46:55.847Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6656e7f3c33cf2cf155f9dba"
+  },
+  "username": "sportswood",
+  "email": "sportswood@gaursonsindia.com",
+  "fullName": "GAURSONS SPORTSWOOD (P) LIMITED",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$V8M5EaAKtsVjt0oA9ApkSOcoelvfXB.fDETFyQzfIx249wDt5tRbi",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Sportswood",
+  "createdAt": {
+    "$date": "2024-05-29T08:31:47.913Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:31:47.913Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6683fd815eba38ca21a8dec0"
+  },
+  "username": "surdeepbuilders",
+  "email": "surdeep@gaursonsindia.com",
+  "fullName": "Surdeep Builders Private Limited",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$CkRQVRTeeE6ydqJkuLq3uuXSKd2e4X4ATV2U2AeFtZaGlDseI.HR6",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Surdeep",
+  "createdAt": {
+    "$date": "2024-07-02T13:15:45.113Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-02T13:15:45.113Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6683fe675eba38ca21a8ded5"
+  },
+  "username": "golfhorizon",
+  "email": "golfhorizon@gaursonsindia.com",
+  "fullName": "Golf Horizon LLP",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$lVWKhHUiQ/LAOkqTcW015ejWNOn.lQZE0mlNeLW.JC5uPPJrqkbsu",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Golf Horizon",
+  "createdAt": {
+    "$date": "2024-07-02T13:19:35.508Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-02T13:19:35.508Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6656e6c819c0a5bd169e593d"
+  },
+  "username": "hitech",
+  "email": "hitech@gaursonsindia.com",
+  "fullName": "Gaursons Hi Tech Infrastructure Private Limited",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$K04bIOvbcYJNea/6MdGHA.5TYfUM2dnVElqCf7C.sDVl9hsBNiztm",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Hitech",
+  "createdAt": {
+    "$date": "2024-05-29T08:26:48.732Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:26:48.732Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6683fd475eba38ca21a8deb9"
+  },
+  "username": "gaursonsinfratech",
+  "email": "infratech@gaursonsindia.com",
+  "fullName": "Gaursons Infratech Private Limited",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$SeDo6Aco4OguC2Bo413oruoYy5BnkYA7wRhTq.pdjmrw.X3/Zk//O",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Gaursons Infratech",
+  "createdAt": {
+    "$date": "2024-07-02T13:14:47.061Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-02T13:14:47.061Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6656e746c33cf2cf155f9d97"
+  },
+  "username": "ibvogt",
+  "email": "ibvogt@gaursonsindia.com",
+  "fullName": "IB Vogt Solar Four Private Limited",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$zV/zG5s9btQYy.aM6isOWeg2XGpjxf/Flrgp4wZazrgGiXhgxH5vO",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Ibvogt",
+  "createdAt": {
+    "$date": "2024-05-29T08:28:54.393Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:28:54.393Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6656e5d5c33cf2cf155f9d66"
+  },
+  "username": "gipl",
+  "email": "gipl@gaursonsindia.com",
+  "fullName": "GaursonsIndiaPrivateLimited",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$uwXh.s3ObjOL57MxGQZOk.iVeaA3xt7HXpOytZHg25gTGA5aHTZjC",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "GIPL",
+  "createdAt": {
+    "$date": "2024-05-29T08:22:45.157Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:22:45.157Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6683f9d55eba38ca21a8de52"
+  },
+  "username": "harekrishnatourism",
+  "email": "hkt@gaursonsindia.com",
+  "fullName": "Hare Krishna Tourism",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$28zvK3Q2hJGx7qQJ8HabrujmuTa1lqRAJBAseBA8wOWuNzIsrk1B.",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "HKT",
+  "createdAt": {
+    "$date": "2024-07-02T13:00:05.375Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-02T13:00:05.375Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6683fdb95eba38ca21a8dec7"
+  },
+  "username": "golflake",
+  "email": "golflake@gaursonsindia.com",
+  "fullName": "Golf Lake LLP",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$RDWytuooVPgEyRlujRshTeO48CLN1imdDhKaPbLFtsqb5R21A9JBq",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Golf Lake",
+  "createdAt": {
+    "$date": "2024-07-02T13:16:41.530Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-02T13:16:41.530Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6635dbb402c9e9ee7c146ed3"
+  },
+  "username": "chennaifinsensor",
+  "email": "chennai@finsensor.ai",
+  "fullName": "Chennai",
+  "adminId": {
+    "$oid": "6633354402c9e9ee7c142fcc"
+  },
+  "role": "USER",
+  "password": "$2b$10$lSxg9.qnGYhLt3PdE5ARWu94.j5358mZKvcRihlKkQZI.ZQeeEN6K",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Chennai",
+  "createdAt": {
+    "$date": "2024-05-04T06:54:44.084Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-04T06:54:44.084Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6635e1416519aa6a300d0278"
+  },
+  "username": "mumbaifinsensor",
+  "email": "mumbai@finsensor.ai",
+  "fullName": "Mumbai",
+  "adminId": {
+    "$oid": "6633354402c9e9ee7c142fcc"
+  },
+  "role": "USER",
+  "password": "$2b$10$ivibMDUT9M0oVDigZzfgxe3D5FC8S479kGBXxob.Luvq5ZShwc1xK",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Mumbai",
+  "createdAt": {
+    "$date": "2024-05-04T07:18:25.843Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-04T07:18:25.843Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6635e33c6519aa6a300d02ab"
+  },
+  "username": "keralafinsensor",
+  "email": "kerala@finsensor.ai",
+  "fullName": "kerala",
+  "adminId": {
+    "$oid": "6633354402c9e9ee7c142fcc"
+  },
+  "role": "USER",
+  "password": "$2b$10$CNbFY70KhUCGMOi/U5cLc.l.qrdeK1vr2E67Gq1inXcXAikrZKmgS",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Kerala",
+  "createdAt": {
+    "$date": "2024-05-04T07:26:52.163Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-04T07:26:52.163Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6635dbef02c9e9ee7c146ee0"
+  },
+  "username": "kolkatafinsensor",
+  "email": "kolkata@finsensor.ai",
+  "fullName": "Kolkata",
+  "adminId": {
+    "$oid": "6633354402c9e9ee7c142fcc"
+  },
+  "role": "USER",
+  "password": "$2b$10$k3kY3/zNpz7UyS1JtnYDweiPEkDFRXiz4b5t7CZBfzx/2WQZqPAp6",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Kolkata",
+  "createdAt": {
+    "$date": "2024-05-04T06:55:43.490Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-04T06:55:43.490Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6635e19b02c9e9ee7c146f70"
+  },
+  "username": "punefinsensor",
+  "email": "pune@finsensor.ai",
+  "fullName": "Pune",
+  "adminId": {
+    "$oid": "6633354402c9e9ee7c142fcc"
+  },
+  "role": "USER",
+  "password": "$2b$10$B94o4uEnfhRH1gbpMUNET.ZvZdmUpIYaHul/FPTzoeH/zAxXyXscu",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Pune",
+  "createdAt": {
+    "$date": "2024-05-04T07:19:55.999Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-04T07:19:55.999Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6635e24702c9e9ee7c146f7d"
+  },
+  "username": "andhrapradeshfinsensor",
+  "email": "andhrapradesh@finsensor.ai",
+  "fullName": "Andhra Pradesh",
+  "adminId": {
+    "$oid": "6633354402c9e9ee7c142fcc"
+  },
+  "role": "USER",
+  "password": "$2b$10$8b2eTOKfPcGRf9QAaamqDu2sKjywpWqEAEcfpQp6dT2gqmupVtSB2",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "AP",
+  "createdAt": {
+    "$date": "2024-05-04T07:22:47.263Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-04T07:22:47.263Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6656e9e619c0a5bd169e59af"
+  },
+  "username": "uptownship",
+  "email": "uptownship@gaursonsindia.com",
+  "fullName": "U.P Township Infrastructures Private Limited",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$cVQPzuEGnsWefGG9NgA.JuBFgggi3fsP9DE8SDcGUGrkR8g0W0SV6",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "UPtownship",
+  "createdAt": {
+    "$date": "2024-05-29T08:40:06.082Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:40:06.082Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "668288ac5eba38ca21a8d09b"
+  },
+  "username": "vipuljain",
+  "email": "vipul.jain@vclgroup.in",
+  "fullName": "Vipul Jain",
+  "adminId": {
+    "$oid": "6682854b5eba38ca21a8d04c"
+  },
+  "role": "USER",
+  "password": "$2b$10$8BpQzaujtmpZ.yYWFePJ8.S32hfdVnujp.qasGHlYUOaCDK9s.a.W",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "VCL_Maldives",
+  "createdAt": {
+    "$date": "2024-07-01T10:45:00.601Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-01T10:45:00.601Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6656e970c33cf2cf155f9df2"
+  },
+  "username": "promoters",
+  "email": "promoters@gaursonsindia.com",
+  "fullName": "Gaursons Promoters Private Limited",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$ZunNZwTWfr2Oz1Qtzc2VWuefnRu/76.BnoZrBdugU7zCYpytSVnNS",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Promoters",
+  "createdAt": {
+    "$date": "2024-05-29T08:38:08.414Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:38:08.414Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6683fdee5eba38ca21a8dece"
+  },
+  "username": "golfrealtors",
+  "email": "golfrealtors@gaursonsindia.com",
+  "fullName": "Golf Realtors LLP",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$wbDCNg9UCEFQL4Pe1UoUY.3q55LzQBbeQWui0fDEFMFQ3hZjfGOKW",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Golf Realtors",
+  "createdAt": {
+    "$date": "2024-07-02T13:17:34.748Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-02T13:17:34.748Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "663f258b02c9e9ee7c14df20"
+  },
+  "username": "consol",
+  "email": "consol@asphl.com",
+  "fullName": "consol",
+  "adminId": {
+    "$oid": "6613df92529cb686b55552ba"
+  },
+  "role": "USER",
+  "password": "$2b$10$gECOGeX9du4dwJlgLIek.e6lnG/DeMSn9GtUmlsTKX33SH2DNOj3a",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "consol",
+  "createdAt": {
+    "$date": "2024-05-11T08:00:11.392Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-11T08:00:11.392Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6682854b5eba38ca21a8d04c"
+  },
+  "username": "vikasjain",
+  "email": "vikas.jain@vclgroup.in",
+  "fullName": "Varindera Constructions Limited",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$jSBnHdybfgz5.V9meFe1u.rvq.bPIVvweLZAMae7k8RBOTNk1Ad0W",
+  "userLimit": 3,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-07-01T10:30:35.114Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-01T10:46:41.109Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6683fbc55eba38ca21a8de96"
+  },
+  "username": "gloriousvanijya",
+  "email": "glorious@gaursonsindia.com",
+  "fullName": "Glorious Vanijya Private Limited",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$cHrlEYHspjkCSQELsV2OKOIOcW/h2wQ8AGT2LjL43L5wh5FO/o8qu",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Glorious",
+  "createdAt": {
+    "$date": "2024-07-02T13:08:21.341Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-02T13:08:21.341Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6669cc705eba38ca21a8b086"
+  },
+  "username": "vipinyadav",
+  "email": "vipin.yadav06082022@gmail.com",
+  "fullName": "Vipin Yadav",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$aY4dujWIct3A6YxoDC24POm/9LnFinsP3MMfSi8U0H1grDKdI.Iqu",
+  "userLimit": 10,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-06-12T16:27:28.378Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-12T16:27:28.378Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6683fd035eba38ca21a8deb2"
+  },
+  "username": "galaxyinfraheights",
+  "email": "galaxy@gaursonsindia.com",
+  "fullName": "Galaxy Infraheights Private Limited",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$XlHqf3pttDZnqc3SNHQ6DOKbF6DCad4gGgWmI1Xmx3YLx1XvQZIg.",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Galaxy",
+  "createdAt": {
+    "$date": "2024-07-02T13:13:39.333Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-02T13:13:39.333Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "username": "gaursons1",
+  "email": "gaursons@gaursonsindia.com",
+  "fullName": "Gaursonsgroup",
+  "adminId": null,
+  "role": "ADMIN",
+  "password": "$2b$10$l55DtnXYgtxf6NYboHkEten3N/lbs1WJa5p0cH/rNBiL9h9w9419y",
+  "userLimit": 12,
+  "isActive": true,
+  "Location": "",
+  "createdAt": {
+    "$date": "2024-05-29T08:08:49.397Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-02T13:19:35.491Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6656e79ec33cf2cf155f9da6"
+  },
+  "username": "realtech",
+  "email": "realtech@gaursonsindia.com",
+  "fullName": "Gaursons Realtech Private Limited",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$knD5Btmra9SmFTLiM7GyQu7xif7HNOpgdijuiIon5thvfhT/Gap9e",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Realtech",
+  "createdAt": {
+    "$date": "2024-05-29T08:30:22.722Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:30:22.722Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6656e852c33cf2cf155f9dc8"
+  },
+  "username": "educational",
+  "email": "educational@gaursonsindia.com",
+  "fullName": "Gaursons Educational Institutions Private Limited",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$xM0a.j/69fB3j.wZO.lE6enmUYzINvf0BNvlAwLrdDfNIiYxGdtlm",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Educational",
+  "createdAt": {
+    "$date": "2024-05-29T08:33:22.902Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:33:22.902Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6656e668c33cf2cf155f9d80"
+  },
+  "username": "fastidious",
+  "email": "fastidious@gaursonsindia.com",
+  "fullName": "FastidiousBuildmartPrivateLimited",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$JWijnjEiugc4WepLChl2LukuRpxEAYLDKhFyHJT.O6Fp.qD4/uaii",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Fastidious",
+  "createdAt": {
+    "$date": "2024-05-29T08:25:12.682Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:25:12.682Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6656e8d319c0a5bd169e5985"
+  },
+  "username": "reality",
+  "email": "reality@gaursonsindia.com",
+  "fullName": "Gaursons Realty Private Limited",
+  "adminId": {
+    "$oid": "6656e291c33cf2cf155f9cfc"
+  },
+  "role": "USER",
+  "password": "$2b$10$Sm/Dci/JbIbUWLdc3ReD9Ob9/4bGyqplhHgI7IsSNiwtNDlr/d7KK",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Reality",
+  "createdAt": {
+    "$date": "2024-05-29T08:35:31.279Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:35:31.279Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "668289115eba38ca21a8d0a2"
+  },
+  "username": "sachinsharma",
+  "email": "sachin.sharma@vclgroup.in",
+  "fullName": "Sachin Sharma",
+  "adminId": {
+    "$oid": "6682854b5eba38ca21a8d04c"
+  },
+  "role": "USER",
+  "password": "$2b$10$JZ7qnJdRjGLK11nE95gI3.2WO8Cb6U5u0XKOZUsKYH5oES/99NRWm",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "VCL_Mauritius",
+  "createdAt": {
+    "$date": "2024-07-01T10:46:41.125Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-01T10:46:41.125Z"
+  },
+  "__v": 0,
+  "OTP": "",
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "isVerified": false,
+  "otpExpireTime": {
+    "$date": "2024-09-12T17:49:37.623Z"
+  },
+  "refreshToken": "",
+  "subRole": "UNITS",
+  "verifiedDate": null,
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "66900cf0c97ff05958bed810"
+  },
+  "username": "sitope4855",
+  "email": "sitope4855@bacaki.com",
+  "fullName": "sitope4855@bacaki.com",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "password": "$2b$10$.WUKkvPpQf06O3E4V9SFpOzbJUjrGsT43xZtAz9CvT.5N6iVDfyYy",
+  "userLimit": 1,
+  "isActive": true,
+  "Location": "",
+  "isVerified": true,
+  "OTP": "768612",
+  "verifiedDate": {
+    "$date": "2024-07-11T16:49:09.668Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-07-11T17:08:48.988Z"
+  },
+  "createdAt": {
+    "$date": "2024-07-11T16:48:49.016Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-11T16:49:09.669Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6690b35621e42a2b7fb5be02"
+  },
+  "username": "pipeyib912",
+  "email": "pipeyib912@bacaki.com",
+  "fullName": "pipeyib912@bacaki.com",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "password": "$2b$10$0bDJve2b5w.Xs3DLd2IJ4edI86RsH74x5NQQ6UNNy5RSZaJDVv61m",
+  "userLimit": 1,
+  "isActive": true,
+  "Location": "",
+  "isVerified": false,
+  "OTP": "856112",
+  "verifiedDate": {
+    "$date": "2024-07-12T04:38:46.281Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-07-12T04:58:46.281Z"
+  },
+  "createdAt": {
+    "$date": "2024-07-12T04:38:46.289Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-12T04:38:46.289Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "6696a43022a649fe0916d43e"
+  },
+  "username": "vipin",
+  "email": "vipin.yadav06082020@gmail.com",
+  "fullName": "Vipin Yadav",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "password": "$2b$10$3f9lp5g.qIBbVSJu.E.TPOgAqNKmZxW82aY5Hb9Eg.ed6akRwjmEu",
+  "userLimit": 1,
+  "isActive": true,
+  "Location": "",
+  "isVerified": true,
+  "OTP": "655347",
+  "verifiedDate": {
+    "$date": "2024-07-16T16:48:31.660Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-07-16T17:07:44.608Z"
+  },
+  "createdAt": {
+    "$date": "2024-07-16T16:47:44.611Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-16T16:48:31.661Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "669d28a94162a229e8ce82a4"
+  },
+  "username": "anish1",
+  "email": "anishbishnoi1@gmail.com",
+  "fullName": "anish",
+  "adminId": {
+    "$oid": "6665528dcecad19403443f13"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "password": "$2b$10$N2Mh8b/3wm3xkWzYt.5qxON6PJnuapPB3ihUCps6.F7MkvbelaI5W",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Mumbai",
+  "isVerified": false,
+  "OTP": "398942",
+  "verifiedDate": {
+    "$date": "2024-07-21T15:26:33.250Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-07-21T15:46:33.249Z"
+  },
+  "createdAt": {
+    "$date": "2024-07-21T15:26:33.257Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-21T15:26:33.257Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "66b4ff79efc79db311627bed"
+  },
+  "username": "anish127",
+  "email": "meros62562@eixdeal.com",
+  "fullName": "anish",
+  "adminId": {
+    "$oid": "666b37bba7c37f29d06bff99"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "password": "$2b$10$r0JzYlDNV8622mhP9kdrO.kPWWPDBZ3aLhcis/LpYpVJJOSNu9Q52",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Delhi",
+  "isVerified": true,
+  "OTP": "463787",
+  "verifiedDate": {
+    "$date": "2024-08-08T17:25:34.482Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-08-08T17:45:13.116Z"
+  },
+  "createdAt": {
+    "$date": "2024-08-08T17:25:13.127Z"
+  },
+  "updatedAt": {
+    "$date": "2024-08-08T17:25:34.482Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "66b508429ae27349b3125f60"
+  },
+  "username": "anish1270",
+  "email": "cedixo4152@luvnish.com",
+  "fullName": "anish",
+  "adminId": {
+    "$oid": "666b37bba7c37f29d06bff99"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "password": "$2b$10$Uh3CqWBrJ1OQfMrLqmUvKuxwQzOPc.pvOU9tA07I6T5NOv5DLv/Ay",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Mumbai",
+  "isVerified": true,
+  "OTP": "374058",
+  "verifiedDate": {
+    "$date": "2024-08-08T18:03:03.231Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-08-08T18:22:42.136Z"
+  },
+  "createdAt": {
+    "$date": "2024-08-08T18:02:42.138Z"
+  },
+  "updatedAt": {
+    "$date": "2024-08-08T18:03:03.231Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "66d5fd8a251ddd6d8c92cdfa"
+  },
+  "username": "vipintest1",
+  "email": "jixikin302@inpsur.com",
+  "fullName": "Vipin Test",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "password": "$2b$10$0EV8sQLTXZY9B.EzAtabZe4tdTWl3/vasZpVaDycZzY7AZ9OC4Dl2",
+  "userLimit": 11,
+  "isActive": true,
+  "Location": "",
+  "isVerified": true,
+  "OTP": "323067",
+  "verifiedDate": {
+    "$date": "2024-09-02T18:02:06.643Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-02T18:21:46.971Z"
+  },
+  "createdAt": {
+    "$date": "2024-09-02T18:01:46.974Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-02T18:09:14.170Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "66d5ff4ab4452c829d3bc5c7"
+  },
+  "username": "vipintestuser12",
+  "email": "boceroc741@hapied.com",
+  "fullName": "Vipin Test User",
+  "adminId": {
+    "$oid": "66d5fd8a251ddd6d8c92cdfa"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "password": "$2b$10$pvK5lkTQxl3FkqTE7XLBHexLGjfkoXOm88tLNMGXBau1Kx4TH/.F2",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Flurys",
+  "isVerified": true,
+  "OTP": "746830",
+  "verifiedDate": {
+    "$date": "2024-09-02T18:09:40.133Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-02T18:29:14.191Z"
+  },
+  "createdAt": {
+    "$date": "2024-09-02T18:09:14.193Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-02T18:09:40.133Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "66d691b7251ddd6d8c92e08b"
+  },
+  "username": "pikeyar855",
+  "email": "pikeyar855@daypey.com",
+  "fullName": "pikeyar855@daypey.com",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "password": "$2b$10$3Y40RLVS1NKnWO8MNb4XXeTyMGCkmfOh9FxF2I6NuaRm.ZTpWr33u",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "",
+  "isVerified": true,
+  "OTP": "707480",
+  "verifiedDate": {
+    "$date": "2024-09-03T04:34:17.157Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-03T04:53:59.308Z"
+  },
+  "createdAt": {
+    "$date": "2024-09-03T04:33:59.310Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-03T04:39:26.388Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "66d692feb4452c829d3bc753"
+  },
+  "username": "gefamin518",
+  "email": "gefamin518@apifan.com",
+  "fullName": "gefamin518@apifan.com",
+  "adminId": {
+    "$oid": "66d691b7251ddd6d8c92e08b"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "password": "$2b$10$zuWjT4.98HnMSQlVQyS0ROf.Ssh2pq.7y5CrGnBRDkiKmRvi9pUHC",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Delhi",
+  "isVerified": true,
+  "OTP": "766737",
+  "verifiedDate": {
+    "$date": "2024-09-03T04:39:44.142Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-03T04:59:26.410Z"
+  },
+  "createdAt": {
+    "$date": "2024-09-03T04:39:26.412Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-03T04:39:44.142Z"
+  },
+  "__v": 0,
+  "avatar": "",
+  "coverImage": "",
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "refreshToken": "",
+  "anish": ""
+},
+{
+  "_id": {
+    "$oid": "66e69ecf32400ebb71f81612"
+  },
+  "username": "parkhotel",
+  "email": "saurabh@rnbp.in",
+  "fullName": "Park Hotel",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$A9btG0qfnrw2xLPY477OU.gosr7IC86QnW0xmh41oPKBtu9vHSTi2",
+  "refreshToken": "",
+  "userLimit": 13,
+  "isActive": true,
+  "Location": "",
+  "isVerified": true,
+  "OTP": "246637",
+  "verifiedDate": {
+    "$date": "2024-09-15T08:46:27.932Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-15T09:06:07.121Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-15T08:46:07.130Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-17T10:28:14.310Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e6a52532400ebb71f81688"
+  },
+  "username": "abcde",
+  "email": "saurabh.aggarwal1011@gmail.com",
+  "fullName": "ABCDE",
+  "adminId": {
+    "$oid": "66e69ecf32400ebb71f81612"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$049.r9BtnM9O48pkA6YICeLr2kzJzMDiTzHPuIRa9/PjUIlHePHUy",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Digha",
+  "isVerified": true,
+  "OTP": "299946",
+  "verifiedDate": {
+    "$date": "2024-09-15T09:13:48.492Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-15T09:33:09.670Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-15T09:13:09.672Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-15T09:15:15.497Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e959bee73f84be6d63d334"
+  },
+  "username": "shahdara",
+  "email": "chandni@rnbp.in",
+  "fullName": "Shahdara",
+  "adminId": {
+    "$oid": "66e69ecf32400ebb71f81612"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$WfLb6sX.kR3c.jZ2eEGCjeQpgr1k/40dKVyHVQvtG5sh0z2kv85W.",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Shahdara",
+  "isVerified": true,
+  "OTP": "492969",
+  "verifiedDate": {
+    "$date": "2024-09-17T10:28:37.121Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-17T10:48:14.324Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-17T10:28:14.328Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-17T10:28:45.720Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e98006e73f84be6d63d797"
+  },
+  "username": "rnbp123",
+  "email": "yobib81314@degcos.com",
+  "fullName": "RNBP & Co",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$ZQ.MOQInN5fIWte.uJ8cuema9GZNVhXTel9zOhuJfhCoMvZfQF6qe",
+  "refreshToken": "",
+  "userLimit": 8,
+  "isActive": true,
+  "Location": "",
+  "isVerified": true,
+  "OTP": "455771",
+  "verifiedDate": {
+    "$date": "2024-09-17T13:12:06.918Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-17T13:31:34.127Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-17T13:11:34.130Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-25T15:37:41.488Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e9830de73f84be6d63d7e7"
+  },
+  "username": "delhi1",
+  "email": "lowiw77516@degcos.com",
+  "fullName": "Delhi",
+  "adminId": {
+    "$oid": "66e98006e73f84be6d63d797"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$U8QTJV/FZsKaNeSWHs7vN.MjR0LaaRVfaGFBegxa7DsU39Hx3TgGO",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "delhi",
+  "isVerified": true,
+  "OTP": "510813",
+  "verifiedDate": {
+    "$date": "2024-09-17T13:24:54.248Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-17T13:44:29.763Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-17T13:24:29.765Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-17T13:48:58.700Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e98376e73f84be6d63d7f1"
+  },
+  "username": "vizag1",
+  "email": "xiyaya6293@cetnob.com",
+  "fullName": "Vizag",
+  "adminId": {
+    "$oid": "66e98006e73f84be6d63d797"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$vt0hFIP2F/3OkKPe9CaMs.Qj.Jb7RvdHzyzNq48OFh9YhZX2MEGtq",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "vizag",
+  "isVerified": true,
+  "OTP": "775389",
+  "verifiedDate": {
+    "$date": "2024-09-17T13:26:39.018Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-17T13:46:14.657Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-17T13:26:14.658Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-17T13:26:44.375Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e983d6e73f84be6d63d7fd"
+  },
+  "username": "bangalore1",
+  "email": "rolon51841@heweek.com",
+  "fullName": "Bangalore",
+  "adminId": {
+    "$oid": "66e98006e73f84be6d63d797"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$0..QkVoMoDKMN1G.24X9g.fl..WZMapSmkgC3iSfTOybP87TUfVcq",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "bangalore",
+  "isVerified": true,
+  "OTP": "702260",
+  "verifiedDate": {
+    "$date": "2024-09-17T13:28:15.249Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-17T13:47:50.824Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-17T13:27:50.825Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-17T13:28:19.829Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e9842fe73f84be6d63d80d"
+  },
+  "username": "northwest1",
+  "email": "saday12081@degcos.com",
+  "fullName": "North West",
+  "adminId": {
+    "$oid": "66e98006e73f84be6d63d797"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$2DB7MsFyaKa9y0y4Bl8F6uvIoPWPtS/GYdFJgy6c2L0Hc.YTK.o7C",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "northwest",
+  "isVerified": true,
+  "OTP": "340609",
+  "verifiedDate": {
+    "$date": "2024-09-17T13:31:09.873Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-17T13:50:34.106Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-17T13:29:19.766Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-17T13:31:09.873Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e985274f6a92553cd636df"
+  },
+  "username": "hotelrestaurant",
+  "email": "libem45647@heweek.com",
+  "fullName": "Hotel & Restaurant",
+  "adminId": {
+    "$oid": "66e98006e73f84be6d63d797"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$I.mw/ouAhU/Phsr045NP.eBD3ASiSOzPeUn6gEF5dzEzinhYgx5L2",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "H&M",
+  "isVerified": true,
+  "OTP": "910666",
+  "verifiedDate": {
+    "$date": "2024-09-17T13:33:44.369Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-17T13:53:27.355Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-17T13:33:27.357Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-17T13:33:59.048Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e9b4564f6a92553cd63e46"
+  },
+  "username": "jjkljkljsdklf",
+  "email": "xedo1ek334@jahsec.com",
+  "fullName": "jkjdfljasdklfjkl",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$kESlvs/gcE8/CEPgKjg8SO6yJsIDoR2Qc2cfdnklg0duO1x1lwTwe",
+  "refreshToken": "",
+  "userLimit": 1,
+  "isActive": false,
+  "Location": "",
+  "isVerified": false,
+  "OTP": "345686",
+  "verifiedDate": {
+    "$date": "2024-09-17T16:54:46.607Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-17T17:14:46.607Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-17T16:54:46.609Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-17T16:54:46.609Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e9b8194f6a92553cd63e4f"
+  },
+  "username": "sdfklsdfksdf",
+  "email": "xedokesdsdk334@jahsec.com",
+  "fullName": "sdfsdfsd",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$YvMfdTGPoiGZlT6zG5nU9uSEHXmYzRYySd2g8ppCG00V4p7w8/aMu",
+  "refreshToken": "",
+  "userLimit": 1,
+  "isActive": false,
+  "Location": "",
+  "isVerified": false,
+  "OTP": "112988",
+  "verifiedDate": {
+    "$date": "2024-09-17T17:10:49.485Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-17T17:30:49.485Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-17T17:10:49.486Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-17T17:10:49.486Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66eb9c785bd68480eccaf593"
+  },
+  "username": "new",
+  "email": "new@gmail.com",
+  "fullName": "new",
+  "adminId": {
+    "$oid": "666b37bba7c37f29d06bff99"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$PBgxMNuYrLT0z0BVbIBeU.HrutaQMzwuxUDjhJXUyFNT2mPHbmhpm",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": false,
+  "Location": "new",
+  "isVerified": false,
+  "OTP": "406628",
+  "verifiedDate": {
+    "$date": "2024-09-19T03:37:28.135Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-19T16:10:33.492Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-19T03:37:28.140Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-19T15:50:33.496Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66eba39fc1f52cbeb6c27426"
+  },
+  "username": "anishdsd",
+  "email": "macov2e1392@heweek.com",
+  "fullName": "bishnoia",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$oxWe16FYG2n/.ryXB1SJx.fdW/zWA.gEc2VruHMVjeXO8V3GHpGee",
+  "refreshToken": "",
+  "userLimit": 1,
+  "isActive": false,
+  "Location": "",
+  "isVerified": false,
+  "OTP": "924405",
+  "verifiedDate": {
+    "$date": "2024-09-19T04:07:59.309Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-19T04:27:59.309Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-19T04:07:59.311Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-19T04:07:59.311Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66eba3e65bd68480eccaf59a"
+  },
+  "username": "anishsd",
+  "email": "dopac55982@degcos.com",
+  "fullName": "dsdsad",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$Isik335hkRb5JSXVCWzj/uE2Z7YR1NMiZMkid1uZMAb2F3Six0aKG",
+  "refreshToken": "",
+  "userLimit": 1,
+  "isActive": false,
+  "Location": "",
+  "isVerified": false,
+  "OTP": "628957",
+  "verifiedDate": {
+    "$date": "2024-09-19T04:09:10.772Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-19T04:29:10.772Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-19T04:09:10.774Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-19T04:09:10.774Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66ec43d2c1f52cbeb6c2790f"
+  },
+  "username": "dopac54552",
+  "email": "pepila8075@heweek.com",
+  "fullName": "Test123rtyu",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$3fIUDDbUfI1LQodCOiJxV.MRSxEUZ9s1paTQheTD7x0Wuh8FFsq/O",
+  "refreshToken": "",
+  "userLimit": 1,
+  "isActive": true,
+  "Location": "",
+  "isVerified": true,
+  "OTP": "917759",
+  "verifiedDate": {
+    "$date": "2024-09-19T15:31:48.024Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-19T15:51:30.588Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-19T15:31:30.590Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-19T15:33:02.333Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66ec4d31c1f52cbeb6c279ee"
+  },
+  "username": "ail",
+  "email": "raj.thakur@rnbp.in",
+  "fullName": "Aditya Infotech Limited",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$qFg1cJ8PTGukWIbGMlHSj.6ujTZp9328auiurC12AyaEhpQHNcaym",
+  "refreshToken": "",
+  "userLimit": 17,
+  "isActive": true,
+  "Location": "",
+  "isVerified": true,
+  "OTP": "598311",
+  "verifiedDate": {
+    "$date": "2024-09-19T16:11:47.886Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-19T16:31:29.306Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-19T16:11:29.308Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-19T16:35:10.517Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66ec52be3da1a086861cc13a"
+  },
+  "username": "ailmain",
+  "email": "rajkishor.rs96@gmail.com",
+  "fullName": "AIL Main",
+  "adminId": {
+    "$oid": "66ec4d31c1f52cbeb6c279ee"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$k2RP5HMV01glLKUrxpBrVOEbOSQp0t37mF3/WTLLokyr4fpCvoa6i",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "AIL_Main",
+  "isVerified": true,
+  "OTP": "733088",
+  "verifiedDate": {
+    "$date": "2024-09-19T16:35:55.735Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-19T16:55:10.551Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-19T16:35:10.553Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-19T16:35:55.735Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66ec6a2bdc3a82a7b8de6325"
+  },
+  "username": "fedejat387",
+  "email": "fedejat387@asaud.com",
+  "fullName": "fedejat387@asaud.com",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$tP7AUOGXWH0L2n8LLR0FYuKkKNfbzAmWGzaykTZOPeD2bKtnOn4BS",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "",
+  "isVerified": true,
+  "OTP": "244743",
+  "verifiedDate": {
+    "$date": "2024-09-19T18:15:30.140Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-19T18:35:07.555Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-19T18:15:07.562Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-19T18:17:29.436Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66ec6ab9dc3a82a7b8de63a6"
+  },
+  "username": "limateb628",
+  "email": "limateb628@degcos.com",
+  "fullName": "limateb628@degcos.com",
+  "adminId": {
+    "$oid": "66ec6a2bdc3a82a7b8de6325"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$Ws4GLJtPpFts6REx.3NGJudbjMHMYM80NKhvLrfuvaSyyRrXtOLXq",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Delhi",
+  "isVerified": true,
+  "OTP": "543403",
+  "verifiedDate": {
+    "$date": "2024-09-19T18:17:48.484Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-19T18:37:29.763Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-19T18:17:29.764Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-19T18:17:48.484Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66efe26fd8fa4c9145cee8b6"
+  },
+  "username": "hyderabad1",
+  "email": "xomeb68445@cetnob.com",
+  "fullName": "Hyderabad",
+  "adminId": {
+    "$oid": "66e98006e73f84be6d63d797"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$yMCqwCXZE2EecXzUz5cEtesm5I81QFURoER23xPZnoPRCTR3ZkJ7u",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "TPHYD",
+  "isVerified": true,
+  "OTP": "579786",
+  "verifiedDate": {
+    "$date": "2024-09-22T09:25:33.402Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-22T09:45:03.764Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-22T09:25:03.766Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-22T09:25:33.402Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66efe303d8fa4c9145cee8c3"
+  },
+  "username": "chennai1",
+  "email": "sosiv31815@cetnob.com",
+  "fullName": "Chennai",
+  "adminId": {
+    "$oid": "66e98006e73f84be6d63d797"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$B.aqjbekH0mLQ4NzkPrKAuSXgVrPdVqDQFO.OVQkt9KRNOmGNxmhW",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "TPCH",
+  "isVerified": true,
+  "OTP": "257596",
+  "verifiedDate": {
+    "$date": "2024-09-22T09:27:52.204Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-22T09:47:31.453Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-22T09:27:31.454Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-22T09:27:52.204Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66efe38bd8fa4c9145cee8cd"
+  },
+  "username": "kolkatta",
+  "email": "wobec62929@asaud.com",
+  "fullName": "Kolkatta",
+  "adminId": {
+    "$oid": "66e98006e73f84be6d63d797"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$U4VmEvmJu.xcbON4lkCc9eG0biWjWhBJLkWCTLpvAQuI1/fcGwwEG",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "TPCL",
+  "isVerified": true,
+  "OTP": "555327",
+  "verifiedDate": {
+    "$date": "2024-09-22T09:30:10.138Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-22T09:49:47.859Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-22T09:29:47.860Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-22T09:30:10.138Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66efe791d8fa4c9145cee93c"
+  },
+  "username": "kekoce6985",
+  "email": "kekoce6985@cetnob.com",
+  "fullName": "anish1",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$MGCTzZDsvPYdTvIkwL04yO0uxJSaxsailUAk6tKMifKV6QSJEiH1C",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "",
+  "isVerified": true,
+  "OTP": "594442",
+  "verifiedDate": {
+    "$date": "2024-09-22T09:47:21.515Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-22T10:06:57.314Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-22T09:46:57.316Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-22T09:49:11.878Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66efe817bc999570a39eecdf"
+  },
+  "username": "wiyovev119",
+  "email": "wiyovev119@asaud.com",
+  "fullName": "wiyovev119@asaud.com",
+  "adminId": {
+    "$oid": "66efe791d8fa4c9145cee93c"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$GES/JBtBIiHqt3ceNYLNNe46JlCw8V6zaMsWCoVWf/saNxi8e0rUG",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Mumbai",
+  "isVerified": true,
+  "OTP": "858237",
+  "verifiedDate": {
+    "$date": "2024-09-22T09:49:27.035Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-22T10:09:11.902Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-22T09:49:11.904Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-22T09:49:27.035Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66efec40bc999570a39eed11"
+  },
+  "username": "newadmin",
+  "email": "nowejig242@degcos.com",
+  "fullName": "Newadmin",
+  "adminId": null,
+  "role": "ADMIN",
+  "subRole": "",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$AIwax7Vqz.u1yeReJGkZku.dmDy4hsKD4Wze4D2/Buyz0hkCKvLKm",
+  "refreshToken": "",
+  "userLimit": 1,
+  "isActive": true,
+  "Location": "",
+  "isVerified": false,
+  "OTP": "540013",
+  "verifiedDate": {
+    "$date": "2024-09-22T10:06:56.107Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-22T10:26:56.107Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-22T10:06:56.108Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-22T10:06:56.108Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66eff7f204518eda09fec3e2"
+  },
+  "email": "hofec68989@cetnob.com",
+  "fullName": "Digha",
+  "adminId": {
+    "$oid": "66e98006e73f84be6d63d797"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$twvmMWJNpJqDqZBejz5byeAxPct0FSeleW6Gd1D6PflfDdqAzBfre",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Digha",
+  "isVerified": true,
+  "OTP": "524397",
+  "verifiedDate": {
+    "$date": "2024-09-22T10:57:23.872Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-22T11:16:50.441Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-22T10:56:50.448Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-22T10:57:23.872Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66effdccdfc6983c692feac9"
+  },
+  "email": "bagaga4889@degcos.com",
+  "fullName": "SPE",
+  "adminId": {
+    "$oid": "66e98006e73f84be6d63d797"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$i6xtuzH5xHHoUqo5AX1Fr.D/YTVD9weABaPPiFQA9sQuLdsOkdsYO",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "SPE",
+  "isVerified": true,
+  "OTP": "486802",
+  "verifiedDate": {
+    "$date": "2024-09-22T11:22:05.454Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-22T11:41:48.023Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-22T11:21:48.031Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-22T11:22:05.454Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66effe46b35b1968efa1262c"
+  },
+  "email": "mosoxip891@heweek.com",
+  "fullName": "TPNM",
+  "adminId": {
+    "$oid": "66e98006e73f84be6d63d797"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$4NkVmW7GCsu2..Gv5L.ED.YknbftM5jJUhQmdCcd1nZ9jj58v2Dp6",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "TPNM",
+  "isVerified": true,
+  "OTP": "729711",
+  "verifiedDate": {
+    "$date": "2024-09-22T11:24:11.449Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-22T11:43:50.057Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-22T11:23:50.059Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-22T11:24:11.449Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66effe96b35b1968efa12638"
+  },
+  "email": "yivowo5599@asaud.com",
+  "fullName": "Flurys",
+  "adminId": {
+    "$oid": "66e98006e73f84be6d63d797"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$tPbl77SCUs2mHsZT8z9KnugIqbJBlV6.lc..NfAyz02ao5enwymzG",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Flurys",
+  "isVerified": true,
+  "OTP": "960344",
+  "verifiedDate": {
+    "$date": "2024-09-22T11:25:33.190Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-22T11:45:10.869Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-22T11:25:10.870Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-22T11:25:33.190Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66effeeadfc6983c692feadd"
+  },
+  "email": "riletiw500@cetnob.com",
+  "fullName": "Saket",
+  "adminId": {
+    "$oid": "66e98006e73f84be6d63d797"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$e8zd0W85hQiO.EFsTk6Q..s5N39htqN9FwpWJiMU2Egyj9Q3CRoVe",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Saket",
+  "isVerified": true,
+  "OTP": "704928",
+  "verifiedDate": {
+    "$date": "2024-09-22T11:27:14.751Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-22T11:46:34.907Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-22T11:26:34.909Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-22T11:27:14.751Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66efffc3dfc6983c692feae8"
+  },
+  "email": "lekowa4765@degcos.com",
+  "fullName": "Corporate",
+  "adminId": {
+    "$oid": "66e98006e73f84be6d63d797"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$md/BeXPkwHlhsKfWNJkD.eQAZ010LvJ.5LoeFW9LuhFX3idc/wjIy",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Corporate",
+  "isVerified": true,
+  "OTP": "896141",
+  "verifiedDate": {
+    "$date": "2024-09-22T11:30:45.470Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-22T11:50:11.393Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-22T11:30:11.394Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-22T11:30:45.470Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f0005cdfc6983c692feb03"
+  },
+  "email": "copori6118@cetnob.com",
+  "fullName": "Charter",
+  "adminId": {
+    "$oid": "66e98006e73f84be6d63d797"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$P4FksgExVVcrlwkezeBIceejBU/b3gNABju8GfC1slzaIoFZVsCZa",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "Charter",
+  "isVerified": true,
+  "OTP": "830847",
+  "verifiedDate": {
+    "$date": "2024-09-22T11:33:04.945Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-22T11:52:44.334Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-22T11:32:44.335Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-22T11:33:04.945Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f000b9b35b1968efa1265f"
+  },
+  "email": "mesida4709@asaud.com",
+  "fullName": "consol",
+  "adminId": {
+    "$oid": "66e98006e73f84be6d63d797"
+  },
+  "role": "USER",
+  "subRole": "UNITS",
+  "avatar": "",
+  "coverImage": "",
+  "password": "$2b$10$GV0juEbN/Upf2eewxuwvK.RDVYXADoPDxY0WjPx3u0GfyHbRd5iHu",
+  "refreshToken": "",
+  "userLimit": 0,
+  "isActive": true,
+  "Location": "consol",
+  "isVerified": true,
+  "OTP": "506106",
+  "verifiedDate": {
+    "$date": "2024-09-22T11:34:44.474Z"
+  },
+  "otpExpireTime": {
+    "$date": "2024-09-22T11:54:17.524Z"
+  },
+  "fingerprint_img": "",
+  "fingerprint_key": "",
+  "createdAt": {
+    "$date": "2024-09-22T11:34:17.526Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-22T11:34:44.475Z"
+  },
+  "__v": 0
+}]
