@@ -6,10 +6,9 @@ import errorHandler from './plugins/errorHandler';
 import cors from '@fastify/cors';
 import pino from 'pino';
 import { loggerOptions } from './utils/Loggers';
-import dotenv from 'dotenv';
 import { db } from './db/db';
 import { sql } from 'drizzle-orm';
-dotenv.config();
+import env from './config/env';
 const app = Fastify({
     logger: pino(loggerOptions),
     
@@ -54,7 +53,7 @@ const main = async () => {
         /* -------------------------------------------------------------------------- */
         /*                              SERVER                                        */
         /* -------------------------------------------------------------------------- */
-        const port = Number(process.env.PORT) || 8080;
+        const port = Number(env.PORT) || 8080;
         console.log({ port });
 
         const address = await app.listen({ port: port ,host:'0.0.0.0'});
