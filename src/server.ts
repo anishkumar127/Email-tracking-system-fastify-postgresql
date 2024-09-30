@@ -11,9 +11,8 @@ import { sql } from 'drizzle-orm';
 import env from './config/env';
 const app = Fastify({
     logger: pino(loggerOptions),
-    
 });
-async function checkDatabaseConnection(fastify, options) {
+async function checkDatabaseConnection() {
     try {
         const startTime = process.hrtime();
         await db.execute(sql`SELECT 1`);
@@ -22,19 +21,18 @@ async function checkDatabaseConnection(fastify, options) {
         // Convert the time to milliseconds (seconds * 1e3 + nanoseconds * 1e-6)
         const timeTakenMs = endTime[0] * 1e3 + endTime[1] * 1e-6;
 
-        fastify.log.info(`Database connection successful in ${timeTakenMs.toFixed(3) + ' ms'}`);
-        
+        app.log.info(`Database connection successful in ${timeTakenMs.toFixed(3) + ' ms'}`);
     } catch (error) {
-        fastify.log.error(`Database connection failed:${error}`);
+        app.log.error(`Database connection failed:${error}`);
     }
 }
 const main = async () => {
     try {
-       await  app.register(checkDatabaseConnection);
+        await checkDatabaseConnection();
         /* -------------------------------------------------------------------------- */
         /*                          Register the CORS plugin                          */
         /* -------------------------------------------------------------------------- */
-     await   app.register(cors, {
+        await app.register(cors, {
             origin: '*',
             methods: ['GET', 'POST', 'PUT', 'DELETE'],
             allowedHeaders: ['Content-Type', 'Authorization'],
@@ -53,10 +51,10 @@ const main = async () => {
         /* -------------------------------------------------------------------------- */
         /*                              SERVER                                        */
         /* -------------------------------------------------------------------------- */
-        const port = Number(env.PORT) || 8080;
+        const port = Number(env.PORT) || 3000;
         console.log({ port });
 
-        const address = await app.listen({ port: port ,host:'0.0.0.0'});
+        const address = await app.listen({ port: port, host: '0.0.0.0' });
         app.log.info(`Server listening at ${address}`);
     } catch (err) {
         app.log.error(err);
