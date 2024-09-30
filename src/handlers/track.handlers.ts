@@ -142,7 +142,7 @@ export const createTickets = async (request: FastifyRequest, reply: FastifyReply
 };
 
 /* -------------------------------------------------------------------------- */
-/*                            FETCH ALL THE TICKETS                           */
+/*                            FETCH ALL THE TICKETS By mail                          */
 /* -------------------------------------------------------------------------- */
 export const getTickets = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
@@ -185,6 +185,23 @@ export const summaryOfMail = async (request: FastifyRequest, reply: FastifyReply
         return reply.code(200).send({   
             summary: summary,
             message: 'Summary fetched successfully',
+        });
+    } catch (error) {
+        return reply.code(500).send({ error: 'Internal Server Error' });
+    }
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                      FETCH ALL THE TICKETS INTO THE DB                     */
+/* -------------------------------------------------------------------------- */
+
+export const fetchAllTickets = async (request: FastifyRequest, reply: FastifyReply) => {
+    try {
+        const allTickets = await db.select().from(tickets);
+        return reply.code(200).send({
+            tickets: allTickets,
+            message: 'Tickets fetched successfully',
         });
     } catch (error) {
         return reply.code(500).send({ error: 'Internal Server Error' });
