@@ -6,4 +6,3 @@ dist
 ./.env
 database/data
 database/data/*
-drizzle
