@@ -1,5 +1,5 @@
 import { FastifyInstance } from 'fastify';
-import { createTickets, fetchAllTickets, getTickets, isEmailRead, pingEmail, summaryOfMail } from '../handlers/track.handlers';
+import { createTickets, deleteAllTickets, fetchAllTickets, getTickets, isEmailRead, pingEmail, summaryOfMail } from '../handlers/track.handlers';
 import { readEmailSchema, pingSchema } from '../schemas/track.schema';
 
 export default async function emailTrackingRoutes(fastify: FastifyInstance) {
@@ -24,4 +24,7 @@ export default async function emailTrackingRoutes(fastify: FastifyInstance) {
     fastify.get('/tickets', {
         handler: fetchAllTickets,
     });
+    fastify.delete('/tickets', {
+        handler: deleteAllTickets,
+    })
 }
