@@ -45,7 +45,6 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
                     readAt: now,
                     lastPingAt: now,
                     duration: 0,
-                    readCounts: 1,
                     ipAddress: context?.ip ?? null,
                     location: context?.location ?? null,
                     browser: context?.browser ?? null,
@@ -61,7 +60,6 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
                     readAt: new Date(),
                     lastPingAt: new Date(),
                     duration: 0,
-                    readCounts: 1,
                     ipAddress: context?.ip ?? null,
                     location: context?.location ?? null,
                     browser: context?.browser ?? null,
@@ -146,14 +144,14 @@ export const createTickets = async (request: FastifyRequest, reply: FastifyReply
 /* -------------------------------------------------------------------------- */
 export const getTickets = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        const { emailId, userId } = request.query as { emailId: string; userId: string };
-        if (!emailId || !userId) {
+        const { emailId } = request.query as { emailId: string };
+        if (!emailId) {
             return reply.code(401).send({ error: 'Missing emailId' });
         }
         const user = await db
             .select()
             .from(tickets)
-            .where(and(eq(tickets.emailId, emailId), eq(tickets.userId, userId)));
+            .where(and(eq(tickets.emailId, emailId)));
 
         return reply.code(200).send({
             user: user,
@@ -169,18 +167,17 @@ export const getTickets = async (request: FastifyRequest, reply: FastifyReply) =
 /* -------------------------------------------------------------------------- */
 export const summaryOfMail = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        const { emailId, userId } = request.query as { emailId: string; userId: string };
-        if (!emailId || !userId) {
-            return reply.code(401).send({ error: 'Missing emailId or userId' });
+        const { emailId } = request.query as { emailId: string };
+        if (!emailId) {
+            return reply.code(401).send({ error: 'Missing emailId' });
         }
         const summary = await db
             .select({
                 read: count(),
-                ip: tickets.ipAddress
+                userId: tickets.userId,
              })
             .from(tickets)
-            .where(and(eq(tickets.emailId, emailId), eq(tickets.userId, userId), eq(tickets.isRead, true)))
-            .groupBy(tickets.ipAddress);
+            .where(and(eq(tickets.emailId, emailId), eq(tickets.isRead, true)))
 
         return reply.code(200).send({   
             summary: summary,
@@ -207,7 +204,9 @@ export const fetchAllTickets = async (request: FastifyRequest, reply: FastifyRep
         return reply.code(500).send({ error: 'Internal Server Error' });
     }
 }
-
+/* -------------------------------------------------------------------------- */
+/*                     DELETE ALL THE TICKETS INTO THE DB                     */
+/* -------------------------------------------------------------------------- */
 export const deleteAllTickets = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         await db.delete(tickets)
