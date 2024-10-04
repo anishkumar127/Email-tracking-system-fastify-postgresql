@@ -8,9 +8,9 @@ export default async function emailTrackingRoutes(fastify: FastifyInstance) {
         schema: readEmailSchema,
     });
 
-    fastify.put('/ping', {
+    fastify.get('/ping', {
         handler: pingEmail,
-        schema: pingSchema,
+        // schema: pingSchema,
     });
     fastify.post('/create', {
         handler: createTickets,
