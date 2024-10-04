@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.1](https://github.com/anishkumar127/email-tracking/compare/v1.4.0...v1.4.1) (2024-10-04)
+
+
+### Bug Fixes
+
+* Ping email based on emailId only removed userId ([d44f774](https://github.com/anishkumar127/email-tracking/commit/d44f774cbde61cec5f19eca3870603aec9d95735))
+
 ## [1.4.0](https://github.com/anishkumar127/email-tracking/compare/v1.3.0...v1.4.0) (2024-10-04)
 
 
