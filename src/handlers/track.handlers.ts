@@ -207,7 +207,9 @@ export const fetchAllTickets = async (request: FastifyRequest, reply: FastifyRep
         return reply.code(500).send({ error: 'Internal Server Error' });
     }
 }
-
+/* -------------------------------------------------------------------------- */
+/*                     DELETE ALL THE TICKETS INTO THE DB                     */
+/* -------------------------------------------------------------------------- */
 export const deleteAllTickets = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         await db.delete(tickets)
