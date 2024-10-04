@@ -170,10 +170,11 @@ export const summaryOfMail = async (request: FastifyRequest, reply: FastifyReply
         if (!emailId) {
             return reply.code(401).send({ error: 'Missing emailId' });
         }
+        console.log({emailId})
         const summary = await db
             .select({
+                // userId: tickets.userId,
                 read: count(),
-                userId: tickets.userId,
              })
             .from(tickets)
             .where(and(eq(tickets.emailId, emailId), eq(tickets.isRead, true)))
