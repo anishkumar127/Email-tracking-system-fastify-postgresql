@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.3](https://github.com/anishkumar127/email-tracking/compare/v1.4.2...v1.4.3) (2024-10-04)
+
+
+### Bug Fixes
+
+* Ping api changed PUT to GET ([1d649ff](https://github.com/anishkumar127/email-tracking/commit/1d649ff7b10a5f65b0eafcc21f7a2bfa3d1cdbb6))
+
 ### [1.4.2](https://github.com/anishkumar127/email-tracking/compare/v1.4.1...v1.4.2) (2024-10-04)
 
 ### [1.4.1](https://github.com/anishkumar127/email-tracking/compare/v1.4.0...v1.4.1) (2024-10-04)
