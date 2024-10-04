@@ -88,8 +88,8 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
 
 export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        const { emailId } = request.body as { emailId: string };
-        if (!emailId) {
+        const { emailId, userId } = request.body as { emailId: string; userId: string };
+        if (!emailId || !userId) {
             return reply.status(400).send({ error: 'Missing emailId or userId' });
         }
 
@@ -97,7 +97,7 @@ export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) =>
         const tracking = await db
             .select()
             .from(tickets)
-            .where(and(eq(tickets.emailId, emailId)))
+            .where(and(eq(tickets.emailId, emailId), eq(tickets.userId, userId)))
             .orderBy(desc(tickets.createdAt))
             .limit(1);
 
@@ -109,6 +109,7 @@ export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) =>
 
             const schema = {
                 emailId,
+                userId,
                 lastPingAt: pingAt,
                 duration: tracking[0].duration + durationIncrement,
             };
