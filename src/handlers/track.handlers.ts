@@ -167,18 +167,17 @@ export const getTickets = async (request: FastifyRequest, reply: FastifyReply) =
 /* -------------------------------------------------------------------------- */
 export const summaryOfMail = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        const { emailId, userId } = request.query as { emailId: string; userId: string };
-        if (!emailId || !userId) {
-            return reply.code(401).send({ error: 'Missing emailId or userId' });
+        const { emailId } = request.query as { emailId: string };
+        if (!emailId) {
+            return reply.code(401).send({ error: 'Missing emailId' });
         }
         const summary = await db
             .select({
                 read: count(),
-                ip: tickets.ipAddress
+                userId: tickets.userId,
              })
             .from(tickets)
-            .where(and(eq(tickets.emailId, emailId), eq(tickets.userId, userId), eq(tickets.isRead, true)))
-            .groupBy(tickets.ipAddress);
+            .where(and(eq(tickets.emailId, emailId), eq(tickets.isRead, true)))
 
         return reply.code(200).send({   
             summary: summary,
