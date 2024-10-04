@@ -15,7 +15,7 @@ export default async function emailTrackingRoutes(fastify: FastifyInstance) {
     fastify.post('/create', {
         handler: createTickets,
     });
-    fastify.get('/tickets-by-id', {
+    fastify.get('/tickets-by-emailId', {
         handler: getTickets,
     });
     fastify.get('/summary', {

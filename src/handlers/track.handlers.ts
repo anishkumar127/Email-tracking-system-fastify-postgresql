@@ -144,14 +144,14 @@ export const createTickets = async (request: FastifyRequest, reply: FastifyReply
 /* -------------------------------------------------------------------------- */
 export const getTickets = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        const { emailId, userId } = request.query as { emailId: string; userId: string };
-        if (!emailId || !userId) {
+        const { emailId } = request.query as { emailId: string };
+        if (!emailId) {
             return reply.code(401).send({ error: 'Missing emailId' });
         }
         const user = await db
             .select()
             .from(tickets)
-            .where(and(eq(tickets.emailId, emailId), eq(tickets.userId, userId)));
+            .where(and(eq(tickets.emailId, emailId)));
 
         return reply.code(200).send({
             user: user,
