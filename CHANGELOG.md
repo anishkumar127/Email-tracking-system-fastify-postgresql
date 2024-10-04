@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.2](https://github.com/anishkumar127/email-tracking/compare/v1.4.1...v1.4.2) (2024-10-04)
+
+### [1.4.1](https://github.com/anishkumar127/email-tracking/compare/v1.4.0...v1.4.1) (2024-10-04)
+
+
+### Bug Fixes
+
+* Ping email based on emailId only removed userId ([d44f774](https://github.com/anishkumar127/email-tracking/commit/d44f774cbde61cec5f19eca3870603aec9d95735))
+
+## [1.4.0](https://github.com/anishkumar127/email-tracking/compare/v1.3.0...v1.4.0) (2024-10-04)
+
+
+### Features
+
+* **alltickets:** Show all the tickets ([b77f818](https://github.com/anishkumar127/email-tracking/commit/b77f81866a8c7a36037e01710a745ec57386fb9a))
+* Delete all the tickets ([7ffb494](https://github.com/anishkumar127/email-tracking/commit/7ffb49402876390a63a9f9d30f315dc6981c6311))
+* Drizzle migration files ([c9f1623](https://github.com/anishkumar127/email-tracking/commit/c9f162328875e90abfad8a3a528ee7a9ebe5817e))
+
+
+### Bug Fixes
+
+* Database connection check ([03d52c1](https://github.com/anishkumar127/email-tracking/commit/03d52c1a04ff2e88797390bb7d70935f52ffffa4))
+* GET tickets by emailId instead of with userId ([a353348](https://github.com/anishkumar127/email-tracking/commit/a3533486af63bca18b3d7c583db7207522d6a31f))
+* Removed fields read_counts and send_date from database ([e9f8b3f](https://github.com/anishkumar127/email-tracking/commit/e9f8b3fc9402bc0eaa3cc1c48f3fada5ae4a4a2f))
+* Removed readCounts fields from isEmailRead api ([a94cbb5](https://github.com/anishkumar127/email-tracking/commit/a94cbb52447cb97c68f1a1b4e3c40e2c60776ac3))
+* Summary based on only emailId instead of userId ([ee0cd0e](https://github.com/anishkumar127/email-tracking/commit/ee0cd0e0dd2aa71bbc94351fbba8308aea1aff52))
+
 ## [1.3.0](https://github.com/anishkumar127/email-tracking/compare/v1.1.2...v1.3.0) (2024-09-25)
 
 

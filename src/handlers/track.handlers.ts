@@ -140,7 +140,7 @@ export const createTickets = async (request: FastifyRequest, reply: FastifyReply
 };
 
 /* -------------------------------------------------------------------------- */
-/*                            FETCH ALL THE TICKETS By mail                          */
+/*                            FETCH ALL THE TICKETS By emailId                         */
 /* -------------------------------------------------------------------------- */
 export const getTickets = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
