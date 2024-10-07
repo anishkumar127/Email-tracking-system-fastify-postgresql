@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.5](https://github.com/anishkumar127/email-tracking/compare/v1.4.4...v1.4.5) (2024-10-07)
+
+
+### Bug Fixes
+
+* ALTER table back to notNull email ([fef6a96](https://github.com/anishkumar127/email-tracking/commit/fef6a96937adf5172448fcc32acdbee3f6654d34))
+* Email migration was causing issue bcz email was SET as notNull ([f4009a3](https://github.com/anishkumar127/email-tracking/commit/f4009a38797076a7dd996f957920fd7b693166fc))
+* Schema field name changed & new added ([414c1c8](https://github.com/anishkumar127/email-tracking/commit/414c1c8bf47c09975ee505b17a17b6312561b50b))
+
 ### [1.4.4](https://github.com/anishkumar127/email-tracking/compare/v1.4.3...v1.4.4) (2024-10-04)
 
 ### [1.4.3](https://github.com/anishkumar127/email-tracking/compare/v1.4.2...v1.4.3) (2024-10-04)
