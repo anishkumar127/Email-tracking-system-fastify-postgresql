@@ -3,10 +3,10 @@ export const readEmailSchema = {
     querystring: {
         type: 'object',
         properties: {
-            emailId: { type: 'string' },
+            emailUniqueId: { type: 'string' },
             userId: { type: 'string' },
         },
-        required: ['emailId', 'userId'],
+        required: ['emailUniqueId', 'userId'],
     },
     // body: {
     //     type: 'object',
@@ -43,10 +43,10 @@ export const pingSchema = {
     body: {
         type: 'object',
         properties: {
-            emailId: { type: 'string' },
+            emailUniqueId: { type: 'string' },
             userId: { type: 'string' },
         },
-        required: ['emailId', 'userId'],
+        required: ['emailUniqueId', 'userId'],
     },
     response: {
         200: {

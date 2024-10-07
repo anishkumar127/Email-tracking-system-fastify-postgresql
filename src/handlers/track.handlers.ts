@@ -6,9 +6,9 @@ import { db } from '../db/db';
 import { tickets } from '../db/schema';
 export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        const { emailId, userId } = request.query as { emailId: string; userId: string };
-        if (!emailId || !userId) {
-            return reply.status(400).send({ error: 'Missing emailId or userId' });
+        const { emailUniqueId, userId,email } = request.query as { emailUniqueId: string; userId: string ,email:string};
+        if (!emailUniqueId || !userId) {
+            return reply.status(400).send({ error: 'Missing emailUniqueId or userId' });
         }
         let context;
         try {
@@ -32,14 +32,15 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
         const tracking = await db
             .select()
             .from(tickets)
-            .where(and(eq(tickets.emailId, emailId), eq(tickets.userId, userId)))
+            .where(and(eq(tickets.emailUniqueId, emailUniqueId), eq(tickets.userId, userId)))
             .limit(1);
         if (tracking && tracking?.length > 0) {
                 const now = new Date();
             console.log('location', context?.location);
             if (tracking[0].isRead) {
                 const schema = {
-                    emailId: emailId,
+                    emailUniqueId: emailUniqueId,
+                    email:email,
                     userId: userId,
                     isRead: true,
                     readAt: now,
@@ -54,7 +55,7 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
                 await db.insert(tickets).values(schema);
             } else {
                 const payload = {
-                    emailId: emailId,
+                    emailUniqueId: emailUniqueId,
                     userId: userId,
                     isRead: true,
                     readAt: new Date(),
@@ -88,16 +89,16 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
 
 export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        const { emailId } = request.query as { emailId: string };
-        if (!emailId) {
-            return reply.status(400).send({ error: 'Missing emailId' });
+        const { emailUniqueId } = request.query as { emailUniqueId: string };
+        if (!emailUniqueId) {
+            return reply.status(400).send({ error: 'Missing emailUniqueId' });
         }
 
         const pingAt = new Date();
         const tracking = await db
             .select()
             .from(tickets)
-            .where(and(eq(tickets.emailId, emailId)))
+            .where(and(eq(tickets.emailUniqueId, emailUniqueId)))
             .orderBy(desc(tickets.createdAt))
             .limit(1);
 
@@ -108,7 +109,7 @@ export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) =>
             // const durationIncrement = Math.floor((pingAt.getTime() - tracking.lastPingAt.getTime()) / 1000);
 
             const schema = {
-                emailId,
+                emailUniqueId,
                 lastPingAt: pingAt,
                 duration: tracking[0].duration + durationIncrement,
             };
@@ -128,8 +129,8 @@ export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) =>
 /* -------------------------------------------------------------------------- */
 export const createTickets = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        const { emailId, userId } = request.body as { emailId: string; userId: string };
-        await db.insert(tickets).values({ emailId, userId });
+        const { emailUniqueId, userId,email } = request.body as { emailUniqueId: string; userId: string,email:string };
+        await db.insert(tickets).values({ emailUniqueId, userId ,email});
         return reply.code(201).send({
             message: 'ticket send successfully',
         });
@@ -139,18 +140,18 @@ export const createTickets = async (request: FastifyRequest, reply: FastifyReply
 };
 
 /* -------------------------------------------------------------------------- */
-/*                            FETCH ALL THE TICKETS By emailId                         */
+/*                            FETCH ALL THE TICKETS By emailUniqueId                         */
 /* -------------------------------------------------------------------------- */
 export const getTickets = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        const { emailId } = request.query as { emailId: string };
-        if (!emailId) {
-            return reply.code(401).send({ error: 'Missing emailId' });
+        const { emailUniqueId } = request.query as { emailUniqueId: string };
+        if (!emailUniqueId) {
+            return reply.code(401).send({ error: 'Missing emailUniqueId' });
         }
         const user = await db
             .select()
             .from(tickets)
-            .where(and(eq(tickets.emailId, emailId)));
+            .where(and(eq(tickets.emailUniqueId, emailUniqueId)));
 
         return reply.code(200).send({
             user: user,
@@ -166,18 +167,18 @@ export const getTickets = async (request: FastifyRequest, reply: FastifyReply) =
 /* -------------------------------------------------------------------------- */
 export const summaryOfMail = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        const { emailId } = request.query as { emailId: string };
-        if (!emailId) {
-            return reply.code(401).send({ error: 'Missing emailId' });
+        const { emailUniqueId } = request.query as { emailUniqueId: string };
+        if (!emailUniqueId) {
+            return reply.code(401).send({ error: 'Missing emailUniqueId' });
         }
-        console.log({emailId})
+        console.log({emailUniqueId})
         const summary = await db
             .select({
                 // userId: tickets.userId,
                 read: count(),
              })
             .from(tickets)
-            .where(and(eq(tickets.emailId, emailId), eq(tickets.isRead, true)))
+            .where(and(eq(tickets.emailUniqueId, emailUniqueId), eq(tickets.isRead, true)))
 
         return reply.code(200).send({   
             summary: summary,
