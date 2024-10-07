@@ -6,7 +6,7 @@ const tickets = pgTable(
     {
         id: serial('id').primaryKey(),
         emailUniqueId: varchar('email_unique_id', { length: 500 }).notNull(),
-        email:varchar('email', { length: 300 }).default(''), // if setNot null then it will throw error because previously item didn't have the email field so need to define default value.
+        email:varchar('email', { length: 300 }).notNull().default(''), // if setNot null then it will throw error because previously item didn't have the email field so need to define default value.
         // in email field notNull cause issue so first need to migrate without notNull and then again add the notnull and migrate.
         userId: varchar('user_id', { length: 300 }).notNull(),
         isRead: boolean('is_read').default(false),
