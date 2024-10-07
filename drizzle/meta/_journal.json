@@ -29,6 +29,20 @@
       "when": 1728021632411,
       "tag": "0003_aspiring_natasha_romanoff",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1728283222583,
+      "tag": "0004_freezing_overlord",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1728283307684,
+      "tag": "0005_rare_butterfly",
+      "breakpoints": true
     }
   ]
 }
