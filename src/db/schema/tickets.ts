@@ -5,7 +5,8 @@ const tickets = pgTable(
     'tickets',
     {
         id: serial('id').primaryKey(),
-        emailId: varchar('email_id', { length: 255 }).notNull(),
+        emailUniqueId: varchar('email_unique_id', { length: 500 }).notNull(),
+        email:varchar('email', { length: 300 }).notNull(),
         userId: varchar('user_id', { length: 300 }).notNull(),
         isRead: boolean('is_read').default(false),
         readAt: timestamp('read_at'),
@@ -21,7 +22,8 @@ const tickets = pgTable(
     },
     (table) => {
         return {
-            emailIdIdx: index('email_id_idx').on(table.emailId),
+            emailIdIdx: index('email_id_idx').on(table.emailUniqueId),
+            
         };
     }
 );
