@@ -5,8 +5,9 @@ export const readEmailSchema = {
         properties: {
             emailUniqueId: { type: 'string' },
             userId: { type: 'string' },
+            email:{type:'string'}
         },
-        required: ['emailUniqueId', 'userId'],
+        required: ['emailUniqueId', 'userId','email'],
     },
     // body: {
     //     type: 'object',
