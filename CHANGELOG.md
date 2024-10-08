@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.2](https://github.com/anishkumar127/email-tracking/compare/v1.5.1...v1.5.2) (2024-10-08)
+
+
+### Bug Fixes
+
+* Remanining test cases ([15fa827](https://github.com/anishkumar127/email-tracking/commit/15fa8277f74a147b1f1c1b7e5553a2d5e4ede2c4))
+
+### [1.5.1](https://github.com/anishkumar127/email-tracking/compare/v1.5.0...v1.5.1) (2024-10-08)
+
+
+### Bug Fixes
+
+* some test cases was not working ([240541c](https://github.com/anishkumar127/email-tracking/commit/240541cb13dab40b9b8a22fb56f1ce8b0ca9a162))
+
+## [1.5.0](https://github.com/anishkumar127/email-tracking/compare/v1.4.5...v1.5.0) (2024-10-08)
+
+
+### Features
+
+* test case ([f8fd52d](https://github.com/anishkumar127/email-tracking/commit/f8fd52d930426166871c8b266d91dbb03a992bec))
+
 ### [1.4.5](https://github.com/anishkumar127/email-tracking/compare/v1.4.4...v1.4.5) (2024-10-07)
 
 
