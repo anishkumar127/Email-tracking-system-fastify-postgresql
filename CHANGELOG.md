@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/anishkumar127/email-tracking/compare/v1.4.5...v1.5.0) (2024-10-08)
+
+
+### Features
+
+* test case ([f8fd52d](https://github.com/anishkumar127/email-tracking/commit/f8fd52d930426166871c8b266d91dbb03a992bec))
+
 ### [1.4.5](https://github.com/anishkumar127/email-tracking/compare/v1.4.4...v1.4.5) (2024-10-07)
 
 
