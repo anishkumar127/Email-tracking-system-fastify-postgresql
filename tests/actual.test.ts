@@ -3,7 +3,7 @@ import Fastify from 'fastify';
 import supertest from 'supertest';
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import { tickets } from '../src/db/schema';
-import * as handlers from '../src/handlers/track.handlers'; // Adjust the import path based on your project structure
+import * as handlers from '../src/handlers/track.handlers'; 
 import { db } from '../src/db/db';
 const app = Fastify();
 
@@ -13,17 +13,14 @@ app.post('/create', handlers.createTickets);
 app.get('/tickets', handlers.getTickets);
 
 beforeAll(async () => {
-    // await prisma.$connect(); // Connect to the database
     await app.ready();
 });
 
 afterAll(async () => {
-    // await prisma.$disconnect(); // Disconnect from the database
     await app.close();
 });
 
 beforeEach(async () => {
-    // Clean up the database before each test
     await db.delete(tickets); // This removes all ticket records to start fresh
 });
 
@@ -32,7 +29,7 @@ describe('Ticket Handlers Integration Tests', () => {
         it('should create a ticket successfully', async () => {
             const response = await supertest(app.server)
                 .post('/create')
-                .send({ emailId: 'test@example.com', userId: '123' });
+                .send({ emailUniqueId: '0722a925-f89e-44cc-b2aa-453d53165f42', userId: '5ff06b98-2bc2-47e7-afb9-27a4ec0ce620',email:'H********M@xzm41.onmicrosoft.com' });
 
             expect(response.status).toBe(201);
             expect(response.body).toEqual({ message: 'ticket send successfully' });
@@ -40,15 +37,13 @@ describe('Ticket Handlers Integration Tests', () => {
             // Optional: Verify the entry in the database
             const tickets = await db.query.tickets.findMany();
             expect(tickets.length).toBe(1);
-            expect(tickets[0]).toMatchObject({ emailId: 'test@example.com', userId: '123' });
+            expect(tickets[0]).toMatchObject({ emailUniqueId: '0722a925-f89e-44cc-b2aa-453d53165f42', userId: '5ff06b98-2bc2-47e7-afb9-27a4ec0ce620' });
         });
 
         it('should return 500 if there is an error creating a ticket', async () => {
-            // To simulate an error, you could manually cause an error in your handler or check how it handles invalid data.
-            // Since this is difficult with a real database, this test might be less useful when not mocking.
             const response = await supertest(app.server)
                 .post('/create')
-                .send({ emailId: null, userId: '123' }); // Assuming emailId is required
+                .send({ emailUniqueId: null, userId: '5ff06b98-2bc2-47e7-afb9-27a4ec0ce620' }); // Assuming emailUniqueId is required
 
             expect(response.status).toBe(500);
             expect(response.body).toHaveProperty('error');
@@ -58,11 +53,11 @@ describe('Ticket Handlers Integration Tests', () => {
     describe('GET /tickets', () => {
         it('should fetch tickets successfully', async () => {
             // Create a ticket directly in the database for the test
-            await db.insert(tickets).values({ emailId: 'test@example.com', userId: '123' });
+            await db.insert(tickets).values({ emailUniqueId: '0722a925-f89e-44cc-b2aa-453d53165f42', userId: '5ff06b98-2bc2-47e7-afb9-27a4ec0ce620' });
 
             const response = await supertest(app.server)
                 .get('/tickets')
-                .query({ emailId: 'test@example.com', userId: '123' });
+                .query({ emailUniqueId: '0722a925-f89e-44cc-b2aa-453d53165f42', userId: '5ff06b98-2bc2-47e7-afb9-27a4ec0ce620' });
 
             expect(response.status).toBe(200);
             //   expect(response.body).toEqual({
@@ -91,11 +86,11 @@ describe('Ticket Handlers Integration Tests', () => {
             // * giving array as a result using [] desturcting. and only getting the object.
             const [ticket] = await db
                 .insert(tickets)
-                .values({ emailId: 'test@example.com', userId: '123' })
+                .values({ emailUniqueId: '0722a925-f89e-44cc-b2aa-453d53165f42', userId: '5ff06b98-2bc2-47e7-afb9-27a4ec0ce620' })
                 .returning();
             const response = await supertest(app.server)
                 .get('/read')
-                .query({ emailId: 'test@example.com', userId: '123' });
+                .query({ emailUniqueId: '0722a925-f89e-44cc-b2aa-453d53165f42', userId: '5ff06b98-2bc2-47e7-afb9-27a4ec0ce620' });
             expect(response.status).toBe(200);
 
             const [updatedTicket] = await db.select().from(tickets).where(eq(tickets.id, ticket.id))
@@ -106,7 +101,7 @@ describe('Ticket Handlers Integration Tests', () => {
         it('should return 404 if the tracking record is not found', async () => {
             const response = await supertest(app.server)
                 .get('/read')
-                .query({ emailId: 'notfound@example.com', userId: '123' });
+                .query({ emailId: 'notfound@example.com', userId: '5ff06b98-2bc2-47e7-afb9-27a4ec0ce620' });
             expect(response.status).toBe(404);
             expect(response.body).toEqual({ error: 'Tracking record not found' });
         });
@@ -116,15 +111,15 @@ describe('Ticket Handlers Integration Tests', () => {
         it('should update ping data successfully', async () => {
             // First, create the ticket to update
             const schema = {
-                emailId: 'test@example.com',
-                userId: '123',
+                emailUniqueId: '0722a925-f89e-44cc-b2aa-453d53165f42',
+                userId: '5ff06b98-2bc2-47e7-afb9-27a4ec0ce620',
                 lastPingAt: new Date(),
                 duration: 100,
             };
             const [ticket] = await db.insert(tickets).values(schema).returning();
             const response = await supertest(app.server)
                 .post('/ping')
-                .send({ emailId: 'test@example.com', userId: '123' });
+                .send({ emailUniqueId: '0722a925-f89e-44cc-b2aa-453d53165f42', userId: '5ff06b98-2bc2-47e7-afb9-27a4ec0ce620' });
 
             expect(response.status).toBe(201);
             expect(response.body).toEqual({ status: 'ok', message: 'ping success' });
@@ -137,7 +132,7 @@ describe('Ticket Handlers Integration Tests', () => {
         it('should return 404 if tracking record is not found', async () => {
             const response = await supertest(app.server)
                 .post('/ping')
-                .send({ emailId: 'notfound@example.com', userId: '123' });
+                .send({ emailId: 'notfound@example.com', userId: '5ff06b98-2bc2-47e7-afb9-27a4ec0ce620' });
 
             expect(response.status).toBe(404);
             expect(response.body).toEqual({ error: 'Tracking record not found' });
