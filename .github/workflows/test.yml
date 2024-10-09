@@ -1,0 +1,67 @@
+name: Run Tests with PNPM and Vitest
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+          cache: 'pnpm'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run Vitest tests
+        run: pnpm run test
+        continue-on-error: true  # To ensure that failure notifications still happen
+
+      - name: Generate Test Report
+        if: always()
+        run: |
+          pnpm run test --reporter=json --output-file=test-report.json
+          cat test-report.json
+        continue-on-error: true
+
+      - name: Upload Test Report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: ./test-report.json
+
+      - name: Annotate Test Failures
+        if: failure()
+        uses: dorny/test-reporter@v1
+        with:
+          name: vitest
+          path: ./test-report.json
+          reporter: vitest-json
+
+      - name: Send Failure Notification
+        if: failure()
+        uses: slackapi/slack-github-action@v1.23.0
+        with:
+          slack-message: |
+            :x: Tests have failed on ${{ github.event_name }}!
+            Branch: ${{ github.ref_name }}
+            Commit: ${{ github.sha }}
+            View the detailed results: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # Add this secret in your repo
