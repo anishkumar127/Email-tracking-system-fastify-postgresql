@@ -1,3 +1,4 @@
+
 name: Run Tests with PNPM and Vitest
 
 on:
@@ -22,15 +23,17 @@ jobs:
           node-version: '20.x'
           cache: 'pnpm'
 
-      - name: Install pnpm
-        run: npm install -g pnpm
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2  # This installs pnpm properly
+        with:
+          version: 'latest'
 
       - name: Install dependencies
         run: pnpm install
 
       - name: Run Vitest tests
         run: pnpm run test
-        continue-on-error: true  # To ensure that failure notifications still happen
+        continue-on-error: true  # Ensure failure notification runs
 
       - name: Generate Test Report
         if: always()
@@ -50,18 +53,25 @@ jobs:
         if: failure()
         uses: dorny/test-reporter@v1
         with:
-          name: vitest
+          name: vitest  # Corrected reporter name
           path: ./test-report.json
-          reporter: vitest-json
+          reporter: vitest
+          max-annotations: 10
+          fail-on-error: true
 
-      - name: Send Failure Notification
+      # Email notification step
+      - name: Send Email Notification on Failure
         if: failure()
-        uses: slackapi/slack-github-action@v1.23.0
+        uses: dawidd6/action-send-mail@v3
         with:
-          slack-message: |
-            :x: Tests have failed on ${{ github.event_name }}!
-            Branch: ${{ github.ref_name }}
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }} # Your email (set this secret in GitHub)
+          password: ${{ secrets.EMAIL_PASSWORD }} # App-specific password
+          subject: "Test Failure on ${{ github.repository }}"
+          body: |
+            :x: Tests failed in ${{ github.workflow }} for ${{ github.ref }}.
             Commit: ${{ github.sha }}
             View the detailed results: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # Add this secret in your repo
+          to: your-email@example.com
+          from: ${{ secrets.EMAIL_USERNAME }}
