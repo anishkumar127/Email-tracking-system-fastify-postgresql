@@ -9,6 +9,7 @@
         "pnpm": ">=8"
     },
     "scripts": {
+        "test":"vitest",
         "dev": "nodemon src/server.ts --traceResolution",
         "build": "tsc",
         "start": "node dist/server.js",
