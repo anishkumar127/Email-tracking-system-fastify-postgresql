@@ -21,9 +21,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
+          cache: 'pnpm'
 
       - name: Setup PNPM
-        uses: pnpm/action-setup@v2  # This installs pnpm properly
+        uses: pnpm/action-setup@v2
         with:
           version: 'latest'
 
@@ -32,6 +33,9 @@ jobs:
 
       - name: Run Vitest tests
         run: pnpm run test
+        env:  # Set your environment variables here
+          PORT:  ${{ secrets.PORT }} 
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}  # Store your real database URL in GitHub Secrets
         continue-on-error: true  # Ensure failure notification runs
 
       - name: Generate Test Report
@@ -52,7 +56,7 @@ jobs:
         if: failure()
         uses: dorny/test-reporter@v1
         with:
-          name: vitest  # Corrected reporter name
+          name: vitest
           path: ./test-report.json
           reporter: vitest
           max-annotations: 10
@@ -65,8 +69,8 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 465
-          username: ${{ secrets.EMAIL_USERNAME }} # Your email (set this secret in GitHub)
-          password: ${{ secrets.EMAIL_PASSWORD }} # App-specific password
+          username: ${{ secrets.EMAIL_USERNAME }}  # Your email (set this secret in GitHub)
+          password: ${{ secrets.EMAIL_PASSWORD }}  # App-specific password
           subject: "Test Failure on ${{ github.repository }}"
           body: |
             :x: Tests failed in ${{ github.workflow }} for ${{ github.ref }}.
