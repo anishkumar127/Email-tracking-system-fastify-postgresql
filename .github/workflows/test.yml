@@ -33,7 +33,7 @@ jobs:
       - name: Run Vitest tests
         run: pnpm run test
         env:  # Set your environment variables here
-          PORT:  ${{ secrets.PORT }} 
+          PORT: 3000 
           DATABASE_URL: ${{ secrets.DATABASE_URL }}  # Store your real database URL in GitHub Secrets
         continue-on-error: true  # Ensure failure notification runs
 
