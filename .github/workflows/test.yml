@@ -75,5 +75,5 @@ jobs:
             :x: Tests failed in ${{ github.workflow }} for ${{ github.ref }}.
             Commit: ${{ github.sha }}
             View the detailed results: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          to: your-email@example.com
+          to: anishbishnoi127@gmail.com
           from: ${{ secrets.EMAIL_USERNAME }}
