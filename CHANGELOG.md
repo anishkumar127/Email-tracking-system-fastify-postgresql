@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/anishkumar127/email-tracking/compare/v1.5.2...v1.6.0) (2024-10-10)
+
+
+### Features
+
+* test ci ([92d336f](https://github.com/anishkumar127/email-tracking/commit/92d336f9348142febb83fc80c34c1628f440015f))
+
+
+### Bug Fixes
+
+* by default port ([908f546](https://github.com/anishkumar127/email-tracking/commit/908f5462f12f2a600580c0ebb69be61acc812fa7))
+* ci email ([6dc8a8f](https://github.com/anishkumar127/email-tracking/commit/6dc8a8ff410c1f3c245dfc5de159d5deff0999f6))
+* IP detecting ([de82ea5](https://github.com/anishkumar127/email-tracking/commit/de82ea5b483ce36d2340529b089697de4eb7f7ec))
+* removed pnpm cache from ci ([9388267](https://github.com/anishkumar127/email-tracking/commit/938826700c4f47501781e0e422869ac3a4014df3))
+* test ci ([7b20e4f](https://github.com/anishkumar127/email-tracking/commit/7b20e4fd2a7d6425f0bf5e37a13e6058790ac823))
+* test ci ([be83948](https://github.com/anishkumar127/email-tracking/commit/be8394840155dd77f98b0fe2028dd8807d553ad2))
+* test ci ([7268a28](https://github.com/anishkumar127/email-tracking/commit/7268a28e5c0368a92936207b06516cd0faa5c5f5))
+* test ci ([15766cf](https://github.com/anishkumar127/email-tracking/commit/15766cfeac0f615458c1cb82638ae03db6bba31c))
+
 ### [1.5.2](https://github.com/anishkumar127/email-tracking/compare/v1.5.1...v1.5.2) (2024-10-08)
 
 
