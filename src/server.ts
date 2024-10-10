@@ -1,16 +1,14 @@
-import Fastify from 'fastify';
-import emailTrackingRoutes from './routes/track.routes';
-import health from './routes/healthCheck';
-import loggerPlugin from './plugins/logger';
-import errorHandler from './plugins/errorHandler';
 import cors from '@fastify/cors';
-import pino from 'pino';
-import { loggerOptions } from './utils/Loggers';
-import { db } from './db/db';
 import { sql } from 'drizzle-orm';
+import Fastify from 'fastify';
 import env from './config/env';
+import { db } from './db/db';
+import errorHandler from './plugins/errorHandler';
+import loggerPlugin from './plugins/logger';
+import health from './routes/healthCheck';
+import emailTrackingRoutes from './routes/track.routes';
 const app = Fastify({
-    logger: pino(loggerOptions),
+    logger: true,
     trustProxy: true
 });
 async function checkDatabaseConnection() {
