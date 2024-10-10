@@ -31,7 +31,7 @@ export default async function emailTrackingRoutes(fastify: FastifyInstance) {
         handler: userIdByUniqueIds,
     }
     )
-    fastify.get('/read-details', {
+    fastify.put('/read-details', {
         handler: uniqueIdByReadDetails,
     })
 }

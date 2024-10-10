@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { and, count, desc, eq, or, sql } from 'drizzle-orm';
+import { and, count, desc, eq, inArray, or, sql } from 'drizzle-orm';
 import { FastifyReply, FastifyRequest } from 'fastify';
 import UAParser from 'ua-parser-js';
 import { db } from '../db/db';
@@ -267,23 +267,40 @@ export const userIdByUniqueIds = async (request: FastifyRequest, reply: FastifyR
 
 export const uniqueIdByReadDetails = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        const { uniqueId } = request.query as { uniqueId: string };
-        if (!uniqueId) {
+        const { uniqueId } = request.body as { uniqueId: string[] };
+        if (!uniqueId || uniqueId.length==0) {
             return reply.code(401).send({ error: 'Missing uniqueId' });
         }
         const readDetails = await db
             .select({
-                readCount: sql<number>`COUNT(${tickets.isRead})`.as('readCount'),
-                uniqueId: sql<string>`MAX(${tickets.emailUniqueId})`.as('uniqueId'),
+                readCount: count(tickets.isRead),
+                uniqueId: tickets.emailUniqueId,
+                // readAt: tickets.readAt,
                 readAt: sql<Date>`MAX(${tickets.readAt})`.as('readAt'),
+                // uniqueId: sql<string>`MAX(${tickets.emailUniqueId})`.as('uniqueId'),
             })
             .from(tickets)
-            .where(and(eq(tickets.emailUniqueId, uniqueId), eq(tickets.isRead, true)));
+            .where(
+                and(
+                  inArray(tickets.emailUniqueId, uniqueId),
+                  eq(tickets.isRead, true)
+                )
+              ).groupBy(tickets.emailUniqueId);
+           
+        
+            //   const readDetails = await db.query.tickets.findMany({
+            //     where: and(
+            //       inArray(tickets.emailUniqueId, uniqueId),
+            //       eq(tickets.isRead, true)
+            //     )
+            //   });
+              
         return reply.code(200).send({
-            userId: readDetails,
+            uniqueId: readDetails,
             message: 'readDetails fetched successfully',
         });
     } catch (error) {
+        console.log({error})
         return reply.code(500).send({ error: 'Internal Server Error' });
     }
 };
