@@ -1,32 +1,41 @@
 import axios from 'axios';
-import { and, count, desc, eq, sql } from 'drizzle-orm';
+import { and, count, desc, eq, or, sql } from 'drizzle-orm';
 import { FastifyReply, FastifyRequest } from 'fastify';
 import UAParser from 'ua-parser-js';
 import { db } from '../db/db';
 import { tickets } from '../db/schema';
 export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        const { emailUniqueId, userId,email } = request.query as { emailUniqueId: string; userId: string ,email:string};
+        const { emailUniqueId, userId, email } = request.query as {
+            emailUniqueId: string;
+            userId: string;
+            email: string;
+        };
         if (!emailUniqueId || !userId) {
             return reply.status(400).send({ error: 'Missing emailUniqueId or userId' });
         }
         let context;
         try {
             // const ip = request.ip;
-            const ip :any =(request.headers['x-forwarded-for'])  || request.headers['x-arr-clientip']  || request.ip || (request.headers['cf-connecting-ip'] as string) ||
-            (request.headers['x-real-ip'] as string) ||
-            request.socket.remoteAddress ||'';
-            
+            const ip: any =
+                request.headers['x-forwarded-for'] ||
+                request.headers['x-arr-clientip'] ||
+                request.ip ||
+                (request.headers['cf-connecting-ip'] as string) ||
+                (request.headers['x-real-ip'] as string) ||
+                request.socket.remoteAddress ||
+                '';
+
             const userAgent = request.headers['user-agent'];
             const parser = new UAParser(userAgent);
             const result = parser.getResult();
             const os = result?.os?.name;
             const browser = result?.browser?.name;
-            const realIp = ip.split(":")[0];
+            const realIp = ip.split(':')[0];
             const geoResponse = await axios.get(`https://ipinfo.io/${realIp}/geo?token=843b85132fe7ea`);
             const { city, region, country } = geoResponse.data;
             context = {
-                ip:realIp,
+                ip: realIp,
                 userAgent,
                 os,
                 browser,
@@ -39,12 +48,12 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             .where(and(eq(tickets.emailUniqueId, emailUniqueId), eq(tickets.userId, userId)))
             .limit(1);
         if (tracking && tracking?.length > 0) {
-                const now = new Date();
+            const now = new Date();
             console.log('location', context?.location);
             if (tracking[0].isRead) {
                 const schema = {
                     emailUniqueId: emailUniqueId,
-                    email:email,
+                    email: email,
                     userId: userId,
                     isRead: true,
                     readAt: now,
@@ -133,8 +142,12 @@ export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) =>
 /* -------------------------------------------------------------------------- */
 export const createTickets = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        const { emailUniqueId, userId,email } = request.body as { emailUniqueId: string; userId: string,email:string };
-        await db.insert(tickets).values({ emailUniqueId, userId ,email});
+        const { emailUniqueId, userId, email } = request.body as {
+            emailUniqueId: string;
+            userId: string;
+            email: string;
+        };
+        await db.insert(tickets).values({ emailUniqueId, userId, email });
         return reply.code(201).send({
             message: 'ticket send successfully',
         });
@@ -175,24 +188,30 @@ export const summaryOfMail = async (request: FastifyRequest, reply: FastifyReply
         if (!emailUniqueId) {
             return reply.code(401).send({ error: 'Missing emailUniqueId' });
         }
-        console.log({emailUniqueId})
+        console.log({ emailUniqueId });
         const summary = await db
             .select({
-                // userId: tickets.userId,
-                read: count(),
-             })
+                userId: tickets.userId,
+                isRead: sql<boolean>`bool_or(${tickets.isRead})`,
+                readAt: sql<Date>`MAX(${tickets.updatedAt})`.as('readAt'),
+                ip: sql<string>`MAX(${tickets.ipAddress})`.as('ip'),
+                location: sql<string>`MAX(${tickets.location})`.as('location'),
+                browser: sql<string>`MAX(${tickets.browser})`.as('browser'),
+                system: sql<string>`MAX(${tickets.system})`.as('system'),
+            })
             .from(tickets)
-            .where(and(eq(tickets.emailUniqueId, emailUniqueId), eq(tickets.isRead, true)))
+            .where(and(eq(tickets.emailUniqueId, emailUniqueId)))
+            .groupBy(tickets.userId);
 
-        return reply.code(200).send({   
+        return reply.code(200).send({
             summary: summary,
             message: 'Summary fetched successfully',
         });
     } catch (error) {
+        console.log(error);
         return reply.code(500).send({ error: 'Internal Server Error' });
     }
-}
-
+};
 
 /* -------------------------------------------------------------------------- */
 /*                      FETCH ALL THE TICKETS INTO THE DB                     */
@@ -208,17 +227,17 @@ export const fetchAllTickets = async (request: FastifyRequest, reply: FastifyRep
     } catch (error) {
         return reply.code(500).send({ error: 'Internal Server Error' });
     }
-}
+};
 /* -------------------------------------------------------------------------- */
 /*                     DELETE ALL THE TICKETS INTO THE DB                     */
 /* -------------------------------------------------------------------------- */
 export const deleteAllTickets = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-        await db.delete(tickets)
+        await db.delete(tickets);
         return reply.code(200).send({
             message: 'All tickets deleted successfully',
         });
     } catch (error) {
         return reply.code(500).send({ error: 'Internal Server Error' });
     }
-}
+};
