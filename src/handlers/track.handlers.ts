@@ -17,13 +17,6 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             (request.headers['x-real-ip'] as string) ||
             request.socket.remoteAddress ||'';
             
-            // console.log("ip", ip)
-            // console.log("x-arr", request.headers['x-arr-clientip'])
-            // console.log("for", request.headers['x-forwarded-for'])
-            // console.log("cf", request.headers['cf-connecting-ip'])
-            // console.log("real", request.headers['x-real-ip'])
-            // console.log("headers", request.headers)
-            
             const userAgent = request.headers['user-agent'];
             const parser = new UAParser(userAgent);
             const result = parser.getResult();

@@ -13,6 +13,7 @@
         "outDir": "./dist",
         "strictBindCallApply": false,
         "strictNullChecks": true, // TODO: previously was false.
+        "strict": true,
         "noFallthroughCasesInSwitch": false,
         "noImplicitAny": false,
         "declaration": true,
