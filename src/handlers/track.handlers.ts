@@ -1,4 +1,5 @@
 import axios from 'axios';
+import validator from 'validator';
 import { and, count, desc, eq, sql } from 'drizzle-orm';
 import { FastifyReply, FastifyRequest } from 'fastify';
 import UAParser from 'ua-parser-js';
@@ -23,6 +24,9 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             const os = result?.os?.name;
             const browser = result?.browser?.name;
             const realIp = ip.split(":")[0];
+            if (!validator.isIP(realIp)) {
+                return reply.status(400).send({ error: 'Invalid IP address' });
+            }
             const geoResponse = await axios.get(`https://ipinfo.io/${realIp}/geo?token=843b85132fe7ea`);
             const { city, region, country } = geoResponse.data;
             context = {
