@@ -11,6 +11,7 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             userId: string;
             email: string;
         };
+        console.log("payload===>",{emailUniqueId, userId, email});
         if (!emailUniqueId || !userId) {
             return reply.status(400).send({ error: 'Missing emailUniqueId or userId' });
         }
@@ -51,6 +52,7 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             const now = new Date();
             console.log('location', context?.location);
             if (tracking[0].isRead) {
+                console.log("READ ===========>",tracking[0].readAt);
                 const schema = {
                     emailUniqueId: emailUniqueId,
                     email: email,
@@ -67,9 +69,8 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
                 };
                 await db.insert(tickets).values(schema);
             } else {
+                console.log("NOT READ=======>")
                 const payload = {
-                    emailUniqueId: emailUniqueId,
-                    userId: userId,
                     isRead: true,
                     readAt: new Date(),
                     lastPingAt: new Date(),
@@ -193,7 +194,7 @@ export const summaryOfMail = async (request: FastifyRequest, reply: FastifyReply
             .select({
                 userId: tickets.userId,
                 isRead: sql<boolean>`bool_or(${tickets.isRead})`,
-                readAt: sql<Date>`MAX(${tickets.updatedAt})`.as('readAt'),
+                readAt: sql<Date>`MAX(${tickets.readAt})`.as('readAt'),
                 ip: sql<string>`MAX(${tickets.ipAddress})`.as('ip'),
                 location: sql<string>`MAX(${tickets.location})`.as('location'),
                 browser: sql<string>`MAX(${tickets.browser})`.as('browser'),
@@ -241,3 +242,52 @@ export const deleteAllTickets = async (request: FastifyRequest, reply: FastifyRe
         return reply.code(500).send({ error: 'Internal Server Error' });
     }
 };
+
+
+export const userIdByUniqueIds = async (request: FastifyRequest, reply: FastifyReply) => {
+    try {
+        const { userId } = request.query as { userId: string };
+        if (!userId) {
+            return reply.code(401).send({ error: 'Missing userId' });
+        }
+        const uniqueId = await db
+            .select(
+                {
+                    uniqueId: sql<string>`MAX(${tickets.emailUniqueId})`.as('uniqueId'),
+                }
+            )
+            .from(tickets)
+            .where(and(eq(tickets.userId, userId)))
+        return reply.code(200).send({
+            userId: uniqueId,
+            message: 'uniqueId fetched successfully',
+        });
+    } catch (error) {
+        return reply.code(500).send({ error: 'Internal Server Error' });
+    }
+}
+
+export const uniqueIdByReadDetails = async (request: FastifyRequest, reply: FastifyReply) => {
+    try {
+        const { uniqueId } = request.query as { uniqueId: string };
+        if (!uniqueId) {
+            return reply.code(401).send({ error: 'Missing uniqueId' });
+        }
+        const readDetails = await db
+            .select(
+                {
+                    readCount: sql<number>`COUNT(${tickets.isRead})`.as('readCount'),
+                    uniqueId: sql<string>`MAX(${tickets.emailUniqueId})`.as('uniqueId'),
+                    readAt: sql<Date>`MAX(${tickets.readAt})`.as('readAt'),
+                }
+            )
+            .from(tickets)
+            .where(and(eq(tickets.emailUniqueId, uniqueId), eq(tickets.isRead, true)))
+        return reply.code(200).send({
+            userId: readDetails,
+            message: 'readDetails fetched successfully',
+        });
+    } catch (error) {
+        return reply.code(500).send({ error: 'Internal Server Error' });
+    }
+}
