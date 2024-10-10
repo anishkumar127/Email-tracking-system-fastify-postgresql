@@ -192,7 +192,8 @@ export const summaryOfMail = async (request: FastifyRequest, reply: FastifyReply
         console.log({ emailUniqueId });
         const summary = await db
             .select({
-                userId: tickets.userId,
+                // userId: tickets.userId,
+                userId: sql<string>`MAX(${tickets.userId})`.as('userId'),
                 isRead: sql<boolean>`bool_or(${tickets.isRead})`,
                 readAt: sql<Date>`MAX(${tickets.readAt})`.as('readAt'),
                 ip: sql<string>`MAX(${tickets.ipAddress})`.as('ip'),
@@ -202,7 +203,7 @@ export const summaryOfMail = async (request: FastifyRequest, reply: FastifyReply
             })
             .from(tickets)
             .where(and(eq(tickets.emailUniqueId, emailUniqueId)))
-            .groupBy(tickets.userId);
+            .groupBy(tickets.readAt);
 
         return reply.code(200).send({
             summary: summary,
@@ -249,13 +250,14 @@ export const userIdByUniqueIds = async (request: FastifyRequest, reply: FastifyR
         if (!userId) {
             return reply.code(401).send({ error: 'Missing userId' });
         }
-        const uniqueId = await db
+        const uniqueIdRecords = await db
             .select({
                 uniqueId: tickets.emailUniqueId,
             })
             .from(tickets)
             .where(and(eq(tickets.userId, userId)))
             .groupBy(tickets.emailUniqueId);
+        const uniqueId = uniqueIdRecords.map((record) => record.uniqueId);
         return reply.code(200).send({
             userId: uniqueId,
             message: 'uniqueId fetched successfully',
@@ -268,39 +270,33 @@ export const userIdByUniqueIds = async (request: FastifyRequest, reply: FastifyR
 export const uniqueIdByReadDetails = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         const { uniqueId } = request.body as { uniqueId: string[] };
-        if (!uniqueId || uniqueId.length==0) {
+        if (!uniqueId || uniqueId.length == 0) {
             return reply.code(401).send({ error: 'Missing uniqueId' });
         }
+        console.log('uniqueid========', { uniqueId });
         const readDetails = await db
             .select({
-                readCount: count(tickets.isRead),
+                // readCount: count(tickets.isRead),
+                readCount: sql<number>`
+                SUM(CASE WHEN ${tickets.isRead} = true THEN 1 ELSE 0 END)
+            `.as('readCount'),
                 uniqueId: tickets.emailUniqueId,
-                // readAt: tickets.readAt,
                 readAt: sql<Date>`MAX(${tickets.readAt})`.as('readAt'),
-                // uniqueId: sql<string>`MAX(${tickets.emailUniqueId})`.as('uniqueId'),
+                // readAt:sql<Date | string>`CASE WHEN ${tickets.readAt} IS NULL THEN 'Not yet' ELSE ${tickets.readAt} END`.as('readAt'),
+                // readAt: sql<string>`CASE WHEN ${tickets.readAt} IS NULL THEN 'Not yet' ELSE ${tickets.readAt}::text END`.as('readAt'),
             })
             .from(tickets)
             .where(
-                and(
-                  inArray(tickets.emailUniqueId, uniqueId),
-                  eq(tickets.isRead, true)
-                )
-              ).groupBy(tickets.emailUniqueId);
-           
-        
-            //   const readDetails = await db.query.tickets.findMany({
-            //     where: and(
-            //       inArray(tickets.emailUniqueId, uniqueId),
-            //       eq(tickets.isRead, true)
-            //     )
-            //   });
-              
+                inArray(tickets.emailUniqueId, uniqueId)
+            )
+            .groupBy(tickets.emailUniqueId);
+
         return reply.code(200).send({
             uniqueId: readDetails,
             message: 'readDetails fetched successfully',
         });
     } catch (error) {
-        console.log({error})
+        console.log({ error });
         return reply.code(500).send({ error: 'Internal Server Error' });
     }
 };
