@@ -11,6 +11,7 @@ import { sql } from 'drizzle-orm';
 import env from './config/env';
 const app = Fastify({
     logger: pino(loggerOptions),
+    trustProxy: true
 });
 async function checkDatabaseConnection() {
     try {
