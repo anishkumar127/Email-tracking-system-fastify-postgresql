@@ -194,12 +194,14 @@ export const summaryOfMail = async (request: FastifyRequest, reply: FastifyReply
             .select({
                 // userId: tickets.userId,
                 userId: sql<string>`MAX(${tickets.userId})`.as('userId'),
+                email: sql<string>`MAX(${tickets.email})`.as('email'),
                 isRead: sql<boolean>`bool_or(${tickets.isRead})`,
                 readAt: sql<Date>`MAX(${tickets.readAt})`.as('readAt'),
                 ip: sql<string>`MAX(${tickets.ipAddress})`.as('ip'),
                 location: sql<string>`MAX(${tickets.location})`.as('location'),
                 browser: sql<string>`MAX(${tickets.browser})`.as('browser'),
                 system: sql<string>`MAX(${tickets.system})`.as('system'),
+                deviceInfo: sql<string>`MAX(${tickets.deviceInfo})`.as('deviceInfo'),
             })
             .from(tickets)
             .where(and(eq(tickets.emailUniqueId, emailUniqueId)))
