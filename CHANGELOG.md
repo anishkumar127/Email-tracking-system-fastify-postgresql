@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/anishkumar127/email-tracking/compare/v1.6.0...v1.7.0) (2024-10-11)
+
+
+### Features
+
+* User specific email tracking api ([da00906](https://github.com/anishkumar127/email-tracking/commit/da00906e3711f425afedf5fe70e87f8ae538165f))
+
+
+### Bug Fixes
+
+* deviceInfo changed varchar limit to text ([c173383](https://github.com/anishkumar127/email-tracking/commit/c1733836dc17035f3bb40d56c745f892f35aeb38))
+* Drizzle migrate ([cd89140](https://github.com/anishkumar127/email-tracking/commit/cd891407c6e4aaa22d04e2b4fc81dce92ac747f5))
+* Missing email and deviceInfo added ([a20a261](https://github.com/anishkumar127/email-tracking/commit/a20a2619a82903a2baffd891be806817b802e3da))
+* Read count was not coming zero if not read ([4fba268](https://github.com/anishkumar127/email-tracking/commit/4fba26882c23f8b6fc6c5a4bc1cc37cabff6fd60))
+* Read details of particular uniqueId ([e6f7076](https://github.com/anishkumar127/email-tracking/commit/e6f7076501e34afd3a840901610cd5500ca9a4f8))
+* readAt date to text data type in postgresql ([e906e18](https://github.com/anishkumar127/email-tracking/commit/e906e18ee44b219de1086780d064757cf1e481da))
+* Summary of emails ([61c7092](https://github.com/anishkumar127/email-tracking/commit/61c70925b9e46502c93aadf137a0b2c090a804ba))
+* UniqueId should be unique by groupby with less response data ([ff8f529](https://github.com/anishkumar127/email-tracking/commit/ff8f52924204e284c02a7ac74e6d3fd68bbcd48b))
+
 ## [1.6.0](https://github.com/anishkumar127/email-tracking/compare/v1.5.2...v1.6.0) (2024-10-10)
 
 
