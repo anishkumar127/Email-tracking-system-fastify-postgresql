@@ -15,7 +15,7 @@ const tickets = pgTable(
         ipAddress: t.varchar({ length: 100 }),
         location: t.varchar({ length: 200 }),
         browser: t.varchar({ length: 100 }),
-        deviceInfo: t.varchar({ length: 300 }),
+        deviceInfo: t.text(),
         system: t.varchar({ length: 200 }),
         createdAt: t.timestamp().default(sql`CURRENT_TIMESTAMP`),
         updatedAt: t.timestamp({ mode: 'date' }).defaultNow(),
