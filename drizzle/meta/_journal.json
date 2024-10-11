@@ -57,6 +57,13 @@
       "when": 1728565815763,
       "tag": "0007_sturdy_penance",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1728649216267,
+      "tag": "0008_polite_tombstone",
+      "breakpoints": true
     }
   ]
 }

@@ -1,0 +1,1 @@
+ALTER TABLE "tickets" ALTER COLUMN "device_info" SET DATA TYPE text;
