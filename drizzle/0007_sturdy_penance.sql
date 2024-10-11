@@ -1,0 +1,1 @@
+ALTER TABLE "tickets" ALTER COLUMN "last_ping_at" SET DATA TYPE text;

@@ -43,6 +43,27 @@
       "when": 1728283307684,
       "tag": "0005_rare_butterfly",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1728565774548,
+      "tag": "0006_rainy_skin",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1728565815763,
+      "tag": "0007_sturdy_penance",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1728649216267,
+      "tag": "0008_polite_tombstone",
+      "breakpoints": true
     }
   ]
 }
