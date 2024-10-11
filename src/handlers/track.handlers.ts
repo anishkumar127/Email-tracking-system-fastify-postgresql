@@ -49,7 +49,7 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             .where(and(eq(tickets.emailUniqueId, emailUniqueId), eq(tickets.userId, userId)))
             .limit(1);
         if (tracking && tracking?.length > 0) {
-            const now = new Date();
+            const now = new Date().toISOString();
             console.log('location', context?.location);
             if (tracking[0].isRead) {
                 console.log('READ ===========>', tracking[0].readAt);
@@ -72,8 +72,8 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
                 console.log('NOT READ=======>');
                 const payload = {
                     isRead: true,
-                    readAt: new Date(),
-                    lastPingAt: new Date(),
+                    readAt: new Date().toISOString(),
+                    lastPingAt: new Date().toISOString(),
                     duration: 0,
                     ipAddress: context?.ip ?? null,
                     location: context?.location ?? null,
@@ -101,42 +101,42 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
     }
 };
 
-export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) => {
-    try {
-        const { emailUniqueId } = request.query as { emailUniqueId: string };
-        if (!emailUniqueId) {
-            return reply.status(400).send({ error: 'Missing emailUniqueId' });
-        }
+// export const pingEmail = async (request: FastifyRequest, reply: FastifyReply) => {
+//     try {
+//         const { emailUniqueId } = request.query as { emailUniqueId: string };
+//         if (!emailUniqueId) {
+//             return reply.status(400).send({ error: 'Missing emailUniqueId' });
+//         }
 
-        const pingAt = new Date();
-        const tracking = await db
-            .select()
-            .from(tickets)
-            .where(and(eq(tickets.emailUniqueId, emailUniqueId)))
-            .orderBy(desc(tickets.createdAt))
-            .limit(1);
+//         const pingAt = new Date().toISOString();
+//         const tracking = await db
+//             .select()
+//             .from(tickets)
+//             .where(and(eq(tickets.emailUniqueId, emailUniqueId)))
+//             .orderBy(desc(tickets.createdAt))
+//             .limit(1);
 
-        if (tracking && tracking?.length > 0) {
-            const lastPingAt = tracking[0].lastPingAt ? new Date(tracking[0].lastPingAt) : pingAt;
-            const durationIncrement = Math.floor((pingAt.getTime() - lastPingAt.getTime()) / 1000); // Calculate duration increment
+//         if (tracking && tracking?.length > 0) {
+//             const lastPingAt = tracking[0].lastPingAt ? new Date(tracking[0].lastPingAt) : pingAt;
+//             const durationIncrement = Math.floor((pingAt.getTime() - lastPingAt.getTime()) / 1000); // Calculate duration increment
 
-            // const durationIncrement = Math.floor((pingAt.getTime() - tracking.lastPingAt.getTime()) / 1000);
+//             // const durationIncrement = Math.floor((pingAt.getTime() - tracking.lastPingAt.getTime()) / 1000);
 
-            const schema = {
-                emailUniqueId,
-                lastPingAt: pingAt,
-                duration: tracking[0].duration + durationIncrement,
-            };
-            await db.update(tickets).set(schema).where(eq(tickets.id, tracking[0].id));
-        } else {
-            return reply.status(404).send({ error: 'Tracking record not found' });
-        }
+//             const schema = {
+//                 emailUniqueId,
+//                 lastPingAt: pingAt,
+//                 duration: tracking[0].duration + durationIncrement,
+//             };
+//             await db.update(tickets).set(schema).where(eq(tickets.id, tracking[0].id));
+//         } else {
+//             return reply.status(404).send({ error: 'Tracking record not found' });
+//         }
 
-        return reply.code(201).send({ status: 'ok', message: 'ping success' });
-    } catch (error) {
-        return reply.code(500).send({ error: 'Internal Server Error' });
-    }
-};
+//         return reply.code(201).send({ status: 'ok', message: 'ping success' });
+//     } catch (error) {
+//         return reply.code(500).send({ error: 'Internal Server Error' });
+//     }
+// };
 
 /* -------------------------------------------------------------------------- */
 /*                               CREATE TICKETS                               */

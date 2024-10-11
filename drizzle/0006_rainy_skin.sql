@@ -1,0 +1,1 @@
+ALTER TABLE "tickets" ALTER COLUMN "read_at" SET DATA TYPE text;
