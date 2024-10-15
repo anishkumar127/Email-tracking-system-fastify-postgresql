@@ -4,6 +4,7 @@ import { FastifyReply, FastifyRequest } from 'fastify';
 import UAParser from 'ua-parser-js';
 import { db } from '../db/db';
 import { tickets } from '../db/schema';
+import { create } from 'domain';
 export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         const { emailUniqueId, userId, email } = request.query as {
@@ -278,6 +279,8 @@ export const uniqueIdByReadDetails = async (request: FastifyRequest, reply: Fast
         console.log('uniqueid========', { uniqueId });
         const readDetails = await db
             .select({
+                createdAt: sql<Date | string>`MAX(${tickets.createdAt})`.as('createdAt'),
+                email: sql<string>`MAX(${tickets.email})`.as('email'),
                 // readCount: count(tickets.isRead),
                 readCount: sql<number>`
                 SUM(CASE WHEN ${tickets.isRead} = true THEN 1 ELSE 0 END)
