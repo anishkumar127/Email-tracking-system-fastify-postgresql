@@ -1,10 +1,9 @@
 import axios from 'axios';
-import { and, count, desc, eq, inArray, or, sql } from 'drizzle-orm';
+import { and, eq, inArray, sql } from 'drizzle-orm';
 import { FastifyReply, FastifyRequest } from 'fastify';
 import UAParser from 'ua-parser-js';
 import { db } from '../db/db';
 import { tickets } from '../db/schema';
-import { create } from 'domain';
 export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
         const { emailUniqueId, userId, email } = request.query as {
