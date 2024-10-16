@@ -279,6 +279,7 @@ export const uniqueIdByReadDetails = async (request: FastifyRequest, reply: Fast
         const readDetails = await db
             .select({
                 createdAt: sql<Date | string>`MAX(${tickets.createdAt})`.as('createdAt'),
+                isRead: sql<boolean>`bool_or(${tickets.isRead})`,
                 email: sql<string>`MAX(${tickets.email})`.as('email'),
                 // readCount: count(tickets.isRead),
                 readCount: sql<number>`
