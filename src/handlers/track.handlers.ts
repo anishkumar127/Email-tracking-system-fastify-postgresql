@@ -53,9 +53,16 @@ export const isEmailRead = async (request: FastifyRequest, reply: FastifyReply) 
             console.log('location', context?.location);
             if (tracking[0].isRead) {
                 console.log('READ ===========>', tracking[0].readAt);
+                const [localPart, domainPart] = email?.split('@');
+                let emailEncrypted;
+                if (localPart.length <= 2) {
+                    emailEncrypted = email;
+                }
+                const maskedLocalPart = localPart[0] + '*'.repeat(localPart.length - 2) + localPart[localPart.length - 1];
+                emailEncrypted = `${maskedLocalPart}@${domainPart}`;
                 const schema = {
                     emailUniqueId: emailUniqueId,
-                    email: email,
+                    email: emailEncrypted,
                     userId: userId,
                     isRead: true,
                     readAt: now,
@@ -148,7 +155,14 @@ export const createTickets = async (request: FastifyRequest, reply: FastifyReply
             userId: string;
             email: string;
         };
-        await db.insert(tickets).values({ emailUniqueId, userId, email });
+        const [localPart, domainPart] = email?.split('@');
+        let emailEncrypted;
+        if (localPart.length <= 2) {
+            emailEncrypted = email;
+        }
+        const maskedLocalPart = localPart[0] + '*'.repeat(localPart.length - 2) + localPart[localPart.length - 1];
+        emailEncrypted = `${maskedLocalPart}@${domainPart}`;
+        await db.insert(tickets).values({ emailUniqueId, userId, email:emailEncrypted });
         return reply.code(201).send({
             message: 'ticket send successfully',
         });
