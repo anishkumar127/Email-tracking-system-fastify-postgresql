@@ -1,5 +1,5 @@
 import { sql } from 'drizzle-orm';
-import { boolean, index, integer, pgTable, serial, timestamp, varchar } from 'drizzle-orm/pg-core';
+import { index, pgTable } from 'drizzle-orm/pg-core';
 
 const tickets = pgTable(
     'tickets',
